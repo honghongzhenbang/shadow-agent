@@ -1,0 +1,75 @@
+{
+  "id": "shadow-work",
+  "name": "Shadow Context",
+  "description": "Temporal work context graph and incremental change feed for the sole OpenClaw controller.",
+  "version": "4.27.0",
+  "kind": "context-engine",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "databasePath"
+    ],
+    "properties": {
+      "databasePath": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Absolute path to the Shadow Agent V4 epistemic context database."
+      },
+      "maxContextBytes": {
+        "type": "integer",
+        "minimum": 8192,
+        "maximum": 262144,
+        "default": 65536
+      },
+      "workboardDatabasePath": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Optional absolute path to the OpenClaw Workboard database used for attention ranking."
+      },
+      "reuseConnections": {
+        "type": "boolean",
+        "default": true,
+        "description": "Reuse SQLite handles for the Gateway lifetime to avoid reopening a large database for every tool call."
+      }
+    }
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "trustedToolPolicies": [],
+    "tools": [
+      "shadow_attention_packet",
+      "shadow_conversation_window",
+      "shadow_context_status",
+      "shadow_context_changes",
+      "shadow_information_dispatch",
+      "shadow_context_focus",
+      "shadow_context_focus_update",
+      "shadow_task_checkpoint",
+      "shadow_context_ack",
+      "shadow_context_resolve",
+      "shadow_context_query",
+      "shadow_evidence_search",
+      "shadow_context_entity",
+      "shadow_context_impact",
+      "shadow_context_capture",
+      "shadow_knowledge_delta_capture",
+      "shadow_context_revise",
+      "shadow_context_enrichment",
+      "shadow_context_annotate",
+      "shadow_context_vocabulary",
+      "shadow_context_propose",
+      "shadow_outbound_draft_create",
+      "shadow_outbound_draft_list",
+      "shadow_reminder_create",
+      "shadow_reminder_list",
+      "shadow_reminder_update",
+      "shadow_reminder_cancel",
+      "shadow_condition_watch",
+      "shadow_condition_list",
+      "shadow_condition_resolve"
+    ]
+  }
+}

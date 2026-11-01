@@ -1,0 +1,31 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "X:/ExampleProjects/sdagent/runtime/experiments/runtime-boundary/00000000-0000-4000-8000-00000000000b/replacement/workspace"
+    },
+    "entries": { "main": {} }
+  },
+  "plugins": {
+    "enabled": true,
+    "allow": ["runtime-boundary-prompt-policy"],
+    "load": {
+      "paths": ["X:/ExampleProjects/sdagent/scripts/experiments/runtime-boundary/prompt-policy"]
+    },
+    "entries": {
+      "runtime-boundary-prompt-policy": {
+        "enabled": true,
+        "hooks": {
+          "allowConversationAccess": true,
+          "allowPromptInjection": true
+        },
+        "config": {
+          "experimentId": "runtime-boundary-prompt-policy-v1",
+          "experimentRoot": "X:/ExampleProjects/sdagent/runtime/experiments/runtime-boundary/00000000-0000-4000-8000-00000000000b",
+          "mode": "replacement",
+          "role": "engineer",
+          "stableRules": "Use the supplied fixture brief and return only verifiable fixture results."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "id": "shadow-core",
+  "version": 2,
+  "description": "基于 PROV 思想的开放式通用上下文词汇；领域类型可通过数据扩展，不修改图谱代码。",
+  "entityTypes": [
+    {
+      "type": "Entity",
+      "topClass": "Entity",
+      "description": "具有相对稳定身份的物理、数字或概念对象。"
+    },
+    {
+      "type": "Activity",
+      "topClass": "Activity",
+      "description": "在一段时间内使用、改变或生成实体的活动。"
+    },
+    {
+      "type": "Agent",
+      "topClass": "Agent",
+      "description": "对活动或实体承担责任的人、组织或软件代理。"
+    },
+    {
+      "type": "Person",
+      "parentType": "Agent",
+      "topClass": "Agent",
+      "description": "自然人责任主体。"
+    },
+    {
+      "type": "SoftwareAgent",
+      "parentType": "Agent",
+      "topClass": "Agent",
+      "description": "可独立执行或辅助执行工作的软件代理。"
+    },
+    {
+      "type": "Organization",
+      "parentType": "Agent",
+      "topClass": "Agent",
+      "description": "组织责任主体。"
+    },
+    {
+      "type": "Team",
+      "parentType": "Organization",
+      "topClass": "Agent",
+      "aliases": ["团队", "小组"],
+      "description": "承担一组稳定工作责任的协作团队。"
+    },
+    {
+      "type": "Role",
+      "parentType": "Agent",
+      "topClass": "Agent",
+      "aliases": ["角色", "岗位"],
+      "description": "可由人员或团队承担的职责角色。"
+    },
+    {
+      "type": "InformationArtifact",
+      "parentType": "Entity",
+      "topClass": "Entity",
+      "description": "代码、文档、记录、模型或其他可持久化信息对象。"
+    },
+    {
+      "type": "Concept",
+      "parentType": "Entity",
+      "topClass": "Entity",
+      "description": "用于分类和表达含义的概念。"
+    },
+    {
+      "type": "KnowledgeTopic",
+      "parentType": "Concept",
+      "topClass": "Entity",
+      "aliases": ["知识主题", "问题域"],
+      "description": "连接问题、来源、代码位置和可求助主体的稳定知识主题。"
+    },
+    {
+      "type": "Collection",
+      "parentType": "Entity",
+      "topClass": "Entity",
+      "description": "具有成员关系的逻辑集合。"
+    },
+    {
+      "type": "Claim",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "可由证据支持、反驳或修订的陈述。"
+    },
+    {
+      "type": "Observation",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "description": "在特定环境和时间内获得观察结果的活动。"
+    },
+    {
+      "type": "Project",
+      "parentType": "Collection",
+      "topClass": "Entity",
+      "aliases": ["项目", "工作域", "project"],
+      "description": "组织目标、活动和产物的工作上下文，不要求其他知识必须归属项目。"
+    },
+    {
+      "type": "Session",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "aliases": ["会话", "任务会话", "session", "thread"],
+      "description": "一次有起止边界的交互或执行过程。"
+    },
+    {
+      "type": "Repository",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "保存版本化信息对象的仓库。"
+    },
+    {
+      "type": "Document",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "独立文档对象。"
+    },
+    {
+      "type": "InformationSource",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "aliases": ["信息源", "查询入口"],
+      "description": "可在需要时重新取得信息的仓库、系统、文档集合或服务入口。"
+    },
+    {
+      "type": "CodeLocation",
+      "parentType": "InformationSource",
+      "topClass": "Entity",
+      "aliases": ["代码位置", "源码位置", "符号"],
+      "description": "可定位到仓库、目录、文件、符号或提交的源码入口。"
+    },
+    {
+      "type": "CommunicationChannel",
+      "parentType": "InformationSource",
+      "topClass": "Entity",
+      "aliases": ["沟通渠道", "会话入口"],
+      "description": "可联系人员、团队或继续讨论主题的工作渠道。"
+    },
+    {
+      "type": "Procedure",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "aliases": ["流程", "查询步骤"],
+      "description": "取得、验证或更新信息的可重复步骤。"
+    },
+    {
+      "type": "Skill",
+      "parentType": "Procedure",
+      "topClass": "Entity",
+      "aliases": ["技能", "Skill"],
+      "description": "可由 Agent 按需调用的专门工作能力。"
+    },
+    {
+      "type": "QuestionPattern",
+      "parentType": "Concept",
+      "topClass": "Entity",
+      "aliases": ["问题模式", "查询模板"],
+      "description": "可复用已验证求知路径的一类问题表达。"
+    },
+    {
+      "type": "DocumentSet",
+      "parentType": "Collection",
+      "topClass": "Entity",
+      "description": "一组文档形成的集合。"
+    },
+    {
+      "type": "Message",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "在沟通活动中产生的消息。"
+    },
+    {
+      "type": "WorkEvent",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "description": "对工作状态有意义的事件或活动。"
+    },
+    {
+      "type": "HistoricalTask",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "description": "仅用于历史证据的既有任务记录。"
+    },
+    {
+      "type": "ExternalTask",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "description": "由外部任务系统维护状态的工作活动。"
+    },
+    {
+      "type": "Approval",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "description": "带有责任和结论的审批活动。"
+    }
+  ],
+  "relationTypes": [
+    {
+      "predicate": "RELATED_TO",
+      "description": "尚未获得更精确语义的中性关联。"
+    },
+    {
+      "predicate": "IS_A",
+      "description": "实例或类型属于更一般的类型。",
+      "transitive": true
+    },
+    {
+      "predicate": "SPECIALIZATION_OF",
+      "inversePredicate": "HAS_SPECIALIZATION",
+      "description": "对象是另一个对象在特定范围或时间下的更具体状态。"
+    },
+    {
+      "predicate": "HAS_SPECIALIZATION",
+      "inversePredicate": "SPECIALIZATION_OF",
+      "description": "对象具有一个更具体的状态。"
+    },
+    {
+      "predicate": "PART_OF",
+      "inversePredicate": "HAS_PART",
+      "aliases": ["属于", "组成部分", "包含于"],
+      "description": "主体是客体的组成部分。",
+      "transitive": true,
+      "forwardImpactWeight": 0.8,
+      "reverseImpactWeight": 0.35,
+      "maxImpactHops": 4
+    },
+    {
+      "predicate": "HAS_PART",
+      "inversePredicate": "PART_OF",
+      "description": "主体包含客体作为组成部分。",
+      "transitive": true,
+      "forwardImpactWeight": 0.35,
+      "reverseImpactWeight": 0.8,
+      "maxImpactHops": 4
+    },
+    {
+      "predicate": "DEPENDS_ON",
+      "inversePredicate": "REQUIRED_BY",
+      "aliases": ["依赖", "依靠", "前置条件"],
+      "description": "主体的正确性或可用性依赖客体。",
+      "reverseImpactWeight": 0.95,
+      "maxImpactHops": 5
+    },
+    {
+      "predicate": "REQUIRED_BY",
+      "inversePredicate": "DEPENDS_ON",
+      "description": "主体被客体依赖。",
+      "forwardImpactWeight": 0.95,
+      "maxImpactHops": 5
+    },
+    {
+      "predicate": "USES",
+      "inversePredicate": "USED_BY",
+      "description": "主体活动或实体使用客体。",
+      "reverseImpactWeight": 0.9,
+      "maxImpactHops": 4
+    },
+    {
+      "predicate": "USED_BY",
+      "inversePredicate": "USES",
+      "description": "主体被客体使用。",
+      "forwardImpactWeight": 0.9,
+      "maxImpactHops": 4
+    },
+    {
+      "predicate": "DERIVED_FROM",
+      "inversePredicate": "SOURCE_OF",
+      "aliases": ["来源于", "派生自", "根据", "生成依据"],
+      "description": "主体由客体派生；原始对象变化可能使派生对象过期。",
+      "reverseImpactWeight": 0.95,
+      "maxImpactHops": 5
+    },
+    {
+      "predicate": "SOURCE_OF",
+      "inversePredicate": "DERIVED_FROM",
+      "description": "主体是客体的来源。",
+      "forwardImpactWeight": 0.95,
+      "maxImpactHops": 5
+    },
+    {
+      "predicate": "REVISION_OF",
+      "inversePredicate": "HAS_REVISION",
+      "aliases": ["修订自", "上一版本", "版本谱系"],
+      "description": "主体是客体的后续修订；仅表示谱系，不自动传播影响。"
+    },
+    {
+      "predicate": "HAS_REVISION",
+      "inversePredicate": "REVISION_OF",
+      "description": "主体具有一个后续修订。"
+    },
+    {
+      "predicate": "GENERATED_BY",
+      "inversePredicate": "GENERATED",
+      "description": "主体实体由客体活动生成。"
+    },
+    {
+      "predicate": "GENERATED",
+      "inversePredicate": "GENERATED_BY",
+      "description": "主体活动生成客体实体。"
+    },
+    {
+      "predicate": "ASSOCIATED_WITH",
+      "description": "活动与承担责任的 Agent 关联。"
+    },
+    {
+      "predicate": "ATTRIBUTED_TO",
+      "description": "实体归因于某个 Agent。"
+    },
+    {
+      "predicate": "IMPLEMENTS",
+      "inversePredicate": "IMPLEMENTED_BY",
+      "aliases": ["实现", "落实", "满足要求"],
+      "description": "主体实现客体所表达的要求或契约。",
+      "forwardImpactWeight": 0.15,
+      "reverseImpactWeight": 0.9,
+      "maxImpactHops": 4
+    },
+    {
+      "predicate": "IMPLEMENTED_BY",
+      "inversePredicate": "IMPLEMENTS",
+      "description": "主体由客体实现。",
+      "forwardImpactWeight": 0.9,
+      "reverseImpactWeight": 0.15,
+      "maxImpactHops": 4
+    },
+    {
+      "predicate": "VALIDATES",
+      "inversePredicate": "VALIDATED_BY",
+      "aliases": ["验证", "测试证明", "验收"],
+      "description": "主体证据或活动验证客体；客体变化会使验证结论需要重审。",
+      "reverseImpactWeight": 1.0,
+      "maxImpactHops": 2
+    },
+    {
+      "predicate": "VALIDATED_BY",
+      "inversePredicate": "VALIDATES",
+      "description": "主体由客体证据或活动验证。",
+      "forwardImpactWeight": 1.0,
+      "maxImpactHops": 2
+    },
+    {
+      "predicate": "SUPERSEDES",
+      "inversePredicate": "SUPERSEDED_BY",
+      "description": "主体明确取代客体；旧事实或实体保留历史。"
+    },
+    {
+      "predicate": "SUPERSEDED_BY",
+      "inversePredicate": "SUPERSEDES",
+      "description": "主体被客体明确取代。"
+    },
+    {
+      "predicate": "REFERENCES",
+      "inversePredicate": "REFERENCED_BY",
+      "description": "主体引用客体；客体变化可能使引用内容需要复核。",
+      "reverseImpactWeight": 0.65,
+      "maxImpactHops": 2
+    },
+    {
+      "predicate": "REFERENCED_BY",
+      "inversePredicate": "REFERENCES",
+      "description": "主体被客体引用。",
+      "forwardImpactWeight": 0.65,
+      "maxImpactHops": 2
+    },
+    {
+      "predicate": "BELONGS_TO",
+      "inversePredicate": "HAS_MEMBER",
+      "description": "主体属于某个上下文或集合；不要求所有实体都必须归属项目。"
+    },
+    {
+      "predicate": "HAS_MEMBER",
+      "inversePredicate": "BELONGS_TO",
+      "description": "主体集合包含客体。"
+    },
+    {
+      "predicate": "TRACKS_PROJECT",
+      "description": "有明确职责、任务或人工证据支持的项目关注关系；不得由本机目录扫描自动建立。"
+    },
+    {
+      "predicate": "HAS_LOCAL_WORKSPACE",
+      "description": "主体在本机具有可查询的项目工作区入口；仅用于导航，不表示职责、所有权或当前任务。"
+    },
+    {
+      "predicate": "AFFECTS",
+      "description": "已有证据确认主体对客体产生影响；该结论本身不继续自动扩散。"
+    },
+    {
+      "predicate": "RESPONSIBLE_FOR",
+      "inversePredicate": "HAS_RESPONSIBLE_PARTY",
+      "aliases": ["负责", "责任人"],
+      "description": "人员、团队或角色对对象承担稳定责任。"
+    },
+    {
+      "predicate": "HAS_RESPONSIBLE_PARTY",
+      "inversePredicate": "RESPONSIBLE_FOR",
+      "description": "对象具有明确责任主体。"
+    },
+    {
+      "predicate": "EXPERT_IN",
+      "aliases": ["擅长", "专家"],
+      "description": "主体对主题具有可求助专长，不自动等同正式责任。"
+    },
+    {
+      "predicate": "MAINTAINS",
+      "inversePredicate": "MAINTAINED_BY",
+      "aliases": ["维护", "维护人"],
+      "description": "主体持续维护代码、文档、系统或流程。"
+    },
+    {
+      "predicate": "MAINTAINED_BY",
+      "inversePredicate": "MAINTAINS",
+      "description": "对象由某主体持续维护。"
+    },
+    {
+      "predicate": "DOCUMENTED_IN",
+      "aliases": ["文档位于", "记录在"],
+      "description": "主题或对象在指定信息源中有可查询说明。"
+    },
+    {
+      "predicate": "IMPLEMENTED_IN",
+      "aliases": ["代码位于", "实现位置"],
+      "description": "功能、契约或主题在指定代码位置实现。"
+    },
+    {
+      "predicate": "DISCUSSED_IN",
+      "aliases": ["讨论于", "所在会话"],
+      "description": "主题通常在指定沟通渠道讨论。"
+    },
+    {
+      "predicate": "CONTACT_VIA",
+      "aliases": ["联系方式", "联系渠道"],
+      "description": "主体可通过指定工作渠道联系。"
+    },
+    {
+      "predicate": "QUERY_VIA",
+      "aliases": ["查询方式", "调用方法"],
+      "description": "信息应通过指定工具、接口或步骤重新取得。"
+    },
+    {
+      "predicate": "CAN_ANSWER",
+      "aliases": ["可回答", "知情人"],
+      "description": "某来源或主体可回答一类问题。"
+    },
+    {
+      "predicate": "FALLBACK_TO",
+      "aliases": ["失败后转向", "兜底路径"],
+      "description": "当前求知路径失败后可转向的下一条路径。"
+    }
+  ]
+}

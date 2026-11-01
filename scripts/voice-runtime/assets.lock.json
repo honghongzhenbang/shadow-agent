@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-15",
+  "assets": [
+    {
+      "path": "models/sensevoice/model.int8.onnx",
+      "role": "asr",
+      "url": "https://huggingface.co/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/resolve/2365baeacb507f821a0c8120fcee3d484dba7a07/model.int8.onnx",
+      "bytes": 239233841,
+      "sha256": "c71f0ce00bec95b07744e116345e33d8cbbe08cef896382cf907bf4b51a2cd51",
+      "version": "2024-07-17/2365baeacb507f821a0c8120fcee3d484dba7a07",
+      "license": "FunASR Model Open Source License Agreement 1.1 (custom, not the code's MIT license)",
+      "attribution": "Alibaba Group / FunAudioLLM SenseVoiceSmall; ONNX conversion by k2-fsa/csukuangfj",
+      "licenseUrl": "https://github.com/modelscope/FunASR/blob/f793eae5778eae93854646f9b4b9c42a23584651/MODEL_LICENSE"
+    },
+    {
+      "path": "models/sensevoice/tokens.txt",
+      "role": "tokens",
+      "url": "https://huggingface.co/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/resolve/2365baeacb507f821a0c8120fcee3d484dba7a07/tokens.txt",
+      "bytes": 315894,
+      "sha256": "f449eb28dc567533d7fa59be34e2abca8784f771850c78a47fb731a31429a1dc"
+    },
+    {
+      "path": "models/silero/silero_vad.onnx",
+      "role": "vad",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/silero_vad.onnx",
+      "bytes": 643854,
+      "sha256": "9e2449e1087496d8d4caba907f23e0bd3f78d91fa552479bb9c23ac09cbb1fd6",
+      "version": "sherpa-asr-models-content-addressed-9e2449e10874",
+      "license": "MIT",
+      "attribution": "Silero Team; sherpa-onnx distribution",
+      "licenseUrl": "https://github.com/snakers4/silero-vad/blob/1e261b036686cd0017d500ee96acd1c4ba572a9d/LICENSE"
+    },
+    {
+      "path": "models/campplus/model.onnx",
+      "role": "embedding",
+      "url": "https://github.com/k2-fsa/sherpa-onnx/releases/download/speaker-recongition-models/3dspeaker_speech_campplus_sv_zh-cn_16k-common.onnx",
+      "bytes": 28281138,
+      "sha256": "f682b514c05d947ee3fa91cd6ec6c5c7543479a128373fa29b1faedccd21fd11",
+      "version": "sherpa-speaker-recognition-content-addressed-f682b514c05d",
+      "license": "Apache-2.0 (upstream model card)",
+      "attribution": "Alibaba ModelScope / 3D-Speaker CAM++; ONNX conversion by sherpa-onnx",
+      "licenseUrl": "https://www.modelscope.cn/models/iic/speech_campplus_sv_zh-cn_16k-common",
+      "dimension": 192
+    },
+    {
+      "path": "models/licenses/FunASR-MODEL_LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/modelscope/FunASR/f793eae5778eae93854646f9b4b9c42a23584651/MODEL_LICENSE",
+      "bytes": 5306,
+      "sha256": "7dba975a2069691db4992b0592d70828b330d2f8a30a71450f4e152a554e84f8"
+    },
+    {
+      "path": "models/licenses/SenseVoice-export-LICENSE.txt",
+      "url": "https://huggingface.co/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/resolve/2365baeacb507f821a0c8120fcee3d484dba7a07/LICENSE",
+      "bytes": 71,
+      "sha256": "221c6df10b0931a5629adad671ea48fb7747e034c414b6d2bfa275bc3dd4ea17"
+    },
+    {
+      "path": "models/licenses/Silero-MIT.txt",
+      "url": "https://raw.githubusercontent.com/snakers4/silero-vad/1e261b036686cd0017d500ee96acd1c4ba572a9d/LICENSE",
+      "bytes": 1075,
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b"
+    },
+    {
+      "path": "models/licenses/3D-Speaker-Apache-2.0.txt",
+      "url": "https://raw.githubusercontent.com/modelscope/3D-Speaker/065629c313eaf1a01c65c640c46d77e61e9607b4/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "fixtures/AISHELL-SLR33.html",
+      "url": "https://www.openslr.org/33/",
+      "bytes": 4011,
+      "sha256": "072e77c5f5a401eca59f7ba0c6608a4c6720f6c67227ab53c37f5745d7b019d9"
+    },
+    {
+      "path": "fixtures/transcripts-S0764.txt",
+      "url": "https://huggingface.co/csukuangfj/icefall-aishell-transducer-stateless-modified-2022-03-01/resolve/c4c0defe1d709cb5b137f10c89e05c42f6a86ccf/test_wavs/transcript.txt",
+      "bytes": 219,
+      "sha256": "79c4fc4acb4f8a21444280c50e1c8e543748164b9058965b1c631fd123db7b8f"
+    },
+    {
+      "path": "fixtures/transcripts-S0724.txt",
+      "url": "https://raw.githubusercontent.com/wenet-e2e/wenet/d17059667d6afe0680d19b3a4948ab825ef25105/test/resources/dataset/text",
+      "bytes": 279,
+      "sha256": "b49dc7eca7e5803a53f2b676130b63bc27aa19df2e250327fd410cfe95d79a53"
+    },
+    {
+      "path": "fixtures/BAC009S0764W0121.wav",
+      "url": "https://huggingface.co/csukuangfj/icefall-aishell-transducer-stateless-modified-2022-03-01/resolve/c4c0defe1d709cb5b137f10c89e05c42f6a86ccf/test_wavs/BAC009S0764W0121.wav",
+      "bytes": 134570,
+      "sha256": "46dbc998c9d1d48111267c40741dd3200f2e5bcf4075f8c4c97f4451160dce50",
+      "speakerId": "AISHELL-S0764",
+      "expectedText": "甚至出现交易几乎停滞的情况",
+      "transcriptSource": "https://huggingface.co/csukuangfj/icefall-aishell-transducer-stateless-modified-2022-03-01/blob/c4c0defe1d709cb5b137f10c89e05c42f6a86ccf/test_wavs/transcript.txt",
+      "license": "Apache-2.0 (OpenSLR SLR33)",
+      "licenseUrl": "https://www.openslr.org/33/",
+      "attribution": "AISHELL-1, Beijing Shell Shell Technology Co.,Ltd; Hui Bu et al., 2017",
+      "testOnly": true
+    },
+    {
+      "path": "fixtures/BAC009S0764W0122.wav",
+      "url": "https://huggingface.co/csukuangfj/icefall-aishell-transducer-stateless-modified-2022-03-01/resolve/c4c0defe1d709cb5b137f10c89e05c42f6a86ccf/test_wavs/BAC009S0764W0122.wav",
+      "bytes": 131724,
+      "sha256": "5760c7ace0923a499f605d373011c7aaf658e304a0999a493c63669c756384e1",
+      "speakerId": "AISHELL-S0764",
+      "expectedText": "一二线城市虽然也处于调整中",
+      "transcriptSource": "https://huggingface.co/csukuangfj/icefall-aishell-transducer-stateless-modified-2022-03-01/blob/c4c0defe1d709cb5b137f10c89e05c42f6a86ccf/test_wavs/transcript.txt",
+      "license": "Apache-2.0 (OpenSLR SLR33)",
+      "licenseUrl": "https://www.openslr.org/33/",
+      "attribution": "AISHELL-1, Beijing Shell Shell Technology Co.,Ltd; Hui Bu et al., 2017",
+      "testOnly": true
+    },
+    {
+      "path": "fixtures/BAC009S0724W0121.wav",
+      "url": "https://raw.githubusercontent.com/wenet-e2e/wenet/d17059667d6afe0680d19b3a4948ab825ef25105/test/resources/aishell-BAC009S0724W0121.wav",
+      "bytes": 137036,
+      "sha256": "2f9fc9c912bb71c85fb286cb88b599c81efb8f727c727a5ea8f6d1c89c55ac13",
+      "speakerId": "AISHELL-S0724",
+      "expectedText": "广州市房地产中介协会分析",
+      "transcriptSource": "https://github.com/wenet-e2e/wenet/blob/d17059667d6afe0680d19b3a4948ab825ef25105/test/resources/dataset/text",
+      "license": "Apache-2.0 (OpenSLR SLR33)",
+      "licenseUrl": "https://www.openslr.org/33/",
+      "attribution": "AISHELL-1, Beijing Shell Shell Technology Co.,Ltd; redistributed in WeNet tests",
+      "testOnly": true
+    }
+  ],
+  "notDeployed": [
+    {
+      "model": "pyannote/segmentation-3.0",
+      "source": "https://huggingface.co/pyannote/segmentation-3.0",
+      "reason": "Upstream requires user acceptance and contact sharing. No acceptance or gated download performed, including ONNX mirrors."
+    },
+    {
+      "model": "Revai/reverb-diarization-v1",
+      "source": "https://huggingface.co/Revai/reverb-diarization-v1",
+      "reason": "Gated upstream and non-commercial terms; not downloaded."
+    }
+  ],
+  "apiReferences": [
+    "https://k2-fsa.github.io/sherpa/onnx/sense-voice/python-api.html",
+    "https://github.com/k2-fsa/sherpa-onnx/blob/v1.13.8/sherpa-onnx/python/csrc/fast-clustering.cc",
+    "https://github.com/k2-fsa/sherpa-onnx/blob/v1.13.8/python-api-examples/speaker-identification-with-vad.py",
+    "https://k2-fsa.github.io/sherpa/onnx/speaker-diarization/models.html",
+    "https://python-sounddevice.readthedocs.io/en/0.5.3/api/streams.html"
+  ]
+}

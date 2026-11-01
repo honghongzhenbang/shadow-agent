@@ -1,0 +1,20 @@
+const { contextBridge, ipcRenderer } = require("electron");
+contextBridge.exposeInMainWorld("shadowVoice", {
+  snapshot: (input) => ipcRenderer.invoke("voice:snapshot", input),
+  group: (input) => ipcRenderer.invoke("voice:group", input),
+  review: (input) => ipcRenderer.invoke("voice:review", input),
+  reviewRefresh: () => ipcRenderer.invoke("voice:review-refresh"),
+  segments: (input) => ipcRenderer.invoke("voice:segments", input),
+  recordings: (input) => ipcRenderer.invoke("voice:recordings", input),
+  timeline: (input) => ipcRenderer.invoke("voice:timeline", input),
+  partials: (input) => ipcRenderer.invoke("voice:partials", input),
+  reviseSegment: (input) => ipcRenderer.invoke("voice:revise-segment", input),
+  createPerson: (input) => ipcRenderer.invoke("voice:create-person", input),
+  confirm: (input) => ipcRenderer.invoke("voice:confirm", input),
+  revoke: (input) => ipcRenderer.invoke("voice:revoke", input),
+  progress: (input) => ipcRenderer.invoke("voice:progress", input),
+  sample: (input) => ipcRenderer.invoke("voice:sample", input),
+  samples: (input) => ipcRenderer.invoke('voice:samples', input),
+  forgetSample: (input) => ipcRenderer.invoke('voice:forget-sample', input),
+  sampleAudio: (input) => ipcRenderer.invoke('voice:sample-audio', input),
+});

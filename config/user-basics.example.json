@@ -1,0 +1,13 @@
+{
+  "exampleOnly": true,
+  "name": "你的称呼",
+  "role": "你的岗位",
+  "team": "你的团队，或独立工作",
+  "responsibilities": ["你负责的业务范围"],
+  "exclusions": ["你不负责的范围，或明确填写暂无排除项"],
+  "firstObjective": "第一个希望 Agent 帮你完成的目标",
+  "preferences": [],
+  "sources": [
+    { "software": "用户选择的软件或文件来源", "scope": "允许调查的目录或资料范围", "connected": false }
+  ]
+}

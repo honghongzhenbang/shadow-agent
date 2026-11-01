@@ -1,0 +1,4 @@
+interface:
+  display_name: "影子 Agent 主动巡查"
+  short_description: "主动采集工作证据、发现任务并持续推进允许的低风险工作任务"
+  default_prompt: "读取影子 Agent 知识与任务状态，执行一次带证据的主动巡查并推进允许的工作。"

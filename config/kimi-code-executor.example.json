@@ -1,0 +1,12 @@
+{
+  "enabled": false,
+  "executable": "../../tools/node-v24.19.0-win-x64/node.exe",
+  "prefixArgs": [
+    "REPLACE_WITH_ABSOLUTE_KIMI_CODE_ENTRYPOINT"
+  ],
+  "kimiCodeHome": "state/kimi-code-home",
+  "stateDir": "state/kimi-code-executor",
+  "shellPath": null,
+  "defaultTimeoutSeconds": 1800,
+  "maxLogBytes": 16777216
+}

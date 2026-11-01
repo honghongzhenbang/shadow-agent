@@ -1,0 +1,178 @@
+{
+  "id": "software-version-vocabulary",
+  "version": 1,
+  "description": "软件交付领域词汇示例。它只向开放图谱登记类型和关系，不包含专用存储、流程或查询代码。",
+  "entityTypes": [
+    {
+      "type": "SoftwareProduct",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "跨版本保持身份连续的软件产品。"
+    },
+    {
+      "type": "SoftwareComponent",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "产品中可独立演化、构建或交付的组成部分。"
+    },
+    {
+      "type": "SoftwareVersion",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "aliases": ["软件版本", "版本本体", "version", "release version"],
+      "description": "产品在确定范围内的不可变状态身份；应由版本清单关联源码修订、依赖、构建配置、接口契约和产物哈希，版本名称本身不是充分身份。"
+    },
+    {
+      "type": "VersionManifest",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "aliases": ["版本清单", "版本组成", "version manifest"],
+      "description": "定义一个软件版本完整组成的不可变清单。"
+    },
+    {
+      "type": "SourceRevision",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "aliases": ["源码修订", "提交", "commit", "revision"],
+      "description": "由内容地址或提交哈希标识的不可变源码状态。"
+    },
+    {
+      "type": "SourceFile",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "aliases": ["源码文件", "代码文件", "source file"],
+      "description": "版本化仓库中的单个源码、头文件、脚本或构建定义文件。"
+    },
+    {
+      "type": "MutableReference",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "分支等可移动引用；不能单独作为软件版本身份。"
+    },
+    {
+      "type": "ChangeSet",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "aliases": ["改动", "变更", "提交改动", "change"],
+      "description": "把一个已知状态变为另一个状态的变更活动。"
+    },
+    {
+      "type": "MergeRequest",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "aliases": ["合并请求", "MR", "pull request", "PR"],
+      "description": "承载变更提议、评审状态和合并结果的可变协作对象。"
+    },
+    {
+      "type": "BuildExecution",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "description": "在明确工具链与配置下把源码修订转换为构建产物的活动。"
+    },
+    {
+      "type": "BuildArtifact",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "由构建活动生成并以内容哈希识别的二进制或软件包。"
+    },
+    {
+      "type": "InterfaceContract",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "aliases": ["外部接口", "接口契约", "API", "ABI", "协议", "数据格式"],
+      "description": "对外 API、ABI、消息、协议、数据结构、配置或持久化格式的可观察约定。"
+    },
+    {
+      "type": "Requirement",
+      "parentType": "Claim",
+      "topClass": "Entity",
+      "description": "软件必须满足的范围化要求。"
+    },
+    {
+      "type": "Issue",
+      "parentType": "Claim",
+      "topClass": "Entity",
+      "description": "需要调查、修复或确认的问题陈述。"
+    },
+    {
+      "type": "TestCase",
+      "parentType": "InformationArtifact",
+      "topClass": "Entity",
+      "description": "定义输入、环境、步骤和预期结果的验证说明。"
+    },
+    {
+      "type": "TestExecution",
+      "parentType": "Observation",
+      "topClass": "Activity",
+      "description": "某个测试在确定版本与环境上的一次实际执行。"
+    },
+    {
+      "type": "Deployment",
+      "parentType": "Activity",
+      "topClass": "Activity",
+      "description": "把确定构建产物放入目标环境的活动；部署不是版本本身。"
+    }
+  ],
+  "relationTypes": [
+    {
+      "predicate": "DESCRIBES_VERSION",
+      "description": "版本清单完整描述某个软件版本。",
+      "functional": true
+    },
+    {
+      "predicate": "POINTS_TO",
+      "description": "可变引用当前指向某个不可变状态；该关系是单值时态事实。",
+      "functional": true,
+      "reverseImpactWeight": 0.25,
+      "maxImpactHops": 1
+    },
+    {
+      "predicate": "MODIFIES",
+      "inversePredicate": "MODIFIED_BY",
+      "aliases": ["修改", "变更", "影响代码"],
+      "description": "变更活动修改某个实体；被修改实体的影响通过其通用依赖关系继续传播。",
+      "forwardImpactWeight": 1.0,
+      "maxImpactHops": 1
+    },
+    {
+      "predicate": "MODIFIED_BY",
+      "inversePredicate": "MODIFIES",
+      "description": "实体被某个变更活动修改。",
+      "reverseImpactWeight": 1.0,
+      "maxImpactHops": 1
+    },
+    {
+      "predicate": "EXPOSES",
+      "inversePredicate": "EXPOSED_BY",
+      "aliases": ["对外暴露", "提供接口", "公开契约"],
+      "description": "组件或版本向外暴露某个契约。",
+      "reverseImpactWeight": 0.85,
+      "maxImpactHops": 2
+    },
+    {
+      "predicate": "EXPOSED_BY",
+      "inversePredicate": "EXPOSES",
+      "description": "契约由组件或版本对外暴露。",
+      "forwardImpactWeight": 0.85,
+      "maxImpactHops": 2
+    },
+    {
+      "predicate": "TARGETS",
+      "description": "活动或提议以某个实体为目标。"
+    },
+    {
+      "predicate": "RESOLVES",
+      "inversePredicate": "RESOLVED_BY",
+      "description": "变更或活动解决某个问题。"
+    },
+    {
+      "predicate": "RESOLVED_BY",
+      "inversePredicate": "RESOLVES",
+      "description": "问题由某个变更或活动解决。"
+    },
+    {
+      "predicate": "EXECUTED_ON",
+      "description": "测试、部署或观察活动针对某个确定对象执行。"
+    }
+  ]
+}

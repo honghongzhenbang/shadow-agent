@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; media-src data:; connect-src 'none'; object-src 'none'">
+  <title>Shadow Agent · 声音标注</title><link rel="stylesheet" href="voice.css">
+</head>
+<body>
+  <aside>
+    <div class="brand"><canvas id="mascot" width="384" height="400" aria-label="Shadow Agent"></canvas><div><b>SHADOW AGENT</b><span>语音设置</span></div></div>
+    <div class="section-heading"><h2>人员与声纹</h2><button id="addPerson" class="icon" title="新增人物" aria-label="新增人物"><i data-lucide="user-plus"></i></button></div>
+    <button id="manageSamples" class="manage-samples" title="查看全部声纹样本"><i data-lucide="audio-lines"></i><span>全部样本</span></button>
+    <div id="people" class="people" aria-label="已登记人物"></div>
+    <div class="sidebar-footer"><i data-lucide="shield-check"></i><span>声纹保存在本机</span></div>
+  </aside>
+  <main>
+    <header><div><p class="eyebrow">语音 / 人物确认</p><h1>声音与人物</h1></div><div class="header-actions"><button class="icon" id="refresh" title="重新匹配已有声音（不重新识别文字）" aria-label="重新匹配"><i data-lucide="refresh-cw"></i></button></div></header>
+    <p id="environment" class="environment">正在读取</p>
+    <section id="partialSection" hidden aria-label="未完成转写"><h2>转写未完成</h2><div id="partialRecordings"></div><div class="pager"><button id="previousPartials" class="icon" title="上一页未完成转写" aria-label="上一页未完成转写"><i data-lucide="chevron-left"></i></button><span id="partialPageLabel"></span><button id="nextPartials" class="icon" title="下一页未完成转写" aria-label="下一页未完成转写"><i data-lucide="chevron-right"></i></button></div></section>
+    <div class="matching-status"><span id="matchingState" role="status" aria-live="polite">正在加载声音 · 已加载 0 / 0 份录音</span><progress id="matchingProgress" aria-label="声音加载进度"></progress></div>
+    <div class="counts" aria-label="录音组标注统计"><span class="confirmed">人工确认 <b id="confirmedCount">--</b> 组</span><span class="matched">自动匹配 <b id="matchedCount">--</b> 组</span><span class="ambiguous">歧义待核 <b id="ambiguousCount">--</b> 组</span><span>未归属 <b id="unassignedCount">--</b> 组</span></div>
+    <nav class="tabs" role="tablist" aria-label="声音视图"><button id="recommendedTab" role="tab" aria-controls="reviewPanel" class="selected" aria-selected="true">优先标注 <span id="recommendedCount">--</span></button><button id="peopleTab" role="tab" aria-controls="reviewPanel" aria-selected="false" tabindex="-1">按人查看</button><button id="recordingsTab" role="tab" aria-controls="reviewPanel" aria-selected="false" tabindex="-1">全部录音 <span id="groupCount">--</span></button></nav>
+    <section id="reviewPanel" role="tabpanel" aria-labelledby="recommendedTab">
+    <div id="groups" class="groups" aria-label="声音分组"></div>
+    <div class="pager"><button id="previousPage" class="icon" title="上一页" aria-label="上一页"><i data-lucide="chevron-left"></i></button><span id="pageLabel"></span><button id="nextPage" class="icon" title="下一页" aria-label="下一页"><i data-lucide="chevron-right"></i></button></div>
+    <p id="empty" class="empty" hidden>暂无优先标注声音</p>
+    </section>
+    <section id="detail" hidden>
+      <div class="detail-heading"><div><span id="detailContext" class="eyebrow">当前录音组</span><h2 id="selectedTitle"></h2></div><button id="listen" class="sample-button" type="button" title="播放完整录音"><i data-lucide="play"></i><span>听完整录音</span></button></div>
+      <div id="playback" class="playback" hidden><span id="playbackScope"></span><input id="playbackSeek" type="range" min="0" max="1" value="0" step="0.1" aria-label="试听进度"><output id="playbackTime">0:00 / 0:00</output></div>
+      <p id="assignmentState" class="assignment-state"></p>
+      <blockquote id="excerpt"></blockquote>
+      <div class="timeline-heading"><h2>录音对话</h2><select id="transcriptVersion" aria-label="转写版本"><option value="">当前转写</option></select></div>
+      <div id="speakerFocus" class="speaker-focus" aria-label="当前录音说话人"></div>
+      <p id="annotationCount" class="muted"></p>
+      <div id="segments" class="segments" aria-label="识别结果"></div>
+      <div class="pager"><button id="previousSegments" class="icon" title="上一页文字" aria-label="上一页文字"><i data-lucide="chevron-left"></i></button><span id="segmentPageLabel"></span><button id="nextSegments" class="icon" title="下一页文字" aria-label="下一页文字"><i data-lucide="chevron-right"></i></button></div>
+      <p id="reviewState" class="muted" role="status"></p>
+      <form id="confirmForm">
+        <label class="field" for="personSelect"><span id="confirmLabel">当前说话人是哪位？</span><select id="personSelect" required><option value="">选择人物</option></select></label>
+        <label class="enroll"><input id="enroll" type="checkbox"><span>同时保存为声纹样本</span></label>
+        <p id="sampleHint" class="muted"></p>
+        <div class="form-footer"><span id="scope" class="muted"></span><button id="revoke" type="button" title="撤销本组身份标注及声纹样本"><i data-lucide="undo-2"></i>撤销标注</button><button id="save" class="primary" type="submit"><i data-lucide="check"></i>确认人物</button></div>
+      </form>
+    </section>
+    <p id="status" role="status" aria-live="polite"></p>
+  </main>
+  <dialog id="personDialog" aria-labelledby="personDialogTitle"><form id="personForm"><h2 id="personDialogTitle">新增人物</h2><label class="field" for="personName">姓名<input id="personName" maxlength="80" required autocomplete="off"></label><p id="personError" role="alert"></p><div class="dialog-actions"><button id="cancelPerson" type="button">取消</button><button class="primary" type="submit">添加</button></div></form></dialog>
+  <dialog id="segmentDialog" aria-labelledby="segmentDialogTitle"><form id="segmentForm"><h2 id="segmentDialogTitle">片段标注</h2><label class="field">人物<select id="segmentPerson"></select></label><label class="field">识别文字<textarea id="segmentText" rows="6" maxlength="16000" required></textarea></label><p id="segmentError" role="alert"></p><div class="dialog-actions"><button id="cancelSegment" type="button">取消</button><button class="primary" type="submit">保存标注</button></div></form></dialog>
+  <dialog id="samplesDialog" aria-labelledby="samplesTitle">
+    <div class="sample-heading"><h2 id="samplesTitle">人员与声纹</h2><div class="header-actions"><button class="icon" id="reloadSamples" title="刷新样本" aria-label="刷新样本"><i data-lucide="refresh-cw"></i></button><button class="icon" id="closeSamples" title="关闭声纹样本" aria-label="关闭声纹样本"><i data-lucide="x"></i></button></div></div>
+    <label class="field sample-person" for="samplePerson"><span>人物</span><select id="samplePerson"><option value="">全部人物</option></select></label>
+    <form id="sampleSearch" class="sample-filters"><input id="sampleQuery" type="search" maxlength="160" placeholder="人物、录音名称或编号" aria-label="查找声纹样本"><select id="sampleStatusFilter" aria-label="样本状态"><option value="all">全部状态</option><option value="active">已启用</option><option value="inactive">已停用</option></select><button class="icon" type="submit" title="查找样本" aria-label="查找样本"><i data-lucide="search"></i></button></form>
+    <div id="sampleList" aria-label="已保存声纹样本"></div>
+    <div class="pager"><button class="icon" id="previousSamples" title="上一页样本" aria-label="上一页样本"><i data-lucide="chevron-left"></i></button><span id="samplePageLabel"></span><button class="icon" id="nextSamples" title="下一页样本" aria-label="下一页样本"><i data-lucide="chevron-right"></i></button></div>
+    <div id="samplePlayer" hidden><p id="samplePlaybackTitle"></p><div class="sample-player-controls"><button class="icon" id="toggleSampleAudio" title="暂停来源录音" aria-label="暂停来源录音"><i data-lucide="pause"></i></button><input id="sampleSeek" type="range" min="0" max="1" value="0" step="0.1" aria-label="样本来源录音进度"><output id="sampleTime"></output></div></div>
+    <section id="removeSamplePrompt" hidden aria-label="移除样本确认"><h3 id="removeSampleTitle"></h3><p>仅移除此声纹模板，音频、文字和历史人物标注保持不变。</p><div class="dialog-actions"><button id="cancelRemoveSample" type="button">取消</button><button id="confirmRemoveSample" class="danger" type="button"><i data-lucide="trash-2"></i>移除样本</button></div></section>
+    <p id="samplesMessage" role="status" aria-live="polite"></p>
+  </dialog>
+  <script src="../node_modules/lucide/dist/umd/lucide.js"></script><script src="pet-canvas.js"></script><script src="voice.js"></script><script src="voice-samples.js"></script>
+</body>
+</html>

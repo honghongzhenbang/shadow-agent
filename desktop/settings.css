@@ -1,0 +1,37 @@
+:root {
+  color-scheme: light;
+  font-family: "Microsoft YaHei UI", "Segoe UI", sans-serif;
+  color: #17221f;
+  background: #f5f8f6;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #f5f8f6; }
+main { padding: 26px 28px 22px; }
+header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+header p { margin: 0 0 4px; color: #178b68; font-size: 12px; font-weight: 800; }
+h1 { margin: 0; font-size: 24px; line-height: 1.2; letter-spacing: 0; }
+
+.switch { position: relative; display: inline-flex; width: 44px; height: 24px; }
+.switch input { position: absolute; opacity: 0; pointer-events: none; }
+.switch span { width: 44px; height: 24px; border-radius: 12px; background: #cdd6d2; transition: background 160ms ease; }
+.switch span::after { content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px; border-radius: 50%; background: #fff; box-shadow: 0 1px 4px #0003; transition: transform 160ms ease; }
+.switch input:checked + span { background: #20a77d; }
+.switch input:checked + span::after { transform: translateX(20px); }
+.switch input:focus-visible + span { outline: 2px solid #0e6f54; outline-offset: 2px; }
+
+.time-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.time-grid label { display: grid; gap: 7px; color: #586660; font-size: 12px; font-weight: 700; }
+input[type="time"] { width: 100%; height: 42px; border: 1px solid #cbd5d0; border-radius: 6px; padding: 0 10px; background: #fff; color: #17221f; font: inherit; font-size: 15px; }
+input[type="time"]:focus { outline: 2px solid #8edbc3; border-color: #20a77d; }
+input:disabled { background: #e9eeeb; color: #82908a; }
+
+.status { min-height: 20px; margin: 18px 0 6px; color: #147b5d; font-size: 13px; font-weight: 700; }
+.status[data-state="error"] { color: #c8473b; }
+.hint { margin: 0; color: #69766f; font-size: 12px; line-height: 1.55; }
+.actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 22px; }
+button { min-width: 78px; height: 36px; border: 1px solid #cbd5d0; border-radius: 6px; background: #fff; color: #283530; font: inherit; font-weight: 700; cursor: pointer; }
+button:hover { background: #edf3f0; }
+button.primary { border-color: #168762; background: #168762; color: #fff; }
+button.primary:hover { background: #116e50; }
+button:disabled { cursor: wait; opacity: .6; }

@@ -1,0 +1,9 @@
+{
+  "baselineSystemPrompt": "SYNTHETIC_BASELINE_ONLY: keep this byte-for-byte, including the final newline.\n",
+  "event": {
+    "prompt": "SYNTHETIC_TASK_ONLY: inspect fixture A.",
+    "messages": [
+      { "role": "user", "content": "SYNTHETIC_HISTORY_ONLY: no real conversation." }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+throw new Error("Independent work-focus imports are retired. Use scripts/user-profile.mjs preview/confirm for user basics, or reconcile evidence through the knowledge tools and select existing facts with shadow_context_focus_update.");

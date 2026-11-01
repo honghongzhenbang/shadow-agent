@@ -1,0 +1,19 @@
+{
+  "id": "shadow-policy",
+  "name": "Shadow Agent Policy",
+  "version": "1.0.0",
+  "description": "Project-owned identity and task access policy; OpenClaw supplies runtime and tools.",
+  "activation": { "onStartup": true },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["required", "rulesPath", "collaborationPath", "databasePath", "workboardDatabasePath"],
+    "properties": {
+      "required": { "const": true },
+      "rulesPath": { "type": "string", "minLength": 1 },
+      "collaborationPath": { "type": "string", "minLength": 1 },
+      "databasePath": { "type": "string", "minLength": 1 },
+      "workboardDatabasePath": { "type": "string", "minLength": 1 }
+    }
+  }
+}

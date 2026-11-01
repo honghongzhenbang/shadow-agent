@@ -1,0 +1,44 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.shadowagent.voice'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'com.shadowagent.voice'
+        minSdk 29
+        targetSdk 35
+        versionCode 10
+        versionName '0.2.3'
+        testInstrumentationRunner 'com.shadowagent.voice.SmokeInstrumentation'
+    }
+    signingConfigs {
+        delivery {
+            if (System.getenv('VOICE_KEYSTORE')) {
+                storeFile file(System.getenv('VOICE_KEYSTORE'))
+                storePassword System.getenv('VOICE_KEY_PASSWORD')
+                keyAlias 'shadow-voice'
+                keyPassword System.getenv('VOICE_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        debug { applicationIdSuffix '.debug' }
+        release {
+            minifyEnabled false
+            if (System.getenv('VOICE_KEYSTORE')) signingConfig signingConfigs.delivery
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    testOptions { unitTests.returnDefaultValues = true }
+    buildFeatures { buildConfig true }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.json:json:20240303'
+}
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }

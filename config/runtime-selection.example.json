@@ -1,0 +1,4 @@
+{
+  "controller": { "model": "deepseek/deepseek-v4-pro", "runtime": "openclaw" },
+  "codingWorker": { "model": "openai/gpt-5.6-sol", "runtime": "codex" }
+}

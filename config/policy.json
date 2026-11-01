@@ -1,0 +1,39 @@
+{
+  "automatic": [
+    "read_local_files",
+    "read_codex_history",
+    "read_connected_sources",
+    "classify_evidence",
+    "create_local_knowledge",
+    "create_local_task",
+    "analyze_repository",
+    "run_read_only_checks"
+  ],
+  "confirmationRequired": [
+    "send_external_message",
+    "reply_external_message",
+    "approve_or_reject",
+    "publish_document",
+    "edit_remote_document",
+    "git_commit",
+    "git_push",
+    "merge_branch",
+    "deploy_or_release",
+    "delete_or_move_data",
+    "change_permissions"
+  ],
+  "neverAutomatic": [
+    "financial_commitment",
+    "legal_commitment",
+    "personnel_decision",
+    "production_device_control",
+    "safety_control",
+    "credential_disclosure"
+  ],
+  "blockedPaths": [
+    "%USERPROFILE%\\.codex\\auth.json",
+    "%USERPROFILE%\\.ssh",
+    "%APPDATA%\\Microsoft\\Credentials",
+    "%LOCALAPPDATA%\\Microsoft\\Credentials"
+  ]
+}

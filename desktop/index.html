@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:">
+  <title>影子 Agent</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="pet" class="pet-shell" data-expanded="false" data-home="conversation">
+    <section class="mascot-zone drag-zone" aria-label="影子 Agent 状态">
+      <div id="serviceStatus" class="service-status no-drag" aria-label="服务状态">
+        <span id="openclawStatus" class="service-status-item" data-state="pending" title="OpenClaw 主控状态"><i></i><b>主控</b></span>
+        <span id="contextStatus" class="service-status-item" data-state="pending" title="上下文采集状态"><i></i><b>采集</b></span>
+        <span id="feishuStatus" class="service-status-item" data-state="pending" title="飞书能力状态"><i></i><b>飞书</b></span>
+      </div>
+      <canvas id="mascot" width="384" height="416" aria-label="影子 Agent 动画"></canvas>
+      <button id="attentionBadge" class="attention-badge no-drag" type="button" title="展开任务">
+        <span id="attentionCount">0</span>
+      </button>
+      <div class="mascot-copy">
+        <strong id="phaseTitle">正在醒来</strong>
+        <span id="phaseDetail">连接后台进程</span>
+      </div>
+    </section>
+
+    <section class="task-panel no-drag" aria-label="任务状态">
+      <header class="panel-header drag-zone">
+        <div>
+          <p>SHADOW AGENT</p>
+          <h1>工作现场</h1>
+        </div>
+        <div class="window-actions no-drag">
+          <button id="historyButton" class="icon-button" type="button" title="处理历史" aria-label="处理历史"><i data-lucide="history"></i></button>
+          <button id="pinButton" class="icon-button is-active" type="button" title="保持置顶" aria-label="保持置顶"><i data-lucide="pin"></i></button>
+          <button id="collapseButton" class="icon-button" type="button" title="收起" aria-label="收起"><i data-lucide="chevron-right"></i></button>
+          <button id="closeButton" class="icon-button danger" type="button" title="隐藏到系统托盘" aria-label="隐藏到系统托盘"><i data-lucide="x"></i></button>
+        </div>
+      </header>
+
+      <nav class="home-tabs" aria-label="工作空间" role="tablist">
+        <button id="mainConversationTab" type="button" role="tab" aria-selected="true" aria-controls="mainConversationView" data-home="conversation"><i data-lucide="messages-square"></i>主对话</button>
+        <button id="workHomeTab" type="button" role="tab" aria-selected="false" aria-controls="workHomeView" data-home="work"><i data-lucide="list-checks"></i>工作<span id="workAttentionCount">0</span></button>
+      </nav>
+      <section id="mainConversationView" class="main-conversation" aria-label="主对话">
+        <div id="mainConversationScroll" class="conversation-scroll">
+          <button id="mainConversationMore" class="history-more" type="button" hidden>查看更早消息</button>
+          <div id="mainConversationMessages" class="conversation-messages" role="log" aria-label="主对话记录"></div>
+        </div>
+        <section class="manual-input-section">
+          <form id="manualInputForm" class="manual-input-form">
+            <textarea id="manualInput" rows="2" maxlength="2000" placeholder="交代一件事，或问个问题…" aria-label="告诉 Agent"></textarea>
+            <button id="manualSubmitButton" class="manual-submit-button" type="submit" title="发送" aria-label="发送"><i data-lucide="arrow-up"></i></button>
+          </form>
+          <div id="manualReceipt" class="manual-receipt" data-state="idle" role="status" aria-live="polite" hidden></div>
+        </section>
+      </section>
+
+      <div id="workHomeView" class="panel-scroll">
+      <button id="focusStrip" class="focus-strip" type="button" title="查看当前任务">
+        <span class="focus-label">正在做</span>
+        <strong id="currentTask">等待新的工作</strong>
+        <small id="currentProject">后台保持在线</small>
+      </button>
+
+      <button id="trackingStrip" class="tracking-strip" type="button" data-state="idle" title="查看持续追踪" aria-label="查看持续追踪" aria-expanded="false" aria-controls="trackingView" aria-live="polite">
+        <i data-lucide="radar"></i>
+        <div>
+          <strong id="trackingTitle">持续跟踪</strong>
+          <span id="trackingDetail">暂无持续跟踪</span>
+        </div>
+        <b id="trackingCount">0</b>
+        <i class="tracking-open-icon" data-lucide="chevron-right"></i>
+      </button>
+
+      <section id="reminderSection" class="reminder-section" hidden aria-label="提醒">
+        <div class="section-heading reminder-heading">
+          <h2><i data-lucide="bell-ring"></i><span id="reminderHeading">提醒</span></h2>
+          <span id="reminderCount">0</span>
+        </div>
+        <div id="reminderList" class="reminder-list"></div>
+      </section>
+
+      <section id="outboundSection" class="outbound-section" hidden aria-label="待确认发送的飞书消息">
+        <div class="section-heading outbound-heading">
+          <h2><i data-lucide="message-square-lock"></i><span>待确认发送</span></h2>
+          <span id="outboundCount">0</span>
+        </div>
+        <div id="outboundList" class="outbound-list"></div>
+      </section>
+
+      <section class="task-section">
+        <div class="queue-tabs" role="tablist" aria-label="待处理任务归属">
+          <button id="userQueueTab" class="queue-tab is-active" type="button" role="tab" aria-selected="true" data-queue="user">需要你处理 <span id="userActionCount">0</span></button>
+          <button id="agentQueueTab" class="queue-tab" type="button" role="tab" aria-selected="false" data-queue="agent">Agent 负责 <span id="queuedCount">0</span></button>
+        </div>
+        <div id="queuedList" class="task-list"></div>
+      </section>
+
+      <section class="task-section completed-section">
+        <div class="section-heading"><h2>最近结束</h2><i data-lucide="check-check"></i></div>
+        <div id="completedList" class="task-list"></div>
+      </section>
+      </div>
+
+      <footer class="panel-footer">
+        <div class="maintenance-line"><i data-lucide="settings-2"></i><span id="maintenanceText">系统维护空闲</span></div>
+        <time id="lastHeartbeat">尚未收到心跳</time>
+      </footer>
+
+      <section id="detailView" class="detail-view" hidden aria-label="任务详情">
+        <div class="detail-toolbar">
+          <button id="detailBackButton" class="icon-button" type="button" title="返回任务列表" aria-label="返回任务列表"><i data-lucide="arrow-left"></i></button>
+          <span>任务会话</span>
+        </div>
+        <div class="detail-heading">
+          <div id="detailBadges" class="detail-badges"></div>
+          <h2 id="detailTitle">加载中</h2>
+          <p id="detailDescription"></p>
+        </div>
+        <div class="detail-actions" aria-label="人工更新任务">
+          <button id="confirmDoneButton" class="command-button success" type="button" disabled><i data-lucide="circle-check-big"></i><span>确认已完成</span></button>
+          <button id="terminateTaskButton" class="command-button danger" type="button" disabled><i data-lucide="circle-stop"></i><span>终止任务</span></button>
+          <span id="detailActionStatus" class="detail-action-status" aria-live="polite"></span>
+        </div>
+        <p id="taskClosureStatus" class="task-closure-status" role="status" hidden></p>
+        <div class="detail-tabs" role="tablist" aria-label="详情视图">
+          <button class="detail-tab is-active" type="button" role="tab" data-tab="conversation">对话</button>
+          <button class="detail-tab" type="button" role="tab" data-tab="overview">概览</button>
+          <button class="detail-tab" type="button" role="tab" data-tab="execution">跟进记录</button>
+          <button class="detail-tab" type="button" role="tab" data-tab="evidence">来源证据</button>
+        </div>
+        <div class="detail-content">
+          <section id="detailConversation" class="detail-pane" data-pane="conversation">
+            <button id="taskConversationMore" class="history-more" type="button" hidden>查看更早消息</button>
+            <div id="taskConversationMessages" class="conversation-messages" role="log" aria-label="任务对话记录"></div>
+          </section>
+          <section id="detailOverview" class="detail-pane" data-pane="overview" hidden></section>
+          <section id="detailExecution" class="detail-pane" data-pane="execution" hidden></section>
+          <section id="detailEvidence" class="detail-pane" data-pane="evidence" hidden></section>
+        </div>
+        <form id="nextStepComposer" class="detail-composer">
+          <label id="taskComposerLabel" for="nextStepInput">交代这项任务</label>
+          <div class="manual-input-form">
+            <textarea id="nextStepInput" rows="2" maxlength="1000" placeholder="补充要求，或问问进展…"></textarea>
+            <button id="saveNextStepButton" class="manual-submit-button" type="submit" title="发送到当前任务" aria-label="发送到当前任务"><i data-lucide="arrow-up"></i></button>
+          </div>
+        </form>
+      </section>
+
+      <section id="outboundConfirmView" class="outbound-confirm-view" hidden aria-label="确认发送飞书消息">
+        <div class="detail-toolbar">
+          <button id="outboundBackButton" class="icon-button" type="button" title="返回" aria-label="返回"><i data-lucide="arrow-left"></i></button>
+          <span>确认发送飞书消息</span>
+        </div>
+        <div class="outbound-confirm-content">
+          <div class="outbound-recipient-line">
+            <span id="outboundKindBadge">主动询问</span>
+            <strong id="outboundRecipient">收件人</strong>
+          </div>
+          <section id="outboundContext" class="outbound-context" aria-label="审核上下文">
+            <div class="outbound-context-heading"><i data-lucide="messages-square"></i><strong>对话上下文</strong></div>
+            <p id="outboundContextSummary" class="outbound-context-summary" hidden></p>
+            <div id="outboundContextMessages" class="outbound-context-messages"></div>
+            <p id="outboundContextEmpty" class="outbound-context-empty" hidden>未保存原始对话，请结合生成依据复核。</p>
+          </section>
+          <section class="outbound-basis" aria-label="生成依据">
+            <strong>生成依据</strong>
+            <p id="outboundReason"></p>
+            <small id="outboundSource" hidden></small>
+          </section>
+          <label class="outbound-editor-label" for="outboundEditor">发送内容</label>
+          <textarea id="outboundEditor" rows="9" maxlength="5000"></textarea>
+          <div class="outbound-safety-note"><i data-lucide="shield-check"></i><span id="outboundSafetyText">仅在你点击确认后进入可靠发送队列。</span></div>
+        </div>
+        <div class="outbound-confirm-footer">
+          <form id="outboundRejectComposer" class="outbound-reject-composer" hidden>
+            <label for="outboundRejectReason">拒绝原因</label>
+            <textarea id="outboundRejectReason" rows="3" maxlength="1000" placeholder="说明为什么不应发送，Agent 会据此学习职责边界和沟通偏好"></textarea>
+            <div class="outbound-reject-actions">
+              <button id="dismissOutboundRejectButton" class="command-button" type="button"><i data-lucide="arrow-left"></i><span>返回审核</span></button>
+              <button id="confirmOutboundRejectButton" class="command-button danger" type="submit"><i data-lucide="ban"></i><span>确认拒绝</span></button>
+            </div>
+          </form>
+          <div id="outboundConfirmActions" class="outbound-confirm-actions">
+            <button id="cancelOutboundButton" class="command-button" type="button"><i data-lucide="ban"></i><span>拒绝</span></button>
+            <button id="approveOutboundButton" class="command-button primary" type="button"><i data-lucide="send"></i><span>确认并发送</span></button>
+          </div>
+          <div id="outboundActionStatus" class="outbound-action-status" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="trackingView" class="tracking-view" hidden aria-label="持续追踪详情">
+        <div class="detail-toolbar">
+          <button id="trackingBackButton" class="icon-button" type="button" title="返回" aria-label="返回"><i data-lucide="arrow-left"></i></button>
+          <span>持续追踪</span>
+        </div>
+        <div class="tracking-view-summary">
+          <strong id="trackingViewCount">0 项追踪</strong>
+          <span id="trackingViewStatus">暂无持续追踪</span>
+        </div>
+        <div id="trackingViewList" class="tracking-view-list"></div>
+      </section>
+
+      <section id="historyView" class="history-view" hidden aria-label="智能体处理历史">
+        <div class="history-toolbar">
+          <button id="historyBackButton" class="icon-button" type="button" title="返回" aria-label="返回"><i data-lucide="arrow-left"></i></button>
+          <strong id="historyToolbarTitle">处理历史</strong>
+          <button id="historyRefreshButton" class="icon-button" type="button" title="刷新记录" aria-label="刷新记录"><i data-lucide="refresh-cw"></i></button>
+        </div>
+        <section id="historyListPane" class="history-list-pane">
+          <label class="history-search" for="historySearchInput">
+            <i data-lucide="search"></i>
+            <input id="historySearchInput" type="search" maxlength="120" placeholder="搜索结论、任务或记录编号">
+          </label>
+          <div class="history-summary"><strong id="historyCount">0 条记录</strong><span>智能体巡查、判断和执行记录</span></div>
+          <div id="historyList" class="history-list"></div>
+        </section>
+        <section id="historyDetailPane" class="history-detail-pane" hidden>
+          <header class="session-detail-heading">
+            <div id="sessionBadges" class="detail-badges"></div>
+            <h2 id="sessionTitle">加载处理记录</h2>
+            <p id="sessionMeta"></p>
+          </header>
+          <div id="sessionActivity" class="session-activity"></div>
+          <div id="sessionMessages" class="session-messages"></div>
+        </section>
+      </section>
+    </section>
+  </main>
+  <dialog id="taskClosureDialog" class="task-closure-dialog no-drag" aria-labelledby="taskClosureTitle" aria-describedby="taskClosureTaskName">
+    <form id="taskClosureForm">
+      <h2 id="taskClosureTitle">关闭任务</h2>
+      <p id="taskClosureTaskName" class="task-closure-task-name"></p>
+      <fieldset id="taskClosureOutcomes" class="task-closure-outcomes">
+        <legend>处理结果</legend>
+        <label><input id="taskClosureDone" type="radio" name="outcome" value="done" checked><i data-lucide="circle-check-big"></i><span>已完成</span></label>
+        <label><input id="taskClosureCancelled" type="radio" name="outcome" value="cancelled"><i data-lucide="circle-stop"></i><span>已终止</span></label>
+      </fieldset>
+      <label class="task-closure-note-label" for="taskClosureNote">备注（可选）</label>
+      <textarea id="taskClosureNote" rows="5" maxlength="4000"></textarea>
+      <p id="taskClosureError" class="task-closure-error" role="alert" hidden></p>
+      <div class="task-closure-actions">
+        <button id="cancelTaskClosureButton" class="command-button" type="button"><i data-lucide="x"></i><span>取消</span></button>
+        <button id="confirmTaskClosureButton" class="command-button success" type="submit"><i data-lucide="check"></i><span>确认完成</span></button>
+      </div>
+    </form>
+  </dialog>
+  <script src="../node_modules/lucide/dist/umd/lucide.min.js"></script>
+  <script src="../node_modules/marked/lib/marked.umd.js"></script>
+  <script src="../node_modules/dompurify/dist/purify.min.js"></script>
+  <script src="pet-canvas.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

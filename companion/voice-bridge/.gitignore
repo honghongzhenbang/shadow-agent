@@ -1,0 +1,5 @@
+**/bin/
+**/obj/
+**/TestResults/
+*.pfx
+pairing.json

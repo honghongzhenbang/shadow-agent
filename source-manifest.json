@@ -1,0 +1,3839 @@
+{
+  "schemaVersion": 1,
+  "name": "shadow-agent",
+  "license": "MIT",
+  "components": {
+    "core": "4.27.0",
+    "voiceCompanion": "0.2.3"
+  },
+  "files": [
+    {
+      "file": ".gitignore",
+      "component": "distribution",
+      "bytes": 372,
+      "sha256": "be357704256b77e737c940b54dd010d17cc7a0547390d50ff406035331019ea5"
+    },
+    {
+      "file": "companion/voice-bridge/.gitignore",
+      "component": "voice-companion",
+      "bytes": 51,
+      "sha256": "f51ee6b05217dd7f0154d59683524dd8b6f4bf4b11978e017332dec0a7232bef"
+    },
+    {
+      "file": "companion/voice-bridge/BluetoothBeacon.cs",
+      "component": "voice-companion",
+      "bytes": 9623,
+      "sha256": "17300e69aedabbf42470c5d386ba2f4a0c0a3bc531345be8ffd79f943c511feb"
+    },
+    {
+      "file": "companion/voice-bridge/BluetoothBeaconSupervisor.cs",
+      "component": "voice-companion",
+      "bytes": 2018,
+      "sha256": "3f67305a5723314cb0168e0076e914adb38a481d1133bdbd2a0fec2633b1178b"
+    },
+    {
+      "file": "companion/voice-bridge/BluetoothCleanup.cs",
+      "component": "voice-companion",
+      "bytes": 837,
+      "sha256": "8b736027a72ab633318d5c8173931244fef83ff7c0981e76fcc8d2bd7749d971"
+    },
+    {
+      "file": "companion/voice-bridge/BridgeDiagnostics.cs",
+      "component": "voice-companion",
+      "bytes": 13489,
+      "sha256": "05c24a8cad3c78fa37c75f3a7cf368d20d8a68288822d6237c847451aaf5d3f8"
+    },
+    {
+      "file": "companion/voice-bridge/BridgeDiscovery.cs",
+      "component": "voice-companion",
+      "bytes": 3987,
+      "sha256": "6d9100f99ec7657686fcf135716466e4c535d722685c84f082c2655c279f3936"
+    },
+    {
+      "file": "companion/voice-bridge/BridgeOptions.cs",
+      "component": "voice-companion",
+      "bytes": 4644,
+      "sha256": "7ab3b8147196c69d2e8e69331ada95c26d657d3785d2917b10dfd73f5cbb039c"
+    },
+    {
+      "file": "companion/voice-bridge/BridgeServer.cs",
+      "component": "voice-companion",
+      "bytes": 9071,
+      "sha256": "afc72c6d62399aa63a5b8e4a66aa438db57a3d14cbd960074d7def3f628aaa1f"
+    },
+    {
+      "file": "companion/voice-bridge/CompressedAudio.cs",
+      "component": "voice-companion",
+      "bytes": 2467,
+      "sha256": "ef2613d90e4353ea54f40be2c1a030ce3cbdf3279a6b21d709c8d6f1e2b8b602"
+    },
+    {
+      "file": "companion/voice-bridge/DurableFiles.cs",
+      "component": "voice-companion",
+      "bytes": 5515,
+      "sha256": "7d7b37c6f138d326ab0e51bfb2c5a9d97639243791e0b1d83eea0087751d6c08"
+    },
+    {
+      "file": "companion/voice-bridge/ImportQueue.cs",
+      "component": "voice-companion",
+      "bytes": 12797,
+      "sha256": "f90a5afccf3aeb185ee33807f6db04c5a2e3b97c41272644ad5378e889499891"
+    },
+    {
+      "file": "companion/voice-bridge/InboxStore.cs",
+      "component": "voice-companion",
+      "bytes": 10446,
+      "sha256": "cdd5250ef8a3603883aaaab6aa412beb933823a4984d72f2e5b6e37387dae102"
+    },
+    {
+      "file": "companion/voice-bridge/LocalRecordingTranscriber.cs",
+      "component": "voice-companion",
+      "bytes": 18369,
+      "sha256": "68e56bc52db0a17ee85c901f0c0265389f9b48ab20683b2f6e37eb0e3d0d134b"
+    },
+    {
+      "file": "companion/voice-bridge/Pairing.cs",
+      "component": "voice-companion",
+      "bytes": 5488,
+      "sha256": "549e023b941ea1d46ae0f084ef7a71331236a7020974ac239ba6442e2a7187f8"
+    },
+    {
+      "file": "companion/voice-bridge/Program.cs",
+      "component": "voice-companion",
+      "bytes": 6426,
+      "sha256": "bda48de63472a0eda7bd44a272ed163a39ab3a8225b63b624feefebb549ee993"
+    },
+    {
+      "file": "companion/voice-bridge/Protocol.cs",
+      "component": "voice-companion",
+      "bytes": 2438,
+      "sha256": "474f152935f80dc899a758147591ea894e109f552c667ade152a325f113bc55b"
+    },
+    {
+      "file": "companion/voice-bridge/README.md",
+      "component": "distribution",
+      "bytes": 104,
+      "sha256": "8c900f7bcf916772946895413f35a854ed26d1fd3a0f279b7a4f40fe0c4449fc"
+    },
+    {
+      "file": "companion/voice-bridge/RecordingLifecycle.cs",
+      "component": "voice-companion",
+      "bytes": 8761,
+      "sha256": "2832df662c5f210adc61b711e630302fafa2cbf9bb06d83533eb928ef54ce0fe"
+    },
+    {
+      "file": "companion/voice-bridge/RecordingManifest.cs",
+      "component": "voice-companion",
+      "bytes": 7309,
+      "sha256": "b5c1c53b2eff9ac079637115973492b6fd50878ded526d7fd883bc6841b7dfca"
+    },
+    {
+      "file": "companion/voice-bridge/ResumableUploadStore.cs",
+      "component": "voice-companion",
+      "bytes": 14890,
+      "sha256": "0e53209c4a52ad204874809e742de3e5730b21f3065a2662f29db971a57bbf31"
+    },
+    {
+      "file": "companion/voice-bridge/RfcommBridgeServer.cs",
+      "component": "voice-companion",
+      "bytes": 11421,
+      "sha256": "1ffb7d8cc27ed537161f347a391af1e4847a7f3538801bd47ff508294ec2f72b"
+    },
+    {
+      "file": "companion/voice-bridge/RfcommBridgeSupervisor.cs",
+      "component": "voice-companion",
+      "bytes": 3319,
+      "sha256": "ba6b13787a9e3589f714545e82a5071cf597c1b886fdab537fa02e23b2ff67f6"
+    },
+    {
+      "file": "companion/voice-bridge/RfcommProtocol.cs",
+      "component": "voice-companion",
+      "bytes": 9785,
+      "sha256": "a5582bfdfed1cedaad1354d299594707704b3ba3c2104ce17473d2fb99563f9e"
+    },
+    {
+      "file": "companion/voice-bridge/tests/BleSmoke.cs",
+      "component": "voice-companion",
+      "bytes": 1438,
+      "sha256": "bddc3a1461b529164189705d9f424da1562d36644357231d254c36cbbe4c241b"
+    },
+    {
+      "file": "companion/voice-bridge/tests/BluetoothAdvertisementStateTest.cs",
+      "component": "voice-companion",
+      "bytes": 3341,
+      "sha256": "ebba9d17f938de4f8871779b667739739caffa0a9f0b1dc8a4577ef89b8e2024"
+    },
+    {
+      "file": "companion/voice-bridge/tests/BluetoothBeaconSupervisorTest.cs",
+      "component": "voice-companion",
+      "bytes": 2750,
+      "sha256": "c5644fd0e219b7fe8da9fad28070bcd62514d605da8c202de4211a5762d8109b"
+    },
+    {
+      "file": "companion/voice-bridge/tests/BluetoothRecoveryTests.cs",
+      "component": "voice-companion",
+      "bytes": 23250,
+      "sha256": "9406db9bc4845b067bdba25e4793a83177a8f45a96fc6841b2515a787a16e44e"
+    },
+    {
+      "file": "companion/voice-bridge/tests/BridgeDiagnosticsTests.cs",
+      "component": "voice-companion",
+      "bytes": 25257,
+      "sha256": "76a6dc38845eaca459fe7583e7d3238827d898b55da28543a0b7a856c246c7b4"
+    },
+    {
+      "file": "companion/voice-bridge/tests/DualTransportTests.cs",
+      "component": "voice-companion",
+      "bytes": 36099,
+      "sha256": "8dfa405ef4e7f5f215724c0ba27b1e1fb25d063a01c8b09a1cf2d2eb27c87e17"
+    },
+    {
+      "file": "companion/voice-bridge/tests/EmulatorTestHost.cs",
+      "component": "voice-companion",
+      "bytes": 2318,
+      "sha256": "a3fba00e6c1544ded6ff86c360a7c0f16a1b3f9418ce9861f7705ca16eacf814"
+    },
+    {
+      "file": "companion/voice-bridge/tests/fixtures/fake-import.mjs",
+      "component": "voice-companion",
+      "bytes": 1553,
+      "sha256": "22678eb1896d19515f91bca01b98b7822dd4982aae44f7ea5126f61c1d902426"
+    },
+    {
+      "file": "companion/voice-bridge/tests/fixtures/java/RfcommInteropClient.java",
+      "component": "voice-companion",
+      "bytes": 6782,
+      "sha256": "4ab42d5650fdc1ba2bb3b44c64df12590ce999250a6bd92251d95ca700bb8805"
+    },
+    {
+      "file": "companion/voice-bridge/tests/JavaInteropTest.cs",
+      "component": "voice-companion",
+      "bytes": 7266,
+      "sha256": "668948d02dd372775cd4871ca455c14473d74990be1c119d9802a63acf9aae3a"
+    },
+    {
+      "file": "companion/voice-bridge/tests/LocalAsrSmoke.cs",
+      "component": "voice-companion",
+      "bytes": 5730,
+      "sha256": "2284757d767fe91783078e6116fc3eb3dcb42f6b20a1a632989440336fbb4235"
+    },
+    {
+      "file": "companion/voice-bridge/tests/LocalTranscriptionTests.cs",
+      "component": "voice-companion",
+      "bytes": 30998,
+      "sha256": "a4048a679fe99556d70830b81ebbdf40739a95da05cf6e236925b03e113e8cb1"
+    },
+    {
+      "file": "companion/voice-bridge/tests/Program.cs",
+      "component": "voice-companion",
+      "bytes": 27507,
+      "sha256": "780c549c8912ef658a4d1d2dd4e7b0a3b55a4588aee97c6bc836e53c61d7958f"
+    },
+    {
+      "file": "companion/voice-bridge/tests/RecordingLifecycleTests.cs",
+      "component": "voice-companion",
+      "bytes": 34791,
+      "sha256": "0ffa68de5272ff70b50a39ae3928f42e99023da5a03403f17a228fff3e43135a"
+    },
+    {
+      "file": "companion/voice-bridge/tests/RfcommTestHost.cs",
+      "component": "voice-companion",
+      "bytes": 5700,
+      "sha256": "d3362c8c470d459d2758593027af86b4799aff337ed8e824ff89f5dc37c033d8"
+    },
+    {
+      "file": "companion/voice-bridge/tests/TestSupport.cs",
+      "component": "voice-companion",
+      "bytes": 8070,
+      "sha256": "93d5c2036d5398ea7fb7f34835c135bc1267cdfe4eef4abcffdb82fbc65fee55"
+    },
+    {
+      "file": "companion/voice-bridge/tests/VoiceBridge.Tests.csproj",
+      "component": "voice-companion",
+      "bytes": 486,
+      "sha256": "569b8085d940adfab9a07716b3ea6848f13f872a07f42e8199ff84c1708065b2"
+    },
+    {
+      "file": "companion/voice-bridge/VoiceBridge.csproj",
+      "component": "voice-companion",
+      "bytes": 577,
+      "sha256": "68354b24d827cf4bee9b6093ed1536cf725568285808b11fe92bd8762f97c27e"
+    },
+    {
+      "file": "companion/voice-bridge/WaveValidator.cs",
+      "component": "voice-companion",
+      "bytes": 2898,
+      "sha256": "25733c958d6fa37c35268936edec3b249ec575165523025d3fbcf19a2f929a61"
+    },
+    {
+      "file": "config/agent.json",
+      "component": "distribution",
+      "bytes": 4616,
+      "sha256": "cd3d22cbb4019523390bd546afdecf4b28cbeae59cc68679919cb8b2bd1e7689"
+    },
+    {
+      "file": "config/cognitive-profile.example.json",
+      "component": "core",
+      "bytes": 1669,
+      "sha256": "bb8309bf459e929833830f68d2fc5324880929c307667d4209ae3a677a020c1c"
+    },
+    {
+      "file": "config/kimi-code-executor.example.json",
+      "component": "core",
+      "bytes": 334,
+      "sha256": "bad670787b69a4a229b498ab092c3bc09189af8168b903addfc56326256a70d9"
+    },
+    {
+      "file": "config/openclaw-runtime-template.json",
+      "component": "core",
+      "bytes": 2135,
+      "sha256": "20b5830cac483a30e9ee4f66ee7015007ecae94b56a7eb179a99520885b53162"
+    },
+    {
+      "file": "config/policy.json",
+      "component": "core",
+      "bytes": 904,
+      "sha256": "081f65eba93969c33bc397d2d4e392b1c5c5eda56f73220fb185987672888d72"
+    },
+    {
+      "file": "config/runtime-selection.example.json",
+      "component": "core",
+      "bytes": 160,
+      "sha256": "2d9c0f79dd4ceb63ae5d943bdaec5ec6ba21703553bfb3036fec31fed2486be1"
+    },
+    {
+      "file": "config/user-basics.example.json",
+      "component": "core",
+      "bytes": 499,
+      "sha256": "e116b6d018c7be62fd0fe0f562f1b49675f268b88e727a8b017c49def5d8fb13"
+    },
+    {
+      "file": "desktop/index.html",
+      "component": "core",
+      "bytes": 16673,
+      "sha256": "85d37f829d78b3bdc820834d9a73e625f14a37668ba611109b27498a4ae73be5"
+    },
+    {
+      "file": "desktop/main.mjs",
+      "component": "core",
+      "bytes": 63310,
+      "sha256": "7921f0d3f7c861691a8b4bd5e3d34ebb8731983939f6fa2b6384431e5d0dd677"
+    },
+    {
+      "file": "desktop/pet-canvas.js",
+      "component": "core",
+      "bytes": 3175,
+      "sha256": "97aadd41be7e0727394a5642856e973739f6f74e038fa1695c3a836973eabf2c"
+    },
+    {
+      "file": "desktop/preload.cjs",
+      "component": "core",
+      "bytes": 2326,
+      "sha256": "d352f30e675857be9e8d19800c982a4bf10f6430273c475bbf9da46649905d8b"
+    },
+    {
+      "file": "desktop/renderer.js",
+      "component": "core",
+      "bytes": 89761,
+      "sha256": "7665c322c74b2794d457df29acf137cabc25925fa3cbab804b1e49a4b37e29a2"
+    },
+    {
+      "file": "desktop/settings.css",
+      "component": "core",
+      "bytes": 2416,
+      "sha256": "8509ed4db0bda3e7374c701dca76108f9d4f1711495afacd669db7b97a6254b9"
+    },
+    {
+      "file": "desktop/settings.html",
+      "component": "core",
+      "bytes": 1416,
+      "sha256": "2e4fbb44731fc89a0a017a4eeed0a8ddcc978db261f653d58382d88f2beaec3c"
+    },
+    {
+      "file": "desktop/settings.js",
+      "component": "core",
+      "bytes": 2319,
+      "sha256": "604a6229e5e8437eb0245399aa3e60e1bd7c1f62a3a8812c352c161d1a63d27c"
+    },
+    {
+      "file": "desktop/styles.css",
+      "component": "core",
+      "bytes": 43458,
+      "sha256": "57eee512743e3a80fc4cb3d621fa437c5be409828f5abe3d2e78d5401d960bed"
+    },
+    {
+      "file": "desktop/voice-preload.cjs",
+      "component": "core",
+      "bytes": 1306,
+      "sha256": "72827ecc8593df3ab0effd5d49fb9a87a376179ca438468eeb141a72f3770bb4"
+    },
+    {
+      "file": "desktop/voice-preview.mjs",
+      "component": "core",
+      "bytes": 1477,
+      "sha256": "0d1c42eeae11d7bcec1a5585c3c887a6e1a41276c7de6b5659eb5dc7ecd7ff2c"
+    },
+    {
+      "file": "desktop/voice-review.mjs",
+      "component": "core",
+      "bytes": 1200,
+      "sha256": "959feb12f4ce0df2b473342a6deb7dc8baa31c1c387e5d3c2f9be9efbf33ab87"
+    },
+    {
+      "file": "desktop/voice-samples.js",
+      "component": "core",
+      "bytes": 9302,
+      "sha256": "59bbe01c8f753786d67f4161cf28831c54562d1cfc8d4bf16fabd833216e5f8a"
+    },
+    {
+      "file": "desktop/voice-window.mjs",
+      "component": "core",
+      "bytes": 3823,
+      "sha256": "ee36947c6a78bb604ae021df5395d66a5f0a8a14078fd4d1ee95d197773d22e1"
+    },
+    {
+      "file": "desktop/voice.css",
+      "component": "core",
+      "bytes": 12539,
+      "sha256": "5ce06a1113b12bd5000897547bc7baa260b560c7d76cbea15d6773951b09ee54"
+    },
+    {
+      "file": "desktop/voice.html",
+      "component": "core",
+      "bytes": 9448,
+      "sha256": "a2c988cb32add775dbf43b5fed1c09b18d5032b85b58d9b85f187fe58e66ee50"
+    },
+    {
+      "file": "desktop/voice.js",
+      "component": "core",
+      "bytes": 40541,
+      "sha256": "1f9cd01a0514141640fc598ddac51c696c5db93dfa742d05663d29555f80d4d2"
+    },
+    {
+      "file": "docs/ARCHITECTURE.md",
+      "component": "core",
+      "bytes": 78423,
+      "sha256": "966950cd51ced61a24e6fdc38d82aba810cf78dc05243b485214a8682179ea90"
+    },
+    {
+      "file": "docs/COGNITIVE_ROUTING_AND_CONTEXT_V4.md",
+      "component": "core",
+      "bytes": 13908,
+      "sha256": "15e469c648d5b15c79ef12969773c689f8bc60bbbc270a43586d9727ffccd3ca"
+    },
+    {
+      "file": "docs/decisions/0001-openclaw-single-controller.md",
+      "component": "core",
+      "bytes": 2038,
+      "sha256": "e9be3b8ae20b26b5ad5f6eb7027d970bbacafe7833ad18766431589841e852fc"
+    },
+    {
+      "file": "docs/decisions/0002-event-driven-runtime-and-reminders.md",
+      "component": "core",
+      "bytes": 3686,
+      "sha256": "2634ac3f8a528ed85b89c13a392ab7e9c1df21dae3a40d8da99037aa92986880"
+    },
+    {
+      "file": "docs/decisions/0003-stable-sessions-and-cognitive-routing.md",
+      "component": "core",
+      "bytes": 3500,
+      "sha256": "ea57f126ffd066c5605e4094e768a688611b81c84cf45fe2caae948e12cadae5"
+    },
+    {
+      "file": "docs/decisions/0004-runtime-hardening-and-human-loop.md",
+      "component": "core",
+      "bytes": 3081,
+      "sha256": "ba2b4d6a8b56958a5f63e9eda2b88d396856eb62aed74bfa50d69ffd6df5a046"
+    },
+    {
+      "file": "docs/decisions/0005-unified-feishu-outbound-modes.md",
+      "component": "core",
+      "bytes": 3345,
+      "sha256": "83d4078051daddcae58067cd8d7ae8b49a82f1cd96405639cdfd366a491a6079"
+    },
+    {
+      "file": "docs/decisions/0006-persisted-hitl-review-context.md",
+      "component": "core",
+      "bytes": 2217,
+      "sha256": "b00e641afa2d69c3dfbc07d27a83f3fd79587c1c80a844362021bf999cbb8a48"
+    },
+    {
+      "file": "docs/decisions/0007-agent-driven-task-events-and-session-ownership.md",
+      "component": "core",
+      "bytes": 5884,
+      "sha256": "be4c6b6f9a4f99a60773adfbecbcec5663da3928bd0163fbd11d3e5b18dd4a3d"
+    },
+    {
+      "file": "docs/decisions/0008-proactive-task-supervision-and-codex-loop.md",
+      "component": "core",
+      "bytes": 3913,
+      "sha256": "fa2049e0a60b7126ca9e4de29cfb3ddac0c79151b2bb2ff0ac88879f249a0be7"
+    },
+    {
+      "file": "docs/decisions/0009-outcome-driven-continuation.md",
+      "component": "core",
+      "bytes": 5873,
+      "sha256": "b965d09308893409147ba502f4b49829afa5b3a4b1f0b193e390e62d975c903b"
+    },
+    {
+      "file": "docs/decisions/0010-bounded-progress-audit.md",
+      "component": "core",
+      "bytes": 4752,
+      "sha256": "d8e706def19a2e0d993f5f5e0fa36e6ab2dc514148034778030c7a62cd6b8869"
+    },
+    {
+      "file": "docs/decisions/0011-snapshot-collection-and-db-recovery.md",
+      "component": "core",
+      "bytes": 1204,
+      "sha256": "9499473ee5f8c1ab1a4f6c06598de75e81907be9dbdc6acafdf72a23aeff755c"
+    },
+    {
+      "file": "docs/decisions/0012-user-reminders-vs-internal-task-review.md",
+      "component": "core",
+      "bytes": 2884,
+      "sha256": "805ca4b8c2f34c3a47a46536e3d712af31613fdd079b6e7167fe3ee6353fa2f4"
+    },
+    {
+      "file": "docs/decisions/0013-unified-direct-input-and-card-conversation.md",
+      "component": "core",
+      "bytes": 3562,
+      "sha256": "57e8b0fac65926218984d6e16c76377cf7c437b7bfa57eae05b8ead84dd6b741"
+    },
+    {
+      "file": "docs/decisions/0014-soft-relations-and-stable-codex-projection.md",
+      "component": "core",
+      "bytes": 6550,
+      "sha256": "ec5fd5469aa51976b7841ae8973c2571cd3107aa5aad65e1bf19f387354a14b3"
+    },
+    {
+      "file": "docs/decisions/0015-real-first-feishu-evaluation.md",
+      "component": "core",
+      "bytes": 4064,
+      "sha256": "b2ffee9e5cc204e6a5640c98182707e5cb21dbf8f72eee1c65e2d27a3f94eabd"
+    },
+    {
+      "file": "docs/decisions/0016-feishu-background-retention-and-bounded-activation.md",
+      "component": "core",
+      "bytes": 3473,
+      "sha256": "c6869f43b3ccff0659a089d771c428da06fa9b21e7876b67e88e9b5fdbb97f4a"
+    },
+    {
+      "file": "docs/decisions/0017-graph-routed-primary-evidence-retrieval.md",
+      "component": "core",
+      "bytes": 4642,
+      "sha256": "669936093d28057bd7992961a962e3b4c5a44dc555c143e52d84d4ded6a4283f"
+    },
+    {
+      "file": "docs/decisions/0018-active-knowledge-debt-and-cold-inventory.md",
+      "component": "core",
+      "bytes": 4563,
+      "sha256": "baaa5576c20dbe1e59726ec1b659f9abe3cac45b7affc6993bb7cd4a3f67d52e"
+    },
+    {
+      "file": "docs/decisions/0019-durable-direct-input-receipts.md",
+      "component": "core",
+      "bytes": 3341,
+      "sha256": "152f68f8fbc53e3f6b2cae16dd8ee0939e2980338c380bd87fe85f4146cd93f1"
+    },
+    {
+      "file": "docs/decisions/0020-task-result-checkpoint.md",
+      "component": "core",
+      "bytes": 2645,
+      "sha256": "e1c042617e97256a68adf5112dd4ba8ae083a37c5bb6b36ba89739f0125ceafc"
+    },
+    {
+      "file": "docs/decisions/0021-native-execution-and-task-condition-binding.md",
+      "component": "core",
+      "bytes": 4274,
+      "sha256": "0d789508a4fc6b5ece04ec859822b422ff83da397b4bf2eda37360f35025b0a6"
+    },
+    {
+      "file": "docs/decisions/0022-controller-turn-budgets-and-observability.md",
+      "component": "core",
+      "bytes": 3926,
+      "sha256": "35bcbdd769ab3a9a822b7366a2db39a9a77d537b14f6a92d6e4ad4c4fa0e79f2"
+    },
+    {
+      "file": "docs/decisions/0023-codex-searchable-dynamic-tools.md",
+      "component": "core",
+      "bytes": 3555,
+      "sha256": "f07f0048e5784586f5e5368f97d54a462b608121b1d6626b35ea4df2a910e02e"
+    },
+    {
+      "file": "docs/decisions/0024-dynamic-tool-ab-and-direct-fallback.md",
+      "component": "core",
+      "bytes": 3918,
+      "sha256": "d9c10f16bf3d8625453057d8a00f55c517d69cd2fbf7400d460f794fdf9f54cb"
+    },
+    {
+      "file": "docs/decisions/0025-controller-run-deadline-and-observation.md",
+      "component": "core",
+      "bytes": 2859,
+      "sha256": "9847f9b0ce5f37f25421dbbcaf556e40dc0e519cef4090f8ac1e264fb8559208"
+    },
+    {
+      "file": "docs/decisions/0026-unified-knowledge-delta-curation.md",
+      "component": "core",
+      "bytes": 3854,
+      "sha256": "1be064ade465c81353a603b3acf2ab3f56357e9fac39e099a04911ef0d8a3544"
+    },
+    {
+      "file": "docs/decisions/0027-bounded-digests-and-orthogonal-knowledge-state.md",
+      "component": "core",
+      "bytes": 2994,
+      "sha256": "5217b91058d36bd582d91d1be4f2a6f556c047fdddbe90fe38ba340862735249"
+    },
+    {
+      "file": "docs/decisions/0028-source-domain-adapters.md",
+      "component": "core",
+      "bytes": 3811,
+      "sha256": "c2892c3bf27b52dbd4be1e6239c1b8bf677794921d7b0d3fab9958c9a1d770ae"
+    },
+    {
+      "file": "docs/decisions/0029-canonical-source-storage-cutover.md",
+      "component": "core",
+      "bytes": 2083,
+      "sha256": "9516374c883f425691c01d7e4b55086923902a1f9066365b4fb265d9b668f167"
+    },
+    {
+      "file": "docs/decisions/0030-canonical-task-handling-authority.md",
+      "component": "core",
+      "bytes": 3954,
+      "sha256": "3d7ef15ec8f4c5aee8b523559b8effb8b22e1355d5c4d4996abad3a0989d522e"
+    },
+    {
+      "file": "docs/decisions/0031-isolated-agent-codex-home.md",
+      "component": "core",
+      "bytes": 4210,
+      "sha256": "3ee173e71388244d79cff08361d3371f583e61dfddd46ec4830b5243a8d3eaea"
+    },
+    {
+      "file": "docs/decisions/0032-memory-and-execution-reliability.md",
+      "component": "core",
+      "bytes": 3926,
+      "sha256": "6c2edc9399d8953b4da986e6994a4d9243d307bdd564bf48b45b1159d127ecf5"
+    },
+    {
+      "file": "docs/decisions/0033-main-and-task-conversations.md",
+      "component": "core",
+      "bytes": 4554,
+      "sha256": "6ae0a86b558044ca3dcf9938709b646aa8fc9606d87bff8bff434052b6d97281"
+    },
+    {
+      "file": "docs/decisions/0034-attention-progress-and-gateway-read-plane.md",
+      "component": "core",
+      "bytes": 4331,
+      "sha256": "cc151899704683fc1c2b92522cc5e1d8ab5bfc795fa57778bdd0c634027d3d19"
+    },
+    {
+      "file": "docs/decisions/0035-intake-and-review-recovery.md",
+      "component": "core",
+      "bytes": 3998,
+      "sha256": "6a07176a49110c4960b8d741b46adc7950b7ef9136caf76d9feac30661bbab1d"
+    },
+    {
+      "file": "docs/decisions/0036-delegation-and-native-capability-growth.md",
+      "component": "core",
+      "bytes": 7356,
+      "sha256": "4438c56c221fc661f78efa8810386737605322ea2b315f5c242abae39773a1f4"
+    },
+    {
+      "file": "docs/decisions/0037-system-wide-local-access.md",
+      "component": "core",
+      "bytes": 4920,
+      "sha256": "11fde7c0f0db72da7bcac0cc5b0f12637fe2592f1ebae8e37e53649030ed62e6"
+    },
+    {
+      "file": "docs/decisions/0038-owned-policy-and-task-boundaries.md",
+      "component": "core",
+      "bytes": 4089,
+      "sha256": "adc91beb4532cb6931b6d71b518f4bb5566437b2b0b2c69f1fca0663577561e0"
+    },
+    {
+      "file": "docs/decisions/0039-personalization-boundary.md",
+      "component": "core",
+      "bytes": 2788,
+      "sha256": "d60c874f384f06be6b402ffca498994e7e9737cc97b723ce8b7997ff1d0a3074"
+    },
+    {
+      "file": "docs/decisions/0040-user-knowledge-projection-and-onboarding.md",
+      "component": "core",
+      "bytes": 4054,
+      "sha256": "8a1dc6a7c2f0cc5adbe99d5adbc92658ccdeec45d29240efb6890bbeb3cc25c6"
+    },
+    {
+      "file": "docs/decisions/0041-local-voice-provider-and-onboarding.md",
+      "component": "core",
+      "bytes": 7537,
+      "sha256": "9ce06e998cd117f89fa540306e0554be5999cd2cf88a4d70a92ba9295b00dc9d"
+    },
+    {
+      "file": "docs/decisions/0042-voice-intake-and-identity-review.md",
+      "component": "core",
+      "bytes": 7108,
+      "sha256": "88b3adf3a5ad1797dcb2e47b55d98410e7e952b999a007c22037449c2bd2bd87"
+    },
+    {
+      "file": "docs/decisions/0043-information-fanout-and-active-task-updates.md",
+      "component": "core",
+      "bytes": 6843,
+      "sha256": "d47b7402c468a5210cc50e3204d72df79bcc8304933e5125d164b0ccac7797da"
+    },
+    {
+      "file": "docs/decisions/0044-derived-knowledge-entry-maintenance.md",
+      "component": "core",
+      "bytes": 4176,
+      "sha256": "318caae7fd22c09b20abfb7d90efe9205e8d996ebfb110f7a7db2fe7e87eff64"
+    },
+    {
+      "file": "docs/decisions/README.md",
+      "component": "core",
+      "bytes": 5079,
+      "sha256": "dee0eb9c1b79cdacbf89b090b75ecab38cd32229f42da799a629f644153d3f55"
+    },
+    {
+      "file": "docs/FEISHU_ATTENTION_V2.md",
+      "component": "core",
+      "bytes": 5351,
+      "sha256": "b7a4e4a106e58538559589c389f905f5405b4fd08f76588bcf6850b317c0f0c1"
+    },
+    {
+      "file": "docs/FEISHU_EVALUATION_DATASET.md",
+      "component": "core",
+      "bytes": 7695,
+      "sha256": "c87d6492eae6842ea7bd833064e5a17936c2f97b2f54ac8849de39b580ab0478"
+    },
+    {
+      "file": "docs/FEISHU_SETUP.md",
+      "component": "core",
+      "bytes": 5498,
+      "sha256": "b5f98844d789d1c7fd85ae2aaadb92f88d30d45b30d2d6487347ffa142ccadbf"
+    },
+    {
+      "file": "docs/GENERIC_EPISTEMIC_GRAPH.md",
+      "component": "core",
+      "bytes": 22462,
+      "sha256": "933d31539f55aebad9003002aa73d59dd898de8c3310c252f173751be4b327f3"
+    },
+    {
+      "file": "docs/getting-started.md",
+      "component": "core",
+      "bytes": 10683,
+      "sha256": "15fc7434f10ed7a628f7ab706c2dd43fdf6a4acd727b60657c20a3b9c4c2c65f"
+    },
+    {
+      "file": "docs/OPERATIONS.md",
+      "component": "core",
+      "bytes": 31733,
+      "sha256": "d5434abdab5034c6a137b8a78686902eaebe9a8c84b6a1b85be4691cc2aea8f1"
+    },
+    {
+      "file": "docs/operations/capability-growth.md",
+      "component": "core",
+      "bytes": 6388,
+      "sha256": "793ae82243ee212721f31f8e8f2ea9bcecb3ca46f95a831c34cb3bf941884d84"
+    },
+    {
+      "file": "docs/operations/feishu-background-auth.md",
+      "component": "core",
+      "bytes": 3527,
+      "sha256": "85dd626912db6befae33e23bffe65a3d650fdfabcf2ed3bf98acf313321e0851"
+    },
+    {
+      "file": "docs/operations/kimi-code-executor.md",
+      "component": "core",
+      "bytes": 5899,
+      "sha256": "a44965acb515740ab3830e7115fd83b9f73aac082cd406c241e7e6efb7b97ed3"
+    },
+    {
+      "file": "docs/operations/local-voice-setup.md",
+      "component": "distribution",
+      "bytes": 66,
+      "sha256": "ac4b7955d7cdd1d3c5dd0c1746e56d4d2d0b32b04b732a7b36035ec65fa5aa7b"
+    },
+    {
+      "file": "docs/operations/personalization-and-distribution.md",
+      "component": "core",
+      "bytes": 2377,
+      "sha256": "3b4f6a0e68b4903a1583f70a78061ad154a6d5238e2ca978d0321f9940816a1a"
+    },
+    {
+      "file": "docs/operations/system-local-access.md",
+      "component": "core",
+      "bytes": 3837,
+      "sha256": "4f366a400d5a6d540861997394e5b432f608f1a9a0522b36e21bcfc8f871c84b"
+    },
+    {
+      "file": "docs/operations/user-knowledge-onboarding.md",
+      "component": "core",
+      "bytes": 5180,
+      "sha256": "038d37867bd88f4eb74f44cae7c94eac595b25bd1fcce057eac58c29518a3d7f"
+    },
+    {
+      "file": "docs/PROJECT_CONTRACT.md",
+      "component": "core",
+      "bytes": 177407,
+      "sha256": "0cd5549e673ef37c8cc09226ec2e5ecb4b81afccfeaa3466da2ce3907b84e90f"
+    },
+    {
+      "file": "docs/README.md",
+      "component": "distribution",
+      "bytes": 261,
+      "sha256": "dba3f6c795266bf56a9be09980fb61f0b2255c8e651d85b752db89cfc8306c85"
+    },
+    {
+      "file": "docs/release-contents.md",
+      "component": "core",
+      "bytes": 1417,
+      "sha256": "7b01ad75502f44ceec61173e2f3db037f031843d3b6aacc4ccd666f8bf9eeb20"
+    },
+    {
+      "file": "docs/runtime-dependencies.md",
+      "component": "core",
+      "bytes": 3061,
+      "sha256": "7858d0b6f4db398df60b6d299697c43b2de47dde1d673f3289d8c2832b6bee28"
+    },
+    {
+      "file": "docs/SOURCE_ADAPTER_ARCHITECTURE.md",
+      "component": "core",
+      "bytes": 16895,
+      "sha256": "d06541723a4b0625f26d6a01284364912531d2fb3e3b71dfd572171244082b92"
+    },
+    {
+      "file": "docs/voice-guide.md",
+      "component": "core",
+      "bytes": 8367,
+      "sha256": "603794cdb59037ea4c38d7c53a970fed7080724d041e83c34099259621fe19ca"
+    },
+    {
+      "file": "knowledge/decisions/index.md",
+      "component": "distribution",
+      "bytes": 83,
+      "sha256": "9a58188a9ec540f51ac50cd90e4cd0da7c8157b4405a12df8630bd5da9e293e5"
+    },
+    {
+      "file": "knowledge/identity/profile.md",
+      "component": "distribution",
+      "bytes": 82,
+      "sha256": "cdef59f7bcc4f88a67d9700b9104b49454778286a3e589682ec6e404b767d3cb"
+    },
+    {
+      "file": "knowledge/ontology/core.json",
+      "component": "core",
+      "bytes": 14726,
+      "sha256": "34015224066bef4618de6691b3cdd583ee124a0c15ea4160a19bb79b00cfcd9a"
+    },
+    {
+      "file": "knowledge/ontology/software-version.json",
+      "component": "core",
+      "bytes": 6207,
+      "sha256": "f4556486f0aaa61ac68e378382ebaa02aa8792a9dbd6dbe45518ac403166f18e"
+    },
+    {
+      "file": "knowledge/open-loops/index.md",
+      "component": "distribution",
+      "bytes": 84,
+      "sha256": "56a226bae040a00bf35859ce79615ad9d5117114d954b3a173be444b840797c5"
+    },
+    {
+      "file": "knowledge/people/index.md",
+      "component": "distribution",
+      "bytes": 80,
+      "sha256": "5f3f1796dfecb099d39322517a646e47bd99194bdd7a4edd2ba24999a6805eda"
+    },
+    {
+      "file": "knowledge/procedures/index.md",
+      "component": "distribution",
+      "bytes": 84,
+      "sha256": "78a43abe90d03a181a8a2f5a5d2fcbce9bc19bd3c6abd27ea286b087872f1058"
+    },
+    {
+      "file": "knowledge/projects/index.md",
+      "component": "distribution",
+      "bytes": 82,
+      "sha256": "7b9d81370d5e55666dcbaa1cebb0dc7125a7253c0568903ee45f7d72eab8f14a"
+    },
+    {
+      "file": "knowledge/responsibilities/index.md",
+      "component": "distribution",
+      "bytes": 90,
+      "sha256": "80fd9d964e9d4fa121f88f84bc2234d16d503cbcd8a248e2af3844df0fd9c7db"
+    },
+    {
+      "file": "knowledge/writing-style/index.md",
+      "component": "distribution",
+      "bytes": 87,
+      "sha256": "9ad49de339275c8ea5546fe9a3ae325d77cd57df76eb2723f80d608b63044f5f"
+    },
+    {
+      "file": "LICENSE",
+      "component": "core",
+      "bytes": 1082,
+      "sha256": "856f6529ce677eee7a068aa180453ab7799a83cfe790b5c5cb8a58eceeef0f4a"
+    },
+    {
+      "file": "mobile/android/.gitignore",
+      "component": "voice-companion",
+      "bytes": 60,
+      "sha256": "23c80139e138021964f171bd18ee3095bd6eb575aff1ed583a0c1d0dc8f3f44b"
+    },
+    {
+      "file": "mobile/android/app/build.gradle",
+      "component": "voice-companion",
+      "bytes": 1332,
+      "sha256": "9e150e692269cbec0b31c44c1550e309219a89c1c64ed43c2ae3583e2e9a5b27"
+    },
+    {
+      "file": "mobile/android/app/src/androidTest/java/com/shadowagent/voice/core/BluetoothTransportSmoke.java",
+      "component": "voice-companion",
+      "bytes": 8758,
+      "sha256": "3bf54a178de06209d92a10bf6bc9c15e13fddd3fc3ba3f6a9d83d3dc36a70ddf"
+    },
+    {
+      "file": "mobile/android/app/src/androidTest/java/com/shadowagent/voice/core/RecordingLifecycleSmoke.java",
+      "component": "voice-companion",
+      "bytes": 3570,
+      "sha256": "b5f8cf293c9920f63d404e17b06ea1378700f066344df8592b12bcb440c00eec"
+    },
+    {
+      "file": "mobile/android/app/src/androidTest/java/com/shadowagent/voice/core/TransportSmoke.java",
+      "component": "voice-companion",
+      "bytes": 5550,
+      "sha256": "aadfc544195cf1907e54a6b6a18a79633453cb30368a82688e2288ef7fd6c817"
+    },
+    {
+      "file": "mobile/android/app/src/androidTest/java/com/shadowagent/voice/SmokeInstrumentation.java",
+      "component": "voice-companion",
+      "bytes": 10423,
+      "sha256": "4e11e6ec89f51c58a8c618f8f95a128e11f9e25772227c1884501ac45fd4da3b"
+    },
+    {
+      "file": "mobile/android/app/src/main/AndroidManifest.xml",
+      "component": "voice-companion",
+      "bytes": 2450,
+      "sha256": "1b91cbc0d5e3ba9fd44230de9b3277b365f3889faae2d8a367ecda759215e91a"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/AppSettings.java",
+      "component": "voice-companion",
+      "bytes": 8147,
+      "sha256": "c7afe0c5d317c3d550f068b2b6ca621c016d5a2f8a059bc47dcea6bb98b3bf34"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/AutoCaptureService.java",
+      "component": "voice-companion",
+      "bytes": 42257,
+      "sha256": "3f41a85dead7cd26588383748958fb88a5c3c5de4c1d1c8a0831e87a335e780d"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/BleMonitor.java",
+      "component": "voice-companion",
+      "bytes": 13066,
+      "sha256": "e00a0f717739cf204ea0e6bad246f5fdf8f3f47f5bfbdd2eea7f7ac8016c7abd"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/BluetoothAvailability.java",
+      "component": "voice-companion",
+      "bytes": 344,
+      "sha256": "95bbfd14f57d5008a6d53f89c3bff124fd5bf12b96d433c031f925345ffdf299"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/BluetoothBridgeClient.java",
+      "component": "voice-companion",
+      "bytes": 6943,
+      "sha256": "37cc75c15e5b132aa3a89531cb712f29202e6bae1e62fc54cf28571797154c52"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/BridgeClient.java",
+      "component": "voice-companion",
+      "bytes": 8234,
+      "sha256": "71b3327a1eadf7d3432c10cc4a0b218f393571cc36931fa5fc308ba0e3a56923"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/BridgeFrames.java",
+      "component": "voice-companion",
+      "bytes": 5702,
+      "sha256": "126597e6cb26fbc7fb8f4f287c922af2956032e4b2f9db1d101c3ba404d00ee1"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/BridgeHealth.java",
+      "component": "voice-companion",
+      "bytes": 4280,
+      "sha256": "6b009bea2c90433a606a6fedc24089ad446bbfa87d8be2edee558f6f9b3f1690"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/BridgeIdentity.java",
+      "component": "voice-companion",
+      "bytes": 4147,
+      "sha256": "83f2c39081644e531f680525617fcc1c7d4cbaeea05322155bbc5bf60e924500"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/CaptureInputState.java",
+      "component": "voice-companion",
+      "bytes": 1692,
+      "sha256": "332373fe66b8fea1ceb6d5fcfa5a031a6a244afef33e8068da2e7cf8ea012bb8"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/CaptureRecovery.java",
+      "component": "voice-companion",
+      "bytes": 1217,
+      "sha256": "af9a54898bacac189635aa92acff0f0e6bd1422609edbcc21832e16c8a682e91"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/EndpointCandidates.java",
+      "component": "voice-companion",
+      "bytes": 1447,
+      "sha256": "91365208f6332d8e16d5ca9383e699757f3463640c8483f7d9a0db4d8119b6ba"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/GattOperations.java",
+      "component": "voice-companion",
+      "bytes": 1247,
+      "sha256": "3e3d3d657a914d06a22fea9c9986d3910f286a2b2186392a5c438fdf6e263bfc"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/LosslessUpload.java",
+      "component": "voice-companion",
+      "bytes": 5224,
+      "sha256": "86a902b4a6758a2d4bf3356c84c7ee7ca20b2ca0280b1d5fe31c52219f119d62"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/package-info.java",
+      "component": "voice-companion",
+      "bytes": 4098,
+      "sha256": "8202dc6239a88cfb6d36fe5de29129a8e64f67fa035b6abbe370528f417197cc"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/PcmRecorder.java",
+      "component": "voice-companion",
+      "bytes": 12130,
+      "sha256": "33da3d4addb0b1284a148a9883109d32bc150b1eb4491524e353c1898a3d6d7a"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/PinnedBridgeTls.java",
+      "component": "voice-companion",
+      "bytes": 3309,
+      "sha256": "1f8f0ddf6aa5fad175af9326cbbd839fd4bb80777e2b6f138cfb3a0d4d4b810d"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/ProximityPolicy.java",
+      "component": "voice-companion",
+      "bytes": 3965,
+      "sha256": "78630b4de4e954a496ec25b0995a3864f17722c6f87b4e4adf9f2fec95bbe147"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/ReceiptValidator.java",
+      "component": "voice-companion",
+      "bytes": 877,
+      "sha256": "5766f00c63c8f5eec697b74690e48131a2c6fbf2f9c9b9835e2e05e9e5e63dfb"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/RecordingAudioCleanup.java",
+      "component": "voice-companion",
+      "bytes": 1461,
+      "sha256": "6faf5170499138051ed6d3b2fd9393bc1f3e3419da86c32664dbc41d96ee1592"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/RecordingCompletion.java",
+      "component": "voice-companion",
+      "bytes": 2320,
+      "sha256": "55275c3fb1fff5268424ea9f2fa99b2ae5ba24c87bd2586f28a5442fc1d09c1e"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/RecordingStore.java",
+      "component": "voice-companion",
+      "bytes": 31422,
+      "sha256": "08b4ce4c55789053274116425abfd31e2031b6b2351935187c2e941eb9ef91e6"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/RecordingTransport.java",
+      "component": "voice-companion",
+      "bytes": 712,
+      "sha256": "312ef4359aa8c8e8c572e738b78d1ab638989be1ec0d95ac500b117606d8a28b"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/RetryBackoff.java",
+      "component": "voice-companion",
+      "bytes": 299,
+      "sha256": "b14568f13e31df8e34b8f4c564991b4c25b1c904f1eccb69514dd8340a6e3b87"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/RfcommSession.java",
+      "component": "voice-companion",
+      "bytes": 2644,
+      "sha256": "ebde8fcdf84adc4e3c963263d3d50ad39b288cefe846885d278c96f40824d4c3"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/TlsEngineStream.java",
+      "component": "voice-companion",
+      "bytes": 9467,
+      "sha256": "ea2c020497fcb2308a79420d638ed0d99cc17b4cdc5a053a5914c67cd304e7db"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/TransportGuard.java",
+      "component": "voice-companion",
+      "bytes": 5561,
+      "sha256": "f1d58d908658e201a1f061bb504bce993c105b486bee2a0d6a68721a00b2e92e"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/TransportPolicy.java",
+      "component": "voice-companion",
+      "bytes": 1860,
+      "sha256": "e5f60237ae60fc8e3e4698e564e07e303ef65b82690b64ed5935983c95fe3613"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/core/WavFile.java",
+      "component": "voice-companion",
+      "bytes": 3199,
+      "sha256": "cff697bb7aba22a6e2d3c4cf8f401d1909923e63893f493a27fcd01920cb061a"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/ExportProvider.java",
+      "component": "voice-companion",
+      "bytes": 2764,
+      "sha256": "7bf50ac683f84394215b1f1e47c531a3177402e4922a89949e9ee15c8461c8f0"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/MainActivity.java",
+      "component": "voice-companion",
+      "bytes": 33989,
+      "sha256": "8528fc53836e48b8377484dfc647d37aefebd2c4c96ccca620475cc0ea83a9b1"
+    },
+    {
+      "file": "mobile/android/app/src/main/java/com/shadowagent/voice/ui/RecordingPresentation.java",
+      "component": "voice-companion",
+      "bytes": 1997,
+      "sha256": "59e6b3a0d89db1c95034f8055b2c12ab0900d4a538b9fe4a3b43f5f16aaadda2"
+    },
+    {
+      "file": "mobile/android/app/src/main/res/drawable-nodpi/shadow_idle.png",
+      "component": "voice-companion",
+      "bytes": 3360,
+      "sha256": "9159cc92d6269106081d0fa55d31476f13ec18b2781d0dd760b071019590f9da"
+    },
+    {
+      "file": "mobile/android/app/src/main/res/drawable-nodpi/shadow_running.png",
+      "component": "voice-companion",
+      "bytes": 3511,
+      "sha256": "4591652c6f70ebbb672cfa28e7fc5e2353624a772c551a8bd36e8d3ccf593852"
+    },
+    {
+      "file": "mobile/android/app/src/main/res/drawable-nodpi/shadow_waiting.png",
+      "component": "voice-companion",
+      "bytes": 3326,
+      "sha256": "0cfc5c54497bb47edacfb7e0492ce2445de374d5a84a16d51a0b373bdc0c1005"
+    },
+    {
+      "file": "mobile/android/app/src/main/res/drawable/ic_launcher.xml",
+      "component": "voice-companion",
+      "bytes": 630,
+      "sha256": "1b040029e547b78412ed24087e351a475e5bc405cab2ac216f8b2ca63508e0f9"
+    },
+    {
+      "file": "mobile/android/app/src/main/res/drawable/ic_mic.xml",
+      "component": "voice-companion",
+      "bytes": 428,
+      "sha256": "e8902b7b497cd89cb4a7cebd769b4ec4b1f82d4dd9a6daa9e57db404cb4420b7"
+    },
+    {
+      "file": "mobile/android/app/src/main/res/values/strings.xml",
+      "component": "voice-companion",
+      "bytes": 75,
+      "sha256": "8e1100b32bdbe4ee61d6d2a9ac11ccc105421da0908a97a43a68025de052fbea"
+    },
+    {
+      "file": "mobile/android/app/src/main/res/values/styles.xml",
+      "component": "voice-companion",
+      "bytes": 665,
+      "sha256": "0da03b6f1bcfbf47f3e8d77920f1d43391612f2a27f26ffffeb5682869f859a6"
+    },
+    {
+      "file": "mobile/android/app/src/main/res/xml/data_extraction_rules.xml",
+      "component": "voice-companion",
+      "bytes": 630,
+      "sha256": "eda9dddce1e895de1efd716fe75e244187bf8f91a3bb7444c6ea1731e51c74a8"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/AppSettingsValidationTest.java",
+      "component": "voice-companion",
+      "bytes": 2966,
+      "sha256": "dc2c7238b18ac4cef209e8111fcd660a9e520561b69ae0d115c62169cfe1ffff"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/AutomaticCaptureFlowTest.java",
+      "component": "voice-companion",
+      "bytes": 3261,
+      "sha256": "ab58ee33f00d98a430d1ee549c8fd53cc3e70356be1c7630a463db879820d354"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/BluetoothBridgeClientTest.java",
+      "component": "voice-companion",
+      "bytes": 1723,
+      "sha256": "fda964cb89b33794b139e228276eb5b2b5a14bdcf9df56956e0957042fc4cd55"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/BluetoothRecoveryTest.java",
+      "component": "voice-companion",
+      "bytes": 2225,
+      "sha256": "f0ff5dda0b65b6225cc08d28f03cfb12ae43538b7fc552ea671c08dfc48ca839"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/BridgeClientTest.java",
+      "component": "voice-companion",
+      "bytes": 856,
+      "sha256": "97cf020df3ace44f5c207864701568687e167cd272eb857de5aa49c6b3bf9be6"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/BridgeClientUploadTest.java",
+      "component": "voice-companion",
+      "bytes": 10751,
+      "sha256": "712e51d0e359dd0115cd922f83b88c41f8196afa2fcfc2ce0c07b3190930374c"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/BridgeFramesTest.java",
+      "component": "voice-companion",
+      "bytes": 4900,
+      "sha256": "25dce81ff1e834e81f3c38eeb68f49b96b31656f723039adf0a2ef1096f68ef7"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/BridgeHealthTest.java",
+      "component": "voice-companion",
+      "bytes": 3790,
+      "sha256": "53f68b91e775e29564fa8d8216c1fdf16a9148b5a80fd791afd2fcdc4ce98129"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/BridgeIdentityTest.java",
+      "component": "voice-companion",
+      "bytes": 6568,
+      "sha256": "af6ccbd2cf0442a39278b2b7e9d8cd5e097a02bc447d28240585fc13beb3b800"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/CaptureInputStateTest.java",
+      "component": "voice-companion",
+      "bytes": 3460,
+      "sha256": "7e64ced1b4a280da444f6ca000ddbfd4cc50ab5e8edfc62c1604c6a2c3017688"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/CaptureRecoveryTest.java",
+      "component": "voice-companion",
+      "bytes": 2782,
+      "sha256": "d133723f12202af7be8670861d880bfc1493fabb78a5bc79737f70bf32f35451"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/CaptureSettingsTest.java",
+      "component": "voice-companion",
+      "bytes": 6546,
+      "sha256": "9531e9c8598d5e5e9f1cce9580c348dc4557b00b525344e4daf23dae49c9f43b"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/EndpointCandidatesTest.java",
+      "component": "voice-companion",
+      "bytes": 2916,
+      "sha256": "5ed1b6f8f8a9cb3743add4023d5c22e1c1337381e2f539f57d9f8dabae05a992"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/GattOperationsTest.java",
+      "component": "voice-companion",
+      "bytes": 2450,
+      "sha256": "40d50be5247353b3db114d90b15937ca12cf19d6e8e693a52436038b132ff8a5"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/LosslessUploadTest.java",
+      "component": "voice-companion",
+      "bytes": 5195,
+      "sha256": "59fa56193c756dab93e2bcd09819037ece26370f78c4b0e7f209e1bf22f36695"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/PairingFixture.java",
+      "component": "voice-companion",
+      "bytes": 757,
+      "sha256": "496f4958bfb8afc6f14f045371edcfa58424b4b327f57b76b28a0973b18b553a"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/PcmRecorderGateTest.java",
+      "component": "voice-companion",
+      "bytes": 2945,
+      "sha256": "037db15aafb0c8b3673bd3f1acc7276b78f9502ad4a40cd91717bdc23e90452d"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/PinnedBridgeTlsTest.java",
+      "component": "voice-companion",
+      "bytes": 4439,
+      "sha256": "2e26dc31a8cf57b3c632f2ea206c246e9c8fd557854793f99cb93b4e998dcb1f"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/ProximityPolicyTest.java",
+      "component": "voice-companion",
+      "bytes": 10774,
+      "sha256": "b2610e7beea1282d81bc6f68a8a9b056fbc99943b204f6c06111c382a9fb473f"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/ReceiptValidatorTest.java",
+      "component": "voice-companion",
+      "bytes": 1524,
+      "sha256": "bc474aac75176ee96bebc04074421680274bfd84006c643140c6a45fa4f087f9"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/RecordingAudioCleanupTest.java",
+      "component": "voice-companion",
+      "bytes": 2800,
+      "sha256": "637b16f49029cce542b030647a9e03db7b4dc1d3c93355e5628884dc5bc2a705"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/RecordingCompletionTest.java",
+      "component": "voice-companion",
+      "bytes": 3747,
+      "sha256": "1a7bfbe9d650b5c80827fc7a64fbd129720f06ad5f4efd9bfb8d7b9d9082bebc"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/RecordingStorePolicyTest.java",
+      "component": "voice-companion",
+      "bytes": 2264,
+      "sha256": "f1994b323421dfc63a6e37e9e374000987047d7856de8925278f3670b460d031"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/RetryBackoffTest.java",
+      "component": "voice-companion",
+      "bytes": 734,
+      "sha256": "8646a47b098bed708d349da38a45c4d8a03297ff34c98f1ffeb13d2a1282f223"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/RfcommSessionTest.java",
+      "component": "voice-companion",
+      "bytes": 10836,
+      "sha256": "dadfaa716f351fcb521808adbd87b22318d4ee65c054d61abb7537121b21c99f"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/SyncScheduleTest.java",
+      "component": "voice-companion",
+      "bytes": 2238,
+      "sha256": "ffbbac301d62a33e55f911e2024d8447b3bed19ab19db2ff028159331b1df815"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/TlsEngineStreamTest.java",
+      "component": "voice-companion",
+      "bytes": 12532,
+      "sha256": "d0895c6891263c3832cee6144cffbf744eb6f265e223f425255aa2a675897d97"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/TransportGuardTest.java",
+      "component": "voice-companion",
+      "bytes": 3903,
+      "sha256": "401241f8200f4f29e2e784f3e38992fa7830ce3b9891b85c829f23cf23d8fbb8"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/TransportPolicyTest.java",
+      "component": "voice-companion",
+      "bytes": 7911,
+      "sha256": "bf00f9a6999ab91eda10f52f758aef8e7d755d558fdac8b16d563b9f38c152f8"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/UploadFixture.java",
+      "component": "voice-companion",
+      "bytes": 1162,
+      "sha256": "2da09ebe1ef3a73749d00ad62bdbf877b5b343e4047f952656d515ca471a3f78"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/core/WavFileTest.java",
+      "component": "voice-companion",
+      "bytes": 4146,
+      "sha256": "4692760f04e6419096f878d182e994afc64fdc98ca54eb3bd4bddedef5afc9e7"
+    },
+    {
+      "file": "mobile/android/app/src/test/java/com/shadowagent/voice/ui/RecordingPresentationTest.java",
+      "component": "voice-companion",
+      "bytes": 1603,
+      "sha256": "1628edc0085343f6ab7f8d883bf038ca0a49f2a1878a8c85dddad7341b389450"
+    },
+    {
+      "file": "mobile/android/app/src/test/resources/tls/cn-only.pem",
+      "component": "voice-companion",
+      "bytes": 1158,
+      "sha256": "9301f52a7fa68db43846a6982ef41d4e3ca7be95d55dcfd54b73520490935333"
+    },
+    {
+      "file": "mobile/android/app/src/test/resources/tls/expired.pem",
+      "component": "voice-companion",
+      "bytes": 1240,
+      "sha256": "4e9a5dbb4e52ab9301984faffeb8943e2e59d46470f320bf0a288acc19c5ebfc"
+    },
+    {
+      "file": "mobile/android/app/src/test/resources/tls/future.pem",
+      "component": "voice-companion",
+      "bytes": 1244,
+      "sha256": "76eea2b6f9c5560a9d43fb3a065e27853417e4416d718e4b2c03b965ea13d821"
+    },
+    {
+      "file": "mobile/android/app/src/test/resources/tls/valid.pem",
+      "component": "voice-companion",
+      "bytes": 1240,
+      "sha256": "4a6af9c3cfb304d868a9ad01ea8909c0a14717c2244ac18cc7e4d6fa40f42732"
+    },
+    {
+      "file": "mobile/android/app/src/test/resources/tls/wildcard.pem",
+      "component": "voice-companion",
+      "bytes": 1188,
+      "sha256": "3d0f9d25465beaf73145a502ff7de3bcdab66db3fef6d5810070ddbd1a6602b1"
+    },
+    {
+      "file": "mobile/android/app/src/test/resources/tls/wrong-san.pem",
+      "component": "voice-companion",
+      "bytes": 1208,
+      "sha256": "38383c0c46ab8640d405ec59a7dc194fe4c3662849e8ebe31bfb8cce8d8cde6e"
+    },
+    {
+      "file": "mobile/android/build.gradle",
+      "component": "voice-companion",
+      "bytes": 74,
+      "sha256": "6844d442e0ae87ec0b784c8afe5598878784c4fa41aced1e9389a9b3bfb25666"
+    },
+    {
+      "file": "mobile/android/gradle.properties",
+      "component": "voice-companion",
+      "bytes": 159,
+      "sha256": "90ad3138aa2675e475dbccdb38c2619602eb9610162fc66b13ef335c8a6be940"
+    },
+    {
+      "file": "mobile/android/README.md",
+      "component": "distribution",
+      "bytes": 104,
+      "sha256": "8c900f7bcf916772946895413f35a854ed26d1fd3a0f279b7a4f40fe0c4449fc"
+    },
+    {
+      "file": "mobile/android/settings.gradle",
+      "component": "voice-companion",
+      "bytes": 283,
+      "sha256": "82816b34ba85f1dc4c2f892a2b20b14e4712aa03a65389c540f9061e34228d80"
+    },
+    {
+      "file": "openclaw/shadow-policy/index.mjs",
+      "component": "core",
+      "bytes": 956,
+      "sha256": "7a44d6622b872d415d769ef8c8058e9902140c9cb0637c7d57a57a4df6b42b89"
+    },
+    {
+      "file": "openclaw/shadow-policy/openclaw.plugin.json",
+      "component": "core",
+      "bytes": 745,
+      "sha256": "af7fd4d8797943e3f34a65f17ed68ba01c65d42f644f5e01335e1b4c1f2d93f7"
+    },
+    {
+      "file": "openclaw/shadow-policy/package.json",
+      "component": "core",
+      "bytes": 147,
+      "sha256": "43c1a381b8b83bb6c694ae2012eb87e8a54844543ad837978878b48b7bb3d922"
+    },
+    {
+      "file": "openclaw/shadow-policy/policy.mjs",
+      "component": "core",
+      "bytes": 5293,
+      "sha256": "a4a4e2e6a4c8a24ff44005bba8b9827557409485f42d06e80b93680246e6728a"
+    },
+    {
+      "file": "openclaw/shadow-policy/task-access.mjs",
+      "component": "core",
+      "bytes": 9217,
+      "sha256": "892071d50186ae6b0927ba6e5999d4b861c9794cb431ae2605d582c2f06f74c1"
+    },
+    {
+      "file": "openclaw/shadow-work/openclaw.plugin.json",
+      "component": "core",
+      "bytes": 2206,
+      "sha256": "0df789945483b0a45ba84a4106e0dc0d1040b5ef7fb74c999191148737a88cc9"
+    },
+    {
+      "file": "openclaw/shadow-work/package.json",
+      "component": "core",
+      "bytes": 466,
+      "sha256": "9e74dccd4c89cb774876e23aaa09cbe2d610c2d17d767a99e7d26388e6df9752"
+    },
+    {
+      "file": "openclaw/shadow-work/README.md",
+      "component": "core",
+      "bytes": 8520,
+      "sha256": "f1687c721f443d167da2872a174a4fa27d48031e3a52d1581b02205cda319b9a"
+    },
+    {
+      "file": "openclaw/shadow-work/src/context-engine.js",
+      "component": "core",
+      "bytes": 5731,
+      "sha256": "2ffef6571e05207cefef57aea10a6029a077deca9ff1b757212696d35e989aa8"
+    },
+    {
+      "file": "openclaw/shadow-work/src/context-engine.test.mjs",
+      "component": "core",
+      "bytes": 4054,
+      "sha256": "9b83d4e3d53df9e1fef97ba263feed42e2d18ac24e258f103c2279511bc0e8d3"
+    },
+    {
+      "file": "openclaw/shadow-work/src/database-worker-client.js",
+      "component": "core",
+      "bytes": 1922,
+      "sha256": "4ab3ad52a75dc00abd2c67c47b510239c0f07803cbb19bcff8d65f0699ac9425"
+    },
+    {
+      "file": "openclaw/shadow-work/src/database-worker.js",
+      "component": "core",
+      "bytes": 1613,
+      "sha256": "09a8c9e42f4993b87eaaa5812ee5f731ed6402d070dbaad31b9dfc4f6f93a898"
+    },
+    {
+      "file": "openclaw/shadow-work/src/epistemic.js",
+      "component": "core",
+      "bytes": 63572,
+      "sha256": "9724c3a4a7408087abbc86409dbb31b5c7b3523e5bcc6d68b66b23cb194e0aff"
+    },
+    {
+      "file": "openclaw/shadow-work/src/epistemic.test.mjs",
+      "component": "core",
+      "bytes": 36876,
+      "sha256": "3f6cdfef8fe933d3dca7ae132b8649bb40a2463c029dc8644aa1a4546a03ca9a"
+    },
+    {
+      "file": "openclaw/shadow-work/src/index.js",
+      "component": "core",
+      "bytes": 208618,
+      "sha256": "ccf588cb4abe723fbd8d9301edaaf1da73e5297a12246ebf5f13dcac8d79bd9f"
+    },
+    {
+      "file": "openclaw/shadow-work/src/index.test.mjs",
+      "component": "core",
+      "bytes": 109220,
+      "sha256": "2f3729bca8e2a0f6911eef401eaca8d8a74d4a570fce2190507a01ac4cef2e27"
+    },
+    {
+      "file": "openclaw/shadow-work/src/native-continuation.mjs",
+      "component": "core",
+      "bytes": 10272,
+      "sha256": "378a8db2cf07818b69c6c2b32e140723c4fb765c1e9c7cc5e00f1a4518330ceb"
+    },
+    {
+      "file": "openclaw/shadow-work/src/native-session-store.mjs",
+      "component": "core",
+      "bytes": 2323,
+      "sha256": "16fb9ae0c5e9e510f610d0e0a570acbb42bfa0d1345ecbc079bc7a0c41f90106"
+    },
+    {
+      "file": "openclaw/shadow-work/src/routing.js",
+      "component": "core",
+      "bytes": 36419,
+      "sha256": "215a4105e4439a144c6d52f8abdaac3436cf7f013c8ae17e4a3346b341abf23a"
+    },
+    {
+      "file": "openclaw/shadow-work/src/task-checkpoint-guard.mjs",
+      "component": "core",
+      "bytes": 7259,
+      "sha256": "5174465a287855ee18cb2074be1f3b5515e5646b61f9ab6eab5b6932a5342fb3"
+    },
+    {
+      "file": "openclaw/shadow-work/src/test-fixture.mjs",
+      "component": "core",
+      "bytes": 234,
+      "sha256": "794ea1d21c5e3ab0fe604f704019b0edc594836472f139a83eb09e3abe802cee"
+    },
+    {
+      "file": "openclaw/shadow-work/src/tool-parameters.test.mjs",
+      "component": "core",
+      "bytes": 16589,
+      "sha256": "e3565b382fa4f89b695d0c511201a4912800ee142225e7b82470f3604819a08e"
+    },
+    {
+      "file": "openclaw/shadow-work/tsconfig.json",
+      "component": "core",
+      "bytes": 247,
+      "sha256": "0743ab64f72dbe3c496094ebc796717ee71e61e082c93dd7f740931a18ba5c6a"
+    },
+    {
+      "file": "openclaw/shadow-work/vitest.config.ts",
+      "component": "core",
+      "bytes": 156,
+      "sha256": "4f49d01f0120eff8b5bac0c9abc9bf6263c8da9834d288ff884c1e397436209f"
+    },
+    {
+      "file": "openclaw/workspace-template/AGENTS.md",
+      "component": "core",
+      "bytes": 17637,
+      "sha256": "a5af95687dc03321264076d8b591c9f74f18fbe5a1a37120589a368068bfca86"
+    },
+    {
+      "file": "openclaw/workspace-template/COLLABORATION.md",
+      "component": "core",
+      "bytes": 1100,
+      "sha256": "c0c507c3b6cb614ba7fb76f71ed58a7bb5500dc513a3a30ed84ea1e9f25bf092"
+    },
+    {
+      "file": "openclaw/workspace-template/HEARTBEAT.md",
+      "component": "core",
+      "bytes": 9177,
+      "sha256": "22fa198c7703200e314c6b699fb17ecd60ddc55b7fe9775f6854574c67746bc4"
+    },
+    {
+      "file": "openclaw/workspace-template/RUNTIME_AGENTS.md",
+      "component": "core",
+      "bytes": 407,
+      "sha256": "9fb5d19c79b6bbf95d50d5bbd61b2f3f59af9e463148c87cf36518b0d75acd8a"
+    },
+    {
+      "file": "openclaw/workspace-template/skills/capability-growth/SKILL.md",
+      "component": "core",
+      "bytes": 3468,
+      "sha256": "adfae798dce0f77e571037eb661cb4f009af37ccc9b77fc80af98be6b5640a14"
+    },
+    {
+      "file": "openclaw/workspace-template/skills/task-progression/SKILL.md",
+      "component": "core",
+      "bytes": 4242,
+      "sha256": "03946c325dc7a3ec64ca88e5b52b35fcfb4e1338b5a365777be122556590193f"
+    },
+    {
+      "file": "openclaw/workspace-template/TOOLS.md",
+      "component": "core",
+      "bytes": 5303,
+      "sha256": "e8cc50857474cb1cd53edba4dee3c52ac949d6f87dec755db828ed535a34a641"
+    },
+    {
+      "file": "package-lock.json",
+      "component": "core",
+      "bytes": 13776,
+      "sha256": "206f2d4ba76ee32b2e3caa420956964ce3c76eae74fbfe58dcc8bc6349adc229"
+    },
+    {
+      "file": "package.json",
+      "component": "core",
+      "bytes": 9449,
+      "sha256": "d916f2dd81ccfd7b9a6637630d08a2283c7d05a2dac1867a1260a508a8e11e3d"
+    },
+    {
+      "file": "README.md",
+      "component": "distribution",
+      "bytes": 18205,
+      "sha256": "95e50bffa62b9c98750b93da343e7bc7c3dff0cc39fea7454c653356d6fc1ede"
+    },
+    {
+      "file": "scripts/analyze-feishu-conversation-evaluation.mjs",
+      "component": "core",
+      "bytes": 20632,
+      "sha256": "2868d65c57943f504d4174c2a0b3f04e42fbd552d75bacfb5dd4719a15a24825"
+    },
+    {
+      "file": "scripts/apply-codex-route-context.mjs",
+      "component": "core",
+      "bytes": 3653,
+      "sha256": "3991094ab91447e9c1452afbb4e9d2484d996c74f4fa24b62e402ad73656cdb6"
+    },
+    {
+      "file": "scripts/apply-codex-session-read-boundary.mjs",
+      "component": "core",
+      "bytes": 3255,
+      "sha256": "e55943582c79f427db528a0f936d92ed7a61547fcd585501c17a5554ceaee709"
+    },
+    {
+      "file": "scripts/apply-codex-shell-alias.mjs",
+      "component": "core",
+      "bytes": 2830,
+      "sha256": "fce16acdc2ecda7efc1b87eee99f51e6f69bdd1b1dc040c802417dfea71c8a94"
+    },
+    {
+      "file": "scripts/apply-openclaw-runtime-profile.mjs",
+      "component": "core",
+      "bytes": 8054,
+      "sha256": "344dc162bcda6a06f6f04b0ff9c1bb1214fda646750039595b5bcb97bb252120"
+    },
+    {
+      "file": "scripts/apply-run-wait-presence.mjs",
+      "component": "core",
+      "bytes": 2126,
+      "sha256": "8e182e86734d905a735f678d827da05ed58cd073764496eae1f4e7413a464ef7"
+    },
+    {
+      "file": "scripts/apply-shadow-policy-boundary.mjs",
+      "component": "core",
+      "bytes": 4415,
+      "sha256": "4436af16cd02cdb0fac10e19e2f94c526e6c3f919b189c162a25dc028d12db79"
+    },
+    {
+      "file": "scripts/archive-migrated-workboard-v2.mjs",
+      "component": "core",
+      "bytes": 2571,
+      "sha256": "fca1a03db7450a729d7f0622a2696fc2bd963b2ebc18d4f2682a2620339672fb"
+    },
+    {
+      "file": "scripts/audit-feishu-evaluation-dataset.mjs",
+      "component": "core",
+      "bytes": 11875,
+      "sha256": "8a7ae53f609ad8bacc0dcf62bbcce86b609e2c741c2f2de97f4aadc02aad27f0"
+    },
+    {
+      "file": "scripts/audit-knowledge-quality.mjs",
+      "component": "core",
+      "bytes": 24284,
+      "sha256": "478e5405de8268696403434520eca1bc6a1a3b6de73b2f3bf68b28182b996dec"
+    },
+    {
+      "file": "scripts/audit-voice-history.mjs",
+      "component": "core",
+      "bytes": 3974,
+      "sha256": "4be570a6a021c5399c229a03c517de72d634c7b9da480285ce1d90adb022a19b"
+    },
+    {
+      "file": "scripts/backup-runtime-state.mjs",
+      "component": "core",
+      "bytes": 4231,
+      "sha256": "28220364c47ab2e8e297195117868619531f996595707324eb6d5d8554a70036"
+    },
+    {
+      "file": "scripts/backup-source.ps1",
+      "component": "core",
+      "bytes": 2127,
+      "sha256": "2071a7c4491b2a2e252eb7e061502f2b98be2090bd487397c244724f63908304"
+    },
+    {
+      "file": "scripts/benchmark-dynamic-tool-loading.mjs",
+      "component": "core",
+      "bytes": 9306,
+      "sha256": "25fe132c7210423601085be09a9659be0125cf54bd19f3a120f72864ec2626f0"
+    },
+    {
+      "file": "scripts/bootstrap-work-focus.mjs",
+      "component": "core",
+      "bytes": 237,
+      "sha256": "b85ed45778eb4af7714262022a28a60582cfc52f05549513a41ba6267fb772fa"
+    },
+    {
+      "file": "scripts/build-feishu-evaluation-dataset.mjs",
+      "component": "core",
+      "bytes": 3334,
+      "sha256": "390bf891769777b4c49b2572339bec872a64583884dbf7d983ad1ba2766efe90"
+    },
+    {
+      "file": "scripts/build-feishu-transport-simulations.mjs",
+      "component": "core",
+      "bytes": 5759,
+      "sha256": "4558d2d3255219cd063f10f135ff8ea545871abc46c095554f473024f8b7713c"
+    },
+    {
+      "file": "scripts/build-team-cognitive-profile.mjs",
+      "component": "core",
+      "bytes": 1979,
+      "sha256": "f54d1d0a4810321d67bbfd3740d03f2e726f6c5a108eefbf71758ddab06b9562"
+    },
+    {
+      "file": "scripts/build-voice-android.ps1",
+      "component": "voice-companion",
+      "bytes": 1050,
+      "sha256": "63288ee3e56432213414d7822c1e7ca448353c06d9fb57e04affcfcadb1094b8"
+    },
+    {
+      "file": "scripts/capture-feishu-conversation-evaluation.mjs",
+      "component": "core",
+      "bytes": 4812,
+      "sha256": "d63f454bc92c412b04df5111ebad29d5778def4bfac7543df3b97a96e0cd8052"
+    },
+    {
+      "file": "scripts/capture-feishu-evaluation-dataset.mjs",
+      "component": "core",
+      "bytes": 6661,
+      "sha256": "d2973323ab2f6c7f4a488a305e0a6e7ade83039aabad96bb5a1beda8ac4c515e"
+    },
+    {
+      "file": "scripts/cleanup-context-changes-v2.mjs",
+      "component": "core",
+      "bytes": 2303,
+      "sha256": "734508cb1fc0ff70271687dd1fb630b9437489dbae8af50d6131bbd5047ddb3a"
+    },
+    {
+      "file": "scripts/create-shadow-reminder.mjs",
+      "component": "core",
+      "bytes": 1191,
+      "sha256": "ace82adaa24f5f7df9ee9d385b7bebbad9cb00e18f3505813ce41e34baa74a0b"
+    },
+    {
+      "file": "scripts/cutover-canonical-source-storage.mjs",
+      "component": "core",
+      "bytes": 4137,
+      "sha256": "396a3f5896eadfc1e03b8fd0aff712d79cd09267bd661e91988ea9c7d42bc52e"
+    },
+    {
+      "file": "scripts/cutover-task-handling-state.mjs",
+      "component": "core",
+      "bytes": 5617,
+      "sha256": "0f0f9e430ab76daa9fe191133ee316bc9aad3a7d74669a86d0dccc1243e0e5e4"
+    },
+    {
+      "file": "scripts/cutover-workboard-v2.mjs",
+      "component": "core",
+      "bytes": 2460,
+      "sha256": "a867fb393d627d476bf126a4d4c0e5d90a7d83f633dec629ff460f6657b651b9"
+    },
+    {
+      "file": "scripts/detach-shared-agent-codex-history.mjs",
+      "component": "core",
+      "bytes": 19827,
+      "sha256": "a4df7338e4656971836363976d57cbfdc8af4fb1a6f9bfe407c040bef81d6e57"
+    },
+    {
+      "file": "scripts/ensure-openclaw-codex-runtime.ps1",
+      "component": "core",
+      "bytes": 2354,
+      "sha256": "20c4d1e1c0334c1bad4ef7b8cc2108f27014c144749e6a1055eb9a93aa7bb165"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/fixture-tools/index.js",
+      "component": "core",
+      "bytes": 5065,
+      "sha256": "053bca97906bb22c53dab2e4e279e3a5a11b218e02b4746d510cd9b36dd55b1a"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/fixture-tools/openclaw.plugin.json",
+      "component": "core",
+      "bytes": 602,
+      "sha256": "205bd67422dd59ad1945a9e67fcceddf69495feef09dbb1c20884f8b337752d0"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/fixture-tools/package.json",
+      "component": "core",
+      "bytes": 138,
+      "sha256": "537523a5f50ce96a76efa2f1d29c5e0e90b19470fb6faadff410b99cd9d49618"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/prompt-policy/fixtures/openclaw.config.json",
+      "component": "core",
+      "bytes": 1060,
+      "sha256": "b018ecb4646b93e69fc140b793f590c43b76702a333fbcabb6a40fc36294f409"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/prompt-policy/fixtures/prompt-cases.json",
+      "component": "core",
+      "bytes": 306,
+      "sha256": "17c3a0ce7a1736d89fe1092caad1e80386282ca383d78d05b580c75c1ff62a87"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/prompt-policy/index.mjs",
+      "component": "core",
+      "bytes": 11184,
+      "sha256": "db9e4c8d67c24e563602a0a5845c513fe56fb83722e4301cc8691b4e100aaaa0"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/prompt-policy/openclaw.plugin.json",
+      "component": "core",
+      "bytes": 1181,
+      "sha256": "a12c5a14cf2326a4bb3c37c7e1286db63ea33ebdfb0929d0bf1bb4bf13233b67"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/prompt-policy/package.json",
+      "component": "core",
+      "bytes": 172,
+      "sha256": "c37301552af7e363bcd1ca90065d6e2552881a576ddb0bbc14e0febef27e59a7"
+    },
+    {
+      "file": "scripts/experiments/runtime-boundary/summarize.mjs",
+      "component": "core",
+      "bytes": 34097,
+      "sha256": "2a3b72adc560f0151eb4acbaff45a35baeeda7193090d2e65556fb380a8e3f26"
+    },
+    {
+      "file": "scripts/feishu-background-auth.mjs",
+      "component": "core",
+      "bytes": 4452,
+      "sha256": "4669fbd9fae85dad33dfaf8fdbcbfde79ab47be2411ebaa080c9d95bf2f0a1a7"
+    },
+    {
+      "file": "scripts/feishu-background-auth.ps1",
+      "component": "core",
+      "bytes": 3847,
+      "sha256": "5f997753bd73c5206046180f52ce1c312719005476ee01dfb8c6343cd2ef525a"
+    },
+    {
+      "file": "scripts/fire-shadow-reminder.mjs",
+      "component": "core",
+      "bytes": 609,
+      "sha256": "e196b694191393ba1f0cc53aa09cdbb2ad3a8b285feaba6c46d8a9b78c689fad"
+    },
+    {
+      "file": "scripts/govern-knowledge-debt.mjs",
+      "component": "core",
+      "bytes": 4067,
+      "sha256": "a2ab3907a3c27a99e19b992814507f5351ad7df66496984d92068a2038ea8869"
+    },
+    {
+      "file": "scripts/import-cognitive-profile.mjs",
+      "component": "core",
+      "bytes": 1173,
+      "sha256": "e0aa1eea428a41b9400933c0023e7fe6897752201975bfbca7e2cf09086f6c3e"
+    },
+    {
+      "file": "scripts/import-voice-history.mjs",
+      "component": "core",
+      "bytes": 3155,
+      "sha256": "b9e2b21fda4bce8af94318d1e8cfd25ebea75bdf0b07e6455a04491aa3264805"
+    },
+    {
+      "file": "scripts/inspect-runtime-state.mjs",
+      "component": "core",
+      "bytes": 817,
+      "sha256": "ce3eea95e5aa583ea316aadbd6363fa02fec32abaad111d53002a6433fc459d7"
+    },
+    {
+      "file": "scripts/inspect-voice-history-state.mjs",
+      "component": "core",
+      "bytes": 1403,
+      "sha256": "395f4c2402099982087e8a463190597a7dccddfa0f9880c75e8c12f2a1da5389"
+    },
+    {
+      "file": "scripts/install-openclaw-poc-task.ps1",
+      "component": "core",
+      "bytes": 1641,
+      "sha256": "c3d12179d3223f2a64cca77a9a3f664d69b29495f554eb3afc42a9e117c3eea3"
+    },
+    {
+      "file": "scripts/install-scheduled-task.ps1",
+      "component": "core",
+      "bytes": 2834,
+      "sha256": "dfe1ec115a336b777288e2528b223c42e93af52c5a9315a0d4104fcafc03fddc"
+    },
+    {
+      "file": "scripts/install-shadow-context-plugin.ps1",
+      "component": "core",
+      "bytes": 1600,
+      "sha256": "14c3c4db4dc7ea55a4c768d28d196d80d78fc006a6f3f0793b70c05aec97e134"
+    },
+    {
+      "file": "scripts/kimi-code-executor.mjs",
+      "component": "core",
+      "bytes": 3086,
+      "sha256": "608bb6f760c3d3ee916493a286431e48360253aee51f1b0ae1077474dd1c3efd"
+    },
+    {
+      "file": "scripts/manage-mcp-capability.mjs",
+      "component": "core",
+      "bytes": 6482,
+      "sha256": "989c9a834480e186e2548c376085770c6cfe35905dc96c9561d0a9b1d8701942"
+    },
+    {
+      "file": "scripts/migrate-internal-review-reminders.mjs",
+      "component": "core",
+      "bytes": 3699,
+      "sha256": "7a5ed82558d5bfa5168596dedd8041b7bef6056bd5395cfbab054c8e4cb586f3"
+    },
+    {
+      "file": "scripts/migrate-knowledge-state-and-digests.mjs",
+      "component": "core",
+      "bytes": 11614,
+      "sha256": "5675689d1504e6585f0c84508e0f960944e1b5608b1cf47fc6fd61be11c2ca2c"
+    },
+    {
+      "file": "scripts/migrate-openclaw-2026.8.1.mjs",
+      "component": "core",
+      "bytes": 2274,
+      "sha256": "a05508a35fb9e88464524899ea2ffa16033ec26b58882c60ba7c515c335b4a33"
+    },
+    {
+      "file": "scripts/migrate-openclaw-to-shared-codex-auth.mjs",
+      "component": "core",
+      "bytes": 2769,
+      "sha256": "a816f73e5efafb4065f3b85a2ec2b6fc36d8331b699e54fbe3359f10a4ab562c"
+    },
+    {
+      "file": "scripts/migrate-task-owner-sessions.mjs",
+      "component": "core",
+      "bytes": 2363,
+      "sha256": "b797b2fa1371ce0e91f9af5db736e774b7bf9c1f37f4aebecbc19ae6ac1c047d"
+    },
+    {
+      "file": "scripts/migrate-user-profile.mjs",
+      "component": "core",
+      "bytes": 3914,
+      "sha256": "ef7aabfca023e7c36a1f8bd3a7c088f5c86fba612101663e225ceca7a70f4d57"
+    },
+    {
+      "file": "scripts/normalize-zentao-openapi.mjs",
+      "component": "core",
+      "bytes": 2647,
+      "sha256": "eb3cc5761eab73a2d48bd16fb551a9a18f128521cb36556d30e0ba1ee906b15e"
+    },
+    {
+      "file": "scripts/openclaw-command.mjs",
+      "component": "core",
+      "bytes": 1302,
+      "sha256": "b7c0fc9814928b70985a1ef35cd6e19b75aa6e7acf865da4cde8b2e9572ef739"
+    },
+    {
+      "file": "scripts/openclaw-gateway-lib.ps1",
+      "component": "core",
+      "bytes": 12652,
+      "sha256": "186d261a7971e70c96b7662ebe71f72ac6c76d05d5a960d63cad3365f3dce7a0"
+    },
+    {
+      "file": "scripts/openclaw-poc-auth.ps1",
+      "component": "core",
+      "bytes": 819,
+      "sha256": "91dd12ad211abb1887b5ad9b464f1902c94319e4af0849fb32fc72714c54ad28"
+    },
+    {
+      "file": "scripts/openclaw-poc-env.ps1",
+      "component": "core",
+      "bytes": 2544,
+      "sha256": "6b46f24d5a343a90a91b1e195c99c46aee42d0dbd862f7df0850afecccad0065"
+    },
+    {
+      "file": "scripts/prepare-voice-enrollment-preview.mjs",
+      "component": "core",
+      "bytes": 2047,
+      "sha256": "729847a958d2ef899fdd5a25768173f2e3edffad69c7fa38ceaad5d1f00e7716"
+    },
+    {
+      "file": "scripts/probe-openclaw-reconnect.mjs",
+      "component": "core",
+      "bytes": 1547,
+      "sha256": "eda4a15b909a34e1eeb8c5a3a5284f4a28bc1ba1a5fba7f1ca9659ba704566b3"
+    },
+    {
+      "file": "scripts/render-voice-mascot.mjs",
+      "component": "voice-companion",
+      "bytes": 2829,
+      "sha256": "9fd45031ca20a7f126902aab98e4c343b242b7a1776b18caadbd140cf24b389a"
+    },
+    {
+      "file": "scripts/repair-codex-thread-titles.mjs",
+      "component": "core",
+      "bytes": 4942,
+      "sha256": "cbd3c4ec6a3611f217abaadf88473c8a602637b0898d43b57045f13a555022f2"
+    },
+    {
+      "file": "scripts/repair-knowledge-entries.mjs",
+      "component": "core",
+      "bytes": 6997,
+      "sha256": "50840f6c7379206ff3fb3a1291235b46af6e83e7f5930425c1a6b5ec70fbde94"
+    },
+    {
+      "file": "scripts/report-controller-runtime.mjs",
+      "component": "core",
+      "bytes": 3683,
+      "sha256": "e84559dd1c84c4cf91f5cadfa8a5e8a554a03b4d040cbf8352c8575d0c054c76"
+    },
+    {
+      "file": "scripts/reprocess-voice-history.mjs",
+      "component": "core",
+      "bytes": 9288,
+      "sha256": "78118762036ae5bec2861ceaa2e599fa5bb9c2ad3f4bb24c672c993d7676b7fd"
+    },
+    {
+      "file": "scripts/run-feishu-conversation-evaluation.mjs",
+      "component": "core",
+      "bytes": 24356,
+      "sha256": "90bf6d9570ff31a0102a3614c95f9417083373cb90676461fce9451521216e41"
+    },
+    {
+      "file": "scripts/run-knowledge-delta-smoke.mjs",
+      "component": "core",
+      "bytes": 5513,
+      "sha256": "9ea802d4435553c809038e3c81d5eabe2e6333aceb58cad8170f0a3f11844f73"
+    },
+    {
+      "file": "scripts/run-knowledge-retrieval-evaluation.mjs",
+      "component": "core",
+      "bytes": 15821,
+      "sha256": "08f3b13cd30513cbed8ed3d545f32a39f3f8fa2e7c2f63f99de6f44434abbd72"
+    },
+    {
+      "file": "scripts/run-once.ps1",
+      "component": "core",
+      "bytes": 485,
+      "sha256": "84c5a0446665b827c64d5d4d0153691aaff6074979c9f3d6e6d5ca2727bddf21"
+    },
+    {
+      "file": "scripts/run-openclaw-poc.ps1",
+      "component": "core",
+      "bytes": 7692,
+      "sha256": "db760bbdedb62220267f08c69b8aad12b23de0b0ba0089668ac1781f4a350de4"
+    },
+    {
+      "file": "scripts/run-portable-node.ps1",
+      "component": "core",
+      "bytes": 319,
+      "sha256": "2f8c6cd6600914413943ab0320eabb1c377c4b7128b9b998898ae91cac432987"
+    },
+    {
+      "file": "scripts/score-feishu-dataset-evaluation.mjs",
+      "component": "core",
+      "bytes": 8965,
+      "sha256": "e8cc3237ba2d7697a1efbdd171c1b96bdc63ede3a521edc3ec1bfb6e2f27f32b"
+    },
+    {
+      "file": "scripts/set-openclaw-controller-mode.ps1",
+      "component": "core",
+      "bytes": 1169,
+      "sha256": "6c7bc5b159b4564c725604b67ed6e73d41d3a95f59d8c8f3acced818dbc005b7"
+    },
+    {
+      "file": "scripts/smoke-controller-runtime-metrics.mjs",
+      "component": "core",
+      "bytes": 2362,
+      "sha256": "e59128920bb6d6965011b29e6cdaa904c3a533f8f9bb64534c4d6ad94b2bf007"
+    },
+    {
+      "file": "scripts/smoke-isolated-codex-runtime.mjs",
+      "component": "core",
+      "bytes": 3096,
+      "sha256": "95d635322b7be62dd315599c64ef8cf0e20e79511041f34036add854d4ad59e3"
+    },
+    {
+      "file": "scripts/smoke-searchable-dynamic-tools.mjs",
+      "component": "core",
+      "bytes": 2986,
+      "sha256": "b9942b11b78ce1ab7ab43cf4e0b4cb36fa2a8a0e7820bec42ca103a7013ba7e1"
+    },
+    {
+      "file": "scripts/smoke-unified-direct-input.mjs",
+      "component": "core",
+      "bytes": 5799,
+      "sha256": "f66704743c98e56ad22cc95669615b33c6fefcf51365055ca9c806dc4f5e73aa"
+    },
+    {
+      "file": "scripts/start-context-service.ps1",
+      "component": "core",
+      "bytes": 1804,
+      "sha256": "a72f2084ccf13fe24cd4f5186a64e2643da0f1444a56c235d86497a89b206f3b"
+    },
+    {
+      "file": "scripts/start-openclaw-poc.ps1",
+      "component": "core",
+      "bytes": 2958,
+      "sha256": "1cb2d94796a2a8c47bc9e89c0e023b0fe894b981d4bb9638cd69dbb18d674f2b"
+    },
+    {
+      "file": "scripts/start-pc-voice.ps1",
+      "component": "core",
+      "bytes": 2438,
+      "sha256": "1699c21c0e3252bfc40fa3bb5d70d814b5b5736b5de645a2372f26bdf4da6337"
+    },
+    {
+      "file": "scripts/start-pet.ps1",
+      "component": "core",
+      "bytes": 1069,
+      "sha256": "f87e1797fed7d2dfd9ddc0716215e68567172f6fa85dc2c78ac94bab5dbc333d"
+    },
+    {
+      "file": "scripts/start-voice-bridge.ps1",
+      "component": "voice-companion",
+      "bytes": 3256,
+      "sha256": "8143acf1db7fdd08511ddf606316083180c0066c95426c92504501a6e9b3d62c"
+    },
+    {
+      "file": "scripts/status-scheduled-task.ps1",
+      "component": "core",
+      "bytes": 1115,
+      "sha256": "3d78b2df236aebe625b8ab813661ceb094ee4f9e94c31eba89f912b9851854e2"
+    },
+    {
+      "file": "scripts/stop-openclaw-poc.ps1",
+      "component": "core",
+      "bytes": 726,
+      "sha256": "e81716f1d0df076c45bbbaf7c9471f74d0d7e2c166f10da27d18897cb463d028"
+    },
+    {
+      "file": "scripts/stop-shadow-agent.ps1",
+      "component": "core",
+      "bytes": 5149,
+      "sha256": "5142abfab620a041095ee8babcd3b3bd72e231d91ad27b473bdef4902c83eeb6"
+    },
+    {
+      "file": "scripts/sync-shadow-tasks-to-workboard.mjs",
+      "component": "core",
+      "bytes": 4836,
+      "sha256": "16f1358b835eb0c426adc1e5f8c5b16195867779ff007c88b490d1668750c5f7"
+    },
+    {
+      "file": "scripts/test-hybrid-runtime.mjs",
+      "component": "core",
+      "bytes": 4850,
+      "sha256": "0c81e4e6d59850e45e52745759cbe0b384254c20476f4f9a5c6fd5cec6eb3d3e"
+    },
+    {
+      "file": "scripts/test-openclaw-gateway.mjs",
+      "component": "core",
+      "bytes": 11711,
+      "sha256": "1b8a5ad1a6fc2cc138292a7c0ea27d90536b76b9c430d0eb6609efb290875cd1"
+    },
+    {
+      "file": "scripts/test-openclaw-manual-bridge.mjs",
+      "component": "core",
+      "bytes": 1966,
+      "sha256": "c527004b84fd94a292e1ca454917cc789b4460daca43c1875f4bdc27c3d9a64b"
+    },
+    {
+      "file": "scripts/test-openclaw-poc.ps1",
+      "component": "core",
+      "bytes": 8340,
+      "sha256": "c4e1e47b4b506f95dd748e09debe0a91af4d37499d1dd1e00847d1741d6c2d46"
+    },
+    {
+      "file": "scripts/test-system-local-access.mjs",
+      "component": "core",
+      "bytes": 5667,
+      "sha256": "9104eba625289a1eff63396e0d40305ba80af409c384041fc3fb5533e472f3d5"
+    },
+    {
+      "file": "scripts/uninstall-scheduled-task.ps1",
+      "component": "core",
+      "bytes": 541,
+      "sha256": "06641903d5ddef25f6240eda3583ec7f78bb9cc661c66829d62f83129afcc443"
+    },
+    {
+      "file": "scripts/user-profile.mjs",
+      "component": "core",
+      "bytes": 2421,
+      "sha256": "f99f37f36d42ca36fec6c446aac12e1fd1a9d7aa33b5b28820ca043d36e98ca1"
+    },
+    {
+      "file": "scripts/verify-openclaw-codex-progression.mjs",
+      "component": "core",
+      "bytes": 3346,
+      "sha256": "27bccb63442a3ab7778bf2c11cf7b5ea2ea13abd11c6f2c1e1778b02cbaecc2e"
+    },
+    {
+      "file": "scripts/verify-owned-runtime.mjs",
+      "component": "core",
+      "bytes": 4510,
+      "sha256": "cd63cea5daaeee520b0d1bef82f21bd03912e175e3e070b59fc7501aae8cfd95"
+    },
+    {
+      "file": "scripts/verify-team-cognitive-profile.mjs",
+      "component": "core",
+      "bytes": 2526,
+      "sha256": "95f4f957c66800b84b33adf4f397c8c2395a5e53851812a652df890f197236ad"
+    },
+    {
+      "file": "scripts/verify-v4-migration.mjs",
+      "component": "core",
+      "bytes": 6951,
+      "sha256": "5bd5e1055c0ae2bf9d0a5cb9b5cc2a928c029a6ca80319e3ed6ae9c95f0b599c"
+    },
+    {
+      "file": "scripts/voice-input.mjs",
+      "component": "core",
+      "bytes": 10348,
+      "sha256": "0746211bd7b8d67dfcf4277d3a8aa2100480491fa97da6922ffe7a0b2c5e7f69"
+    },
+    {
+      "file": "scripts/voice-intake.mjs",
+      "component": "core",
+      "bytes": 3210,
+      "sha256": "b03cd45ae14b3223c8986706458995f4f0a621ea17aabc48d7fbe6e3b82be9cd"
+    },
+    {
+      "file": "scripts/voice-runtime/asr.py",
+      "component": "core",
+      "bytes": 41586,
+      "sha256": "e1d7395bae2375687fabc2184fb7b9360682098150089b9250df051f121a13fb"
+    },
+    {
+      "file": "scripts/voice-runtime/assets.lock.json",
+      "component": "core",
+      "bytes": 8099,
+      "sha256": "7fc5056525c1257b23a1036f28cb17ce562068567439abe3ded5943e84963039"
+    },
+    {
+      "file": "scripts/voice-runtime/audio_conditioning.py",
+      "component": "core",
+      "bytes": 1234,
+      "sha256": "4df40deccc395cc208f61fed2bf6911d762936431eeba994e85d187c4fbd47a5"
+    },
+    {
+      "file": "scripts/voice-runtime/compare_moss_probe.py",
+      "component": "core",
+      "bytes": 4801,
+      "sha256": "90a4fcb550c44e5839b974e5e1d924c72b96f5757b634804e27502d30171ea03"
+    },
+    {
+      "file": "scripts/voice-runtime/continuous_audio.py",
+      "component": "core",
+      "bytes": 6399,
+      "sha256": "2e56a9e14e05dc99b87ee2caa0c6215b6c41878592fce458e46d9e79fd027d0f"
+    },
+    {
+      "file": "scripts/voice-runtime/download_artifact.py",
+      "component": "core",
+      "bytes": 4138,
+      "sha256": "f387657e9b9f4d021d88ce9b634b0c60ab4561084c41079564439666e7265cae"
+    },
+    {
+      "file": "scripts/voice-runtime/fun_worker.py",
+      "component": "core",
+      "bytes": 8095,
+      "sha256": "572c11750d6a06165138d3308b18aafe7b4dceffa9138ca0e20136129f113025"
+    },
+    {
+      "file": "scripts/voice-runtime/history_worker.py",
+      "component": "core",
+      "bytes": 1861,
+      "sha256": "283dc4018783de421a814ce0d50c44b2db3f074b9da5c7228dde5725b7e82d2a"
+    },
+    {
+      "file": "scripts/voice-runtime/listen.py",
+      "component": "core",
+      "bytes": 36298,
+      "sha256": "33265b1bbdc76cb9dcd213edb5b191fd06947c884324768eba67da4f8ceb13eb"
+    },
+    {
+      "file": "scripts/voice-runtime/local_provider.py",
+      "component": "core",
+      "bytes": 13587,
+      "sha256": "aa0d99212c8d54bf7155d60f637fd330625acb691911b0553a6474fe62613d2f"
+    },
+    {
+      "file": "scripts/voice-runtime/moss_attention_probe.py",
+      "component": "core",
+      "bytes": 2435,
+      "sha256": "98ae460b4724bbc421cb35c7f6cd4fce172c1b886c3c683418baed06a8eded51"
+    },
+    {
+      "file": "scripts/voice-runtime/moss_deadline_worker.py",
+      "component": "core",
+      "bytes": 6715,
+      "sha256": "b131d3226a9801334b8773ae2181edaf7a5cb7f2f4946cd767345042b2ffb08f"
+    },
+    {
+      "file": "scripts/voice-runtime/moss_pipeline.py",
+      "component": "core",
+      "bytes": 11541,
+      "sha256": "3b1af6eb10b169b853456365b935db47792b0608436ea37b16e6666cc67e8b93"
+    },
+    {
+      "file": "scripts/voice-runtime/moss_runtime.py",
+      "component": "core",
+      "bytes": 1331,
+      "sha256": "2a1716f0b86c44b183f4c46feaf7ddb87a313959cd9137397a1cf1223d4c7e66"
+    },
+    {
+      "file": "scripts/voice-runtime/prepare_moss_probe.py",
+      "component": "core",
+      "bytes": 1625,
+      "sha256": "a226416f7c727165e19bce7347d587a2b4524b4b076dcd89ad7317520361f7d3"
+    },
+    {
+      "file": "scripts/voice-runtime/prepare_moss_queue.py",
+      "component": "core",
+      "bytes": 3810,
+      "sha256": "606e230a89a47451e98c08763051038379de8086a40e7629372470a9824ce498"
+    },
+    {
+      "file": "scripts/voice-runtime/prepare_moss_silence_diagnostic.py",
+      "component": "core",
+      "bytes": 5271,
+      "sha256": "78bab7c899c65619177441046aa804b1f0b4bd102fe8643a971cf032e367c0cc"
+    },
+    {
+      "file": "scripts/voice-runtime/probe_audio_deadline.py",
+      "component": "core",
+      "bytes": 5228,
+      "sha256": "5ae9082a8694edf50492fa8c98b1bd8b7cc70f5cd19f18df732ff5c4c2bd3979"
+    },
+    {
+      "file": "scripts/voice-runtime/probe_diarization.py",
+      "component": "core",
+      "bytes": 7224,
+      "sha256": "0436e870ff430ed760627264f1d6e68ba2086f157434a0b9281308b8447f428e"
+    },
+    {
+      "file": "scripts/voice-runtime/probe_fun_reference.py",
+      "component": "core",
+      "bytes": 2768,
+      "sha256": "2ddb4e7ae475e690446ac068295999a949af19e5000de63e4de934532b34f4a0"
+    },
+    {
+      "file": "scripts/voice-runtime/probe_gated_asr.py",
+      "component": "core",
+      "bytes": 3340,
+      "sha256": "89339c1399fcc2786f9d1a1f39226b2a689121d7af50877afa810793fa25d982"
+    },
+    {
+      "file": "scripts/voice-runtime/probe_moss_integration.py",
+      "component": "core",
+      "bytes": 5215,
+      "sha256": "8d92fd5afe3aba57b97583dd069ae1fd8bb9f249c4d2b842dbea0a7d2fe1935a"
+    },
+    {
+      "file": "scripts/voice-runtime/probe_moss_long_input.py",
+      "component": "core",
+      "bytes": 3069,
+      "sha256": "79faa34a8e5618d5f8c8190cb0844962a8053065c4466dea4188b0855618d8c4"
+    },
+    {
+      "file": "scripts/voice-runtime/probe_moss.py",
+      "component": "core",
+      "bytes": 11298,
+      "sha256": "912aa2d39c23f11ec943e5f7bc7572f7026ebc95e01c8ebc0d30834fe349390f"
+    },
+    {
+      "file": "scripts/voice-runtime/probe_speech_gating.py",
+      "component": "core",
+      "bytes": 3314,
+      "sha256": "9da432bac7135226f8278ed2df22dbe910df45983d189fafc080b44180373047"
+    },
+    {
+      "file": "scripts/voice-runtime/recognition_windows.py",
+      "component": "core",
+      "bytes": 3530,
+      "sha256": "291715bb0a54617de2f706197687cba6bfd01f886d37d5c15cf2780c5e6753d4"
+    },
+    {
+      "file": "scripts/voice-runtime/requirements-capture.txt",
+      "component": "voice-companion",
+      "bytes": 118,
+      "sha256": "7dde0957a81a150d5063c71bbf5b6f11677d8e364ddf39e284fc20fbfd6d85ab"
+    },
+    {
+      "file": "scripts/voice-runtime/requirements.txt",
+      "component": "core",
+      "bytes": 757,
+      "sha256": "9872f726bb4fb54b049c06a288bd4e475f28e1858908e7a67f2130faa0b7e795"
+    },
+    {
+      "file": "scripts/voice-runtime/runtime_common.py",
+      "component": "core",
+      "bytes": 4161,
+      "sha256": "da2c7bff6c82b943e17f38ba7418ae925238f9e24452256a01a9810fa3056778"
+    },
+    {
+      "file": "scripts/voice-runtime/setup_moss.py",
+      "component": "core",
+      "bytes": 2322,
+      "sha256": "18f2767a541a09d8dc1761785c74343a515e5519d52e5ed3ef849e2585392b10"
+    },
+    {
+      "file": "scripts/voice-runtime/setup-diarization.ps1",
+      "component": "core",
+      "bytes": 2644,
+      "sha256": "100c4516bc942722e832ab061670e8549238027fe576c475ec43f6818905a4d7"
+    },
+    {
+      "file": "scripts/voice-runtime/setup-fun.ps1",
+      "component": "core",
+      "bytes": 1958,
+      "sha256": "befb45c32c058c032b1324da001427b4b770c01ec5a5c6e3fa54167965725216"
+    },
+    {
+      "file": "scripts/voice-runtime/setup.py",
+      "component": "core",
+      "bytes": 8116,
+      "sha256": "7d353566bafb711941937581b3ae363d3fc7c9d026c26077c284e856b050288b"
+    },
+    {
+      "file": "scripts/voice-runtime/streaming_deadline.py",
+      "component": "core",
+      "bytes": 2461,
+      "sha256": "91a8f0abacb1bfef88f2e398ebc797b6c683f5a9525bb64c39752c4d6f028b64"
+    },
+    {
+      "file": "scripts/voice-runtime/transcribe.py",
+      "component": "core",
+      "bytes": 286,
+      "sha256": "e3c97a450d5683e56ad80d09dc8b9f830941f7aa150dc00906159f051e15b0f6"
+    },
+    {
+      "file": "scripts/voice-runtime/transcript_quality.py",
+      "component": "core",
+      "bytes": 634,
+      "sha256": "f7d9cc21dd49dc8594dc55faaeaea5961d037eaa95a7f8bd62ad0c9a68d37af0"
+    },
+    {
+      "file": "scripts/voice-runtime/verify_moss_intake.mjs",
+      "component": "core",
+      "bytes": 5511,
+      "sha256": "75fdb364e32c0a1d96c4d046e1971022bfd21288e6be1808cc309a68554989db"
+    },
+    {
+      "file": "skills/shadow-agent-patrol/agents/openai.yaml",
+      "component": "core",
+      "bytes": 294,
+      "sha256": "05ffdd6d76630875ec5719f1c6622fc2a7c0a466cea2d9d24e4521122b974d97"
+    },
+    {
+      "file": "skills/shadow-agent-patrol/references/policy.md",
+      "component": "core",
+      "bytes": 738,
+      "sha256": "0378c7d3bda6dc19c4b06b906ae813b8ad2450a9efe63b9dca7337f8e36b7253"
+    },
+    {
+      "file": "skills/shadow-agent-patrol/SKILL.md",
+      "component": "core",
+      "bytes": 2231,
+      "sha256": "c42b7d3779f6ee8b15a44f31c03c4c1c2c6c2b7f08a4a951439431c56fa2f7e2"
+    },
+    {
+      "file": "src/active-information.mjs",
+      "component": "core",
+      "bytes": 8758,
+      "sha256": "52d3dc69dd1bfbc2251700d1332d082c62c99d663eba6a41c8e9d6c38f7e8875"
+    },
+    {
+      "file": "src/agent-operations.mjs",
+      "component": "core",
+      "bytes": 7571,
+      "sha256": "83b97a8a01e44b6b30e2e61d32ee44e1cca75a55d8a84dec6f48ad169d162b35"
+    },
+    {
+      "file": "src/attention-scheduler.mjs",
+      "component": "core",
+      "bytes": 524,
+      "sha256": "8230f87eecad9820a94162b308f9ed898a4ef0798f03183868ad46b4f0793663"
+    },
+    {
+      "file": "src/attention-window.mjs",
+      "component": "core",
+      "bytes": 3342,
+      "sha256": "beaaaf2cfe1f7c92e341092745c00a1861b3198edab03df4917a80261578aac0"
+    },
+    {
+      "file": "src/cli.mjs",
+      "component": "core",
+      "bytes": 9071,
+      "sha256": "a04da7e89e101e6adc80eea427a028913f3ad7a5262430dad9177ebe74a5796f"
+    },
+    {
+      "file": "src/codex-client.mjs",
+      "component": "core",
+      "bytes": 3895,
+      "sha256": "20b0615e7a937c3b311fc66f892aeb8bdeff43015bd1e7c5e55bd6579eed2d16"
+    },
+    {
+      "file": "src/codex-thread-title.mjs",
+      "component": "core",
+      "bytes": 3868,
+      "sha256": "bc7044512f384d99faaef78ea67eeb69fc9356f598b686ca7dc7338cd8794f0e"
+    },
+    {
+      "file": "src/codex-title-maintenance.mjs",
+      "component": "core",
+      "bytes": 7896,
+      "sha256": "0e4fe4c1255ac9685cf886dcf83962a4b3d7681cb34e488df72c835a94b52cc5"
+    },
+    {
+      "file": "src/cognitive-profile.mjs",
+      "component": "core",
+      "bytes": 12716,
+      "sha256": "9d7e0e910bbac5180e3772cb4b777db7fa3f4d7fb88dcaf0e5b6b5a47e6bb8cb"
+    },
+    {
+      "file": "src/collectors/codex.mjs",
+      "component": "core",
+      "bytes": 14555,
+      "sha256": "a035ba0fdb143087f22ac70db5db934aff054bec8d3dc723b309c26af1f56bc9"
+    },
+    {
+      "file": "src/collectors/feishu.mjs",
+      "component": "core",
+      "bytes": 27308,
+      "sha256": "e6381c97d5b9fc1958c426eea4ddfef1f254d2fc9327d3ab4a0f3d59100e4d1c"
+    },
+    {
+      "file": "src/collectors/imports.mjs",
+      "component": "core",
+      "bytes": 3465,
+      "sha256": "dfd79da83f137607a9f82accca826eac12869ee04cd9ff20221284f8c2a7461a"
+    },
+    {
+      "file": "src/collectors/index.mjs",
+      "component": "core",
+      "bytes": 1461,
+      "sha256": "672333265c4427a7d6da106fee44d91b5dfcac2187a3c30ba40df48cd9340b0a"
+    },
+    {
+      "file": "src/collectors/projects.mjs",
+      "component": "core",
+      "bytes": 8682,
+      "sha256": "2e4e07f3fd5739a13fc2f7ae9e3698a4a6b31e90feded2dc8a69e83c37f70bec"
+    },
+    {
+      "file": "src/condition-watches.mjs",
+      "component": "core",
+      "bytes": 10933,
+      "sha256": "efb7537b4c57a9b008c47b8bbc3e100b29285887e670bc50151d2e6e64e3bf46"
+    },
+    {
+      "file": "src/config.mjs",
+      "component": "core",
+      "bytes": 3318,
+      "sha256": "b8db59cf425b2d7db7d27e76e0460f4cb70f1afbf8073d9311636b99b54c466d"
+    },
+    {
+      "file": "src/context-delivery.mjs",
+      "component": "core",
+      "bytes": 3972,
+      "sha256": "829d58d0bd27db347e163c773f4cb9bf007745c912c8517f1f9e57fc1f5ab166"
+    },
+    {
+      "file": "src/context-graph.mjs",
+      "component": "core",
+      "bytes": 48316,
+      "sha256": "a9a93e5e88c6a95bfd21fe843e17bd84190d4ff896fbcd8b2c783b5a0f5437cc"
+    },
+    {
+      "file": "src/controller-dispatch.mjs",
+      "component": "core",
+      "bytes": 796,
+      "sha256": "e5310e3b8f9f14951bcd705ece78525884369737eb08b1f0dc73dc731daf432a"
+    },
+    {
+      "file": "src/controller-outbox.mjs",
+      "component": "core",
+      "bytes": 11403,
+      "sha256": "c21abe5f87eb1b3ebe25afa7b9ccc947ad0a02fe7d558861fc8223ec4593123a"
+    },
+    {
+      "file": "src/daemon.mjs",
+      "component": "core",
+      "bytes": 35887,
+      "sha256": "a0837336a3a936499f19e8e11fd57b3ee0b097e359ce39a59f982c0bc74b93e6"
+    },
+    {
+      "file": "src/db.mjs",
+      "component": "core",
+      "bytes": 107662,
+      "sha256": "05e3c7ee676269cdb8cfb0fa4cdcac0af71efdaa8f9a0af0d693e59170313fc7"
+    },
+    {
+      "file": "src/digests.mjs",
+      "component": "core",
+      "bytes": 19633,
+      "sha256": "8bb6d0c8823bcd3428692988f6b042af92d4f51a089abbfabc893b5a9db1d922"
+    },
+    {
+      "file": "src/direct-input.mjs",
+      "component": "core",
+      "bytes": 8258,
+      "sha256": "c46a1a3960d4bb09410cc664e2de11b0e3564e17b6e8633a9585101894cdcc25"
+    },
+    {
+      "file": "src/execution-providers/kimi-code.mjs",
+      "component": "core",
+      "bytes": 14256,
+      "sha256": "6986029b4d9290ae6ae46d481a4f92998ba0c390429f2ae9ee71d34a37dddbac"
+    },
+    {
+      "file": "src/feishu-capabilities.mjs",
+      "component": "core",
+      "bytes": 4966,
+      "sha256": "d2998b76818687839b287589b04d9d5caade147a7fb31fb30f97c181426a97a9"
+    },
+    {
+      "file": "src/feishu-conversation-evaluation.mjs",
+      "component": "core",
+      "bytes": 4691,
+      "sha256": "91057f555afa8dbb379af28d2d6626152538033f0c65dd7f8b7a93197fe69ae2"
+    },
+    {
+      "file": "src/feishu-evaluation-dataset.mjs",
+      "component": "core",
+      "bytes": 17733,
+      "sha256": "f62bb5e46af69dbd5ad1c567718f8a240b7e37928815f98d3de14dcfa8d1d87d"
+    },
+    {
+      "file": "src/feishu-evaluation-result.mjs",
+      "component": "core",
+      "bytes": 2468,
+      "sha256": "081f881da52557844eb6542f8d83ddf797ecedda946817599043e37773ed0d11"
+    },
+    {
+      "file": "src/feishu-evaluation-score.mjs",
+      "component": "core",
+      "bytes": 2792,
+      "sha256": "12af0b867f3a15f4f3cb02931d67a280c47ff458f44844bf40beb70d0a53cbea"
+    },
+    {
+      "file": "src/feishu-message-identity.mjs",
+      "component": "core",
+      "bytes": 439,
+      "sha256": "1f580e1c4aca16c2d81115cc2b1814a3688d45eb4598cdb67ac609d2c3bcdbbb"
+    },
+    {
+      "file": "src/feishu-ownership.mjs",
+      "component": "core",
+      "bytes": 4714,
+      "sha256": "1dad1f6d7f54df7332abc572247544a2beb2a81e866368aa419e865cf01dea01"
+    },
+    {
+      "file": "src/feishu-transport-simulation.mjs",
+      "component": "core",
+      "bytes": 3584,
+      "sha256": "280785d2326a49c8695a28594435a116ac041d7fafa7d3cdf64a24abb6b5a290"
+    },
+    {
+      "file": "src/graph-maintenance.mjs",
+      "component": "core",
+      "bytes": 17836,
+      "sha256": "e9d226c3bb4b511a098a22c2e2d7e40ed8b484e48924331aee8b470a3589ceb3"
+    },
+    {
+      "file": "src/graph-model.mjs",
+      "component": "core",
+      "bytes": 64023,
+      "sha256": "81f196195751763e325e9629472f5a6924c5c0849e103ea7b1e928d8e92c7f18"
+    },
+    {
+      "file": "src/information-delivery.mjs",
+      "component": "core",
+      "bytes": 24802,
+      "sha256": "0373984c380a90db80c60fb8472f5bf9ee09d8f597c7a567bed05cedc21985d5"
+    },
+    {
+      "file": "src/knowledge-entries.mjs",
+      "component": "core",
+      "bytes": 10819,
+      "sha256": "3844a9e053a7361ceb7a2d19ddf174b9df4493bf6ec0e4c068463f7382ce6408"
+    },
+    {
+      "file": "src/knowledge-governance.mjs",
+      "component": "core",
+      "bytes": 14304,
+      "sha256": "5c54e24e2d772fb511b8fc18f712066b53b92de56e0d2a25f6b9efc5d5a7a65e"
+    },
+    {
+      "file": "src/knowledge-policy.mjs",
+      "component": "core",
+      "bytes": 3743,
+      "sha256": "1e254fe7e8cb8feec490a8e92239a12d1dbfa19c30bdb56d8d8e6f53be4919d5"
+    },
+    {
+      "file": "src/knowledge.mjs",
+      "component": "core",
+      "bytes": 3867,
+      "sha256": "1ae0c5f2cc145dfa7f6a3accad521d4052973d5ef169831f7cd71f3028e29afc"
+    },
+    {
+      "file": "src/logger.mjs",
+      "component": "core",
+      "bytes": 821,
+      "sha256": "30f1152232279609167aa2e65c67934259ce7a8d43f3201f779c51f59d31f42a"
+    },
+    {
+      "file": "src/openclaw/bounded-codex-session.mjs",
+      "component": "core",
+      "bytes": 4080,
+      "sha256": "1fd6a9377e0061c60a39f7e4fd3a6c76438d35f793a470ed02ce437a03f106e5"
+    },
+    {
+      "file": "src/openclaw/capability-release.mjs",
+      "component": "core",
+      "bytes": 8516,
+      "sha256": "1d15104c790d92be245318f7623f98570b69ad5e4fc5b3ca1e3d404ffcd0818a"
+    },
+    {
+      "file": "src/openclaw/cli.mjs",
+      "component": "core",
+      "bytes": 17665,
+      "sha256": "be42c8e7b599da84b86f8743e1354a78102900e7c31b7ce7488caf499596f453"
+    },
+    {
+      "file": "src/openclaw/codex-route-context.mjs",
+      "component": "core",
+      "bytes": 647,
+      "sha256": "c3797ec097d1cd4a5a5040a48b2e9b78fce549ba60116b3b8dcc478f8fb74fe9"
+    },
+    {
+      "file": "src/openclaw/gateway-client.mjs",
+      "component": "core",
+      "bytes": 9048,
+      "sha256": "153c0575808be7837025071155dcd203902b5cd3e28fcdd4cf2242e12ed717cf"
+    },
+    {
+      "file": "src/openclaw/native-terminal.mjs",
+      "component": "core",
+      "bytes": 4377,
+      "sha256": "32eea397fe56a4be51da6b3d08cea1efc9f6f1c045c779d62c2e5bc00883312a"
+    },
+    {
+      "file": "src/openclaw/reasoning-policy.mjs",
+      "component": "core",
+      "bytes": 758,
+      "sha256": "05c7ddb9b1b37b63b046c1cd354036e16e1d59538d2cecd84716edaae7d67f95"
+    },
+    {
+      "file": "src/openclaw/runtime-profile.mjs",
+      "component": "core",
+      "bytes": 7217,
+      "sha256": "7dcd01d30c989e9dbe15cd44a26719d16e95c6dc1e7478e5ee4464ee0516be8d"
+    },
+    {
+      "file": "src/openclaw/turn-metrics.mjs",
+      "component": "core",
+      "bytes": 5733,
+      "sha256": "a0e7055b090844fb4eaadfa345a24c6673485e8cebddc4d38e662f839136a106"
+    },
+    {
+      "file": "src/operation-delivery-feedback.mjs",
+      "component": "core",
+      "bytes": 1790,
+      "sha256": "1665b9da865a500d7868495cd69e42aa05069bb9d79bdb883726788bf48ce34b"
+    },
+    {
+      "file": "src/operation-delivery-view.mjs",
+      "component": "core",
+      "bytes": 2728,
+      "sha256": "06771ff1d5b83feead9e8c450540e715fcb5aed47a5e7260e02af26ef0216ffd"
+    },
+    {
+      "file": "src/outbound-messages.mjs",
+      "component": "core",
+      "bytes": 6760,
+      "sha256": "2e29bd041839ddab745c53c40b990b8b8f5d2049dc978b3c8b5b48c512f9c17e"
+    },
+    {
+      "file": "src/paths.mjs",
+      "component": "core",
+      "bytes": 314,
+      "sha256": "bafcc976140270cfc570110094e51d52cc4fc1fa15bd4403dda6eac1efcc8be9"
+    },
+    {
+      "file": "src/pet-conversations.mjs",
+      "component": "core",
+      "bytes": 7138,
+      "sha256": "08db978d6e04dac89b9791f0dc6aa9e12ce8665efb9d809b145187cf410cff21"
+    },
+    {
+      "file": "src/process.mjs",
+      "component": "core",
+      "bytes": 2098,
+      "sha256": "c3713cd0283943b9e82ad787a5cdc7d88eac75ed32e1b95e5702b40ed9ac4c1b"
+    },
+    {
+      "file": "src/realtime/feishu-events.mjs",
+      "component": "core",
+      "bytes": 19974,
+      "sha256": "63af29c4e1ffa694ab1fd842c60e8ee1ae90b3b78a839ac436430ea6fba6df6a"
+    },
+    {
+      "file": "src/reminders.mjs",
+      "component": "core",
+      "bytes": 14495,
+      "sha256": "604a0cdc4a8c992acf5a77951177ebf095a7749ec439ccf5eb9030b46f196ca5"
+    },
+    {
+      "file": "src/source-adapters/contracts.mjs",
+      "component": "core",
+      "bytes": 2986,
+      "sha256": "6a2a8cc877fdf8da51dd1ee1e3d8e8c99c382fcf986f80ddec44d3df57e84245"
+    },
+    {
+      "file": "src/source-adapters/index.mjs",
+      "component": "core",
+      "bytes": 646,
+      "sha256": "488d9b43d7ff5d3c24964dcbcf9176daa7d63be3c6b0839be0c9cd75300655f0"
+    },
+    {
+      "file": "src/source-adapters/providers/codex.mjs",
+      "component": "core",
+      "bytes": 9219,
+      "sha256": "a045e4d00b1154de1655bd54c0912e6b7c3ce01dc0d1f8d2946a4644dec2050c"
+    },
+    {
+      "file": "src/source-adapters/providers/feishu.mjs",
+      "component": "core",
+      "bytes": 5065,
+      "sha256": "21b4614b86bef1856aaea738250f29d7e88aa6599ebcdb726e69efc90cbd4c40"
+    },
+    {
+      "file": "src/source-adapters/providers/voice.mjs",
+      "component": "core",
+      "bytes": 4597,
+      "sha256": "64849e238ca7974aac1f1f5d19c64bca4312771db9528a150153341c84001ede"
+    },
+    {
+      "file": "src/source-adapters/registry.mjs",
+      "component": "core",
+      "bytes": 1756,
+      "sha256": "c9e11406d83269fa69a3005f848a88455e12e973884ae06215302969e6dc31c5"
+    },
+    {
+      "file": "src/source-records.mjs",
+      "component": "core",
+      "bytes": 18548,
+      "sha256": "0f6656037fd0aa841dcbf074188bf30235b7a5312c29a844caaca39cf6edbf44"
+    },
+    {
+      "file": "src/task-closure-lifecycle.mjs",
+      "component": "core",
+      "bytes": 5805,
+      "sha256": "ec451d3d2337cdf467db3f29ca090fa9553de1065fe6ba742f4c6e4f09c516b7"
+    },
+    {
+      "file": "src/task-closure.mjs",
+      "component": "core",
+      "bytes": 6088,
+      "sha256": "01ea51b3e47d47b6ad8b9918576b1f0510eb25a6d2717ae0535811cd6a27b208"
+    },
+    {
+      "file": "src/task-execution-stop.mjs",
+      "component": "core",
+      "bytes": 11132,
+      "sha256": "02c9599ec252e51a79e0db4774a77faf1be20b92edb4c239680c7cf27e447e9d"
+    },
+    {
+      "file": "src/task-handling.mjs",
+      "component": "core",
+      "bytes": 7759,
+      "sha256": "24d18fd21ecb21287fd2e27e5f276204033f88716f91dec4a2994e59a3d173e4"
+    },
+    {
+      "file": "src/task-owner.mjs",
+      "component": "core",
+      "bytes": 7997,
+      "sha256": "98b4b0aea9c032611ed79b502723d6a2eee333516665b35d5e6acbdbc6bb8c42"
+    },
+    {
+      "file": "src/task-progress-plan.mjs",
+      "component": "core",
+      "bytes": 1782,
+      "sha256": "73d554495d1b1303d9afc4176b0a20b3e081525ff76f373e77fc97ef12f4ba2a"
+    },
+    {
+      "file": "src/task-progress-presentation.mjs",
+      "component": "core",
+      "bytes": 10550,
+      "sha256": "007305410cc852a35f28c7ee4886631be2a71f78177397b3e208189528bed56d"
+    },
+    {
+      "file": "src/task-progress-supervisor.mjs",
+      "component": "core",
+      "bytes": 13072,
+      "sha256": "1b62c0a3a27dc046e5de24ca007b1693736637e6dd1d62a68e6e97b81b5b4807"
+    },
+    {
+      "file": "src/team-profile.mjs",
+      "component": "core",
+      "bytes": 18065,
+      "sha256": "09b69b39a9547ca33a2ad7d6cbc810190492bf8996807a25e0fbfc75c9d962ea"
+    },
+    {
+      "file": "src/user-profile-schema.mjs",
+      "component": "core",
+      "bytes": 347,
+      "sha256": "73896d977abb1d0d4fcd420350cb6e344b7d691e3a3437cac4698c3e78129001"
+    },
+    {
+      "file": "src/user-profile-view.mjs",
+      "component": "core",
+      "bytes": 10559,
+      "sha256": "4342369b61b3484cf926f6efe02b261a623a2e9fdc987a8073ff6d6a81286ff1"
+    },
+    {
+      "file": "src/user-profile.mjs",
+      "component": "core",
+      "bytes": 13632,
+      "sha256": "4058dc77166a4c83a05fd225ee538c3cf11e9cd9212a9ed75b7913c3374e0eb7"
+    },
+    {
+      "file": "src/utils.mjs",
+      "component": "core",
+      "bytes": 5356,
+      "sha256": "b1be74f4607192d04c2fb6cfea9d9d14a00ec82c6828f17dd77d1fdaae07fc21"
+    },
+    {
+      "file": "src/voice-enrollment.mjs",
+      "component": "core",
+      "bytes": 31927,
+      "sha256": "592a70f25e8a2d20775522005cacd7db33a0f9b4c67070bfb704dc6a3538ebed"
+    },
+    {
+      "file": "src/voice-history.mjs",
+      "component": "core",
+      "bytes": 4820,
+      "sha256": "32e24501df681ee6858dc56bfba8a50ce65ed151a18586109f9ab9eab6a8ac0e"
+    },
+    {
+      "file": "src/voice-inbox.mjs",
+      "component": "core",
+      "bytes": 16282,
+      "sha256": "f14e8f55e75a7e5642d7519a2bdee881ba65270ea5f0cbd6c3702d09b866a51a"
+    },
+    {
+      "file": "src/voice-input.mjs",
+      "component": "core",
+      "bytes": 47677,
+      "sha256": "c365ec4baa2284df19da3bb6020cfddeeb9d1e512169154c6e13410c36009e22"
+    },
+    {
+      "file": "src/voice-intake-service.mjs",
+      "component": "core",
+      "bytes": 2254,
+      "sha256": "d92f3b132614f2b79478988df3044188a40f55cde5d3b9e7d0ff342ec8e5dc07"
+    },
+    {
+      "file": "src/voice-review-model.mjs",
+      "component": "core",
+      "bytes": 11424,
+      "sha256": "5bfe4be99ea88f14c2edb6b6b2482d73b87875faa19e923c9bb438c2dbb9e6eb"
+    },
+    {
+      "file": "src/voice-review-worker.mjs",
+      "component": "core",
+      "bytes": 8974,
+      "sha256": "9799ae803c1b10cb26caa2de7faf0825e02942e9c2390d982a4a61e6707652b0"
+    },
+    {
+      "file": "src/voice-review.mjs",
+      "component": "core",
+      "bytes": 4182,
+      "sha256": "a19b61f563b6a6bbbec92a6fa34975954e514fb5e099e4794bdf8709501fd696"
+    },
+    {
+      "file": "src/voice-samples.mjs",
+      "component": "core",
+      "bytes": 4264,
+      "sha256": "8d315f88df297fa49fe34277f9555b62fe8b392a5de2fe7b7f6a37a2970dca67"
+    },
+    {
+      "file": "src/voice-speaker-index.mjs",
+      "component": "core",
+      "bytes": 6268,
+      "sha256": "d3fccf6719587573c57c7a53aff634006b693198d7c9ac098f799a405bcd506e"
+    },
+    {
+      "file": "src/work-sessions.mjs",
+      "component": "core",
+      "bytes": 14581,
+      "sha256": "1f3c4ed43de1df9bd4288259e782990576814bc983972da4cca7642eb327bb18"
+    },
+    {
+      "file": "src/workboard-operations.mjs",
+      "component": "core",
+      "bytes": 11401,
+      "sha256": "458b3496c8b12bfdcb60e4f8996fd20e36b907b2052e54ead31ed43f2d10f1a4"
+    },
+    {
+      "file": "src/workboard-reader.mjs",
+      "component": "core",
+      "bytes": 868,
+      "sha256": "fc535fc25006254e05d8bb4b1c8200a54588bbaa24d72c25d51d304c0338092b"
+    },
+    {
+      "file": "test/active-information.test.mjs",
+      "component": "core",
+      "bytes": 20747,
+      "sha256": "6e7ec55995a164797cb72ce30578d289e3edff0ad8fc8bd62aaf82e4e9eed3cd"
+    },
+    {
+      "file": "test/agent-operations.test.mjs",
+      "component": "core",
+      "bytes": 16259,
+      "sha256": "b841dec1f6ca935f8055ef9730375679b864934519d65fabdec3182d14ade897"
+    },
+    {
+      "file": "test/attention-recovery.test.mjs",
+      "component": "core",
+      "bytes": 5510,
+      "sha256": "a38780ffd1009a962b1fcaa8bc0f5002f34c9ab2fc030af4b96fb43b6e3166c6"
+    },
+    {
+      "file": "test/attention-scheduler.test.mjs",
+      "component": "core",
+      "bytes": 11162,
+      "sha256": "18fac306f55b3ecd26b898628b68c553020ee98d326ee1727f28ca2f66e3c71a"
+    },
+    {
+      "file": "test/attention-window.test.mjs",
+      "component": "core",
+      "bytes": 3127,
+      "sha256": "14915df9af631698fde2459164932b39adce83fc1888c653c70298d60f6e80a6"
+    },
+    {
+      "file": "test/bounded-codex-session.test.mjs",
+      "component": "core",
+      "bytes": 3060,
+      "sha256": "3456f0f628fc0344c160b4a9d9afe1a063fa29565da2fbddf3b35bcc837d3bfb"
+    },
+    {
+      "file": "test/capability-readiness-cli.test.mjs",
+      "component": "core",
+      "bytes": 5421,
+      "sha256": "1a157b08a04d1dc9ff7a08a455669c1302d22ed06ae5281497166239cb034aba"
+    },
+    {
+      "file": "test/capability-release.test.mjs",
+      "component": "core",
+      "bytes": 3943,
+      "sha256": "b3488338dff5563d3d4ce574bfc0e4ac82c1fcbdd9f01b059d8b8a07bbaebf2e"
+    },
+    {
+      "file": "test/codex-client.test.mjs",
+      "component": "core",
+      "bytes": 962,
+      "sha256": "8d2472c438de8ab093b4c2cd5da7bfffa0243b02f155fde51ecb17b9c4cda55e"
+    },
+    {
+      "file": "test/codex-collector.test.mjs",
+      "component": "core",
+      "bytes": 5868,
+      "sha256": "83d74d2a7827b2376e971177ce50657bb1310b5c0aac8fb9cbe0b67cd9df4ac4"
+    },
+    {
+      "file": "test/codex-route-context.test.mjs",
+      "component": "core",
+      "bytes": 32054,
+      "sha256": "8486252885579904e69e0cc0f01b920435f8d923472a9a4ef0d41e09bba186a3"
+    },
+    {
+      "file": "test/codex-shell-alias.test.mjs",
+      "component": "core",
+      "bytes": 1878,
+      "sha256": "9dbe8d0f093b75c6d1d9831761d1cb446709bc26bc6f7b68cade7d345753bc93"
+    },
+    {
+      "file": "test/codex-thread-title.test.mjs",
+      "component": "core",
+      "bytes": 3882,
+      "sha256": "c46f2049c2db18e3288d6cdf2d48768594a751d17059582686e12b5cf873b101"
+    },
+    {
+      "file": "test/cognitive-profile.test.mjs",
+      "component": "core",
+      "bytes": 5231,
+      "sha256": "bb9621c95fbd29d1c718dd9d77e4acf499d688f776044826b6ae22ef31aeeb17"
+    },
+    {
+      "file": "test/condition-watches.test.mjs",
+      "component": "core",
+      "bytes": 7451,
+      "sha256": "63e65bb8c9b64132cbd0c7322d5f8faf0b8cf9cb302e0eae94b56c112561ef32"
+    },
+    {
+      "file": "test/context-delivery.test.mjs",
+      "component": "core",
+      "bytes": 9131,
+      "sha256": "06a2ab81399a088d02d73e9021ba17989daef95d8177d8d9e39f4d56d0118ece"
+    },
+    {
+      "file": "test/context-graph.test.mjs",
+      "component": "core",
+      "bytes": 8981,
+      "sha256": "f34f8c657fe694500721fd0c5c65dad27e70ec0a0bd62adeb6d273e94f45ad5a"
+    },
+    {
+      "file": "test/controller-dispatch.test.mjs",
+      "component": "core",
+      "bytes": 1000,
+      "sha256": "fcfe2414e1b93cff321e645b3d15357095e86cc120d0c86f512c353279864c92"
+    },
+    {
+      "file": "test/controller-outbox-recovery.test.mjs",
+      "component": "core",
+      "bytes": 6903,
+      "sha256": "e9f533bc991b57167b7000ba4dd870fa71f5e01731c9c9cbdada742764d54985"
+    },
+    {
+      "file": "test/daemon.test.mjs",
+      "component": "core",
+      "bytes": 3991,
+      "sha256": "bd7aa1baef6e3f16fbba36cabf2f8a3e718907d419c74302b44bc3ad0cc3a386"
+    },
+    {
+      "file": "test/database-worker.test.mjs",
+      "component": "core",
+      "bytes": 1717,
+      "sha256": "f5953674f839f1da308b03c947b765b3444bd82635a5767019c4786577e21466"
+    },
+    {
+      "file": "test/db-initialization.test.mjs",
+      "component": "core",
+      "bytes": 6803,
+      "sha256": "aa336955ebe6cc1bf0f522b19a985a2c222fca541715baee76500f5450d28e77"
+    },
+    {
+      "file": "test/db.test.mjs",
+      "component": "core",
+      "bytes": 15745,
+      "sha256": "6eef8534998f2cfbc29100305165d7cc5f860af91c150d83bf0bcaff6f8e5d3b"
+    },
+    {
+      "file": "test/digests.test.mjs",
+      "component": "core",
+      "bytes": 9146,
+      "sha256": "ad45d1b1af9036d2136a7bd32f0773677fe0952b7eb4b39063ef71d30cbbf6b2"
+    },
+    {
+      "file": "test/direct-input.test.mjs",
+      "component": "core",
+      "bytes": 10124,
+      "sha256": "23dc8e6291621994126d17bf0c09f8b53684c8889cf12201735098a9969faecc"
+    },
+    {
+      "file": "test/e2e/capability-growth.e2e.mjs",
+      "component": "core",
+      "bytes": 2685,
+      "sha256": "d17d60b9e520d0cb88d9abf704c60105250a352baaacd459bcc520940950e1bd"
+    },
+    {
+      "file": "test/e2e/codex-shell-alias.e2e.mjs",
+      "component": "core",
+      "bytes": 2772,
+      "sha256": "7586e2eedd368affd85571b9088e3b5016a094dbff1e83b8917459420c6a32f3"
+    },
+    {
+      "file": "test/e2e/pet-settings.e2e.mjs",
+      "component": "core",
+      "bytes": 3210,
+      "sha256": "bb1a1aa0a711852ab38432e908be811b0a2cc3d0c9e8ef9162bc59d7fd92f249"
+    },
+    {
+      "file": "test/e2e/pet.e2e.mjs",
+      "component": "core",
+      "bytes": 52676,
+      "sha256": "41505291989024bf3b139b5e0ce366eac114f9c8f66caa26d8b13f31cb65300a"
+    },
+    {
+      "file": "test/e2e/runtime-selection.e2e.mjs",
+      "component": "core",
+      "bytes": 4176,
+      "sha256": "15c53d7954dff662832306eb744afe91ba01ea0e4708e86f3e23ec3aa916aefe"
+    },
+    {
+      "file": "test/e2e/task-detail-freshness.e2e.mjs",
+      "component": "core",
+      "bytes": 7007,
+      "sha256": "104bac55fe6b7247666169ee963aa2b634379953176695802b9ab15872e22cb7"
+    },
+    {
+      "file": "test/e2e/task-progress-electron.mjs",
+      "component": "core",
+      "bytes": 3008,
+      "sha256": "015576183ea7bd3a91441e896647f75747b60d09a9f2ec15e5d5c2b9c0ee378a"
+    },
+    {
+      "file": "test/e2e/task-progress-history.e2e.mjs",
+      "component": "core",
+      "bytes": 10459,
+      "sha256": "89dbfdd337aaa9b362458c79451e1012ca67a608f74ebd4def0ad3156b73702a"
+    },
+    {
+      "file": "test/e2e/task-progress.e2e.mjs",
+      "component": "core",
+      "bytes": 10615,
+      "sha256": "a10ac3f439656304b3454280e02600e6b13aecc4bbdab1b3bd71f6404d35871b"
+    },
+    {
+      "file": "test/e2e/voice-enrollment.e2e.mjs",
+      "component": "core",
+      "bytes": 14158,
+      "sha256": "d4c5b6239c5d6c8d86d91bc82373a692acc10e10a092893e70403e3b633bd9a9"
+    },
+    {
+      "file": "test/e2e/voice-multispeaker.e2e.mjs",
+      "component": "core",
+      "bytes": 4788,
+      "sha256": "f4012f967d356fcaa377c2dc498e89c961ba9cb3a93b98c3f5b077f1d673bb3c"
+    },
+    {
+      "file": "test/e2e/voice-partials.e2e.mjs",
+      "component": "core",
+      "bytes": 4638,
+      "sha256": "84f34719069c81e6d6b23d7f9f5af181f24c7e5f45d6efdc5b45b1faa9cec122"
+    },
+    {
+      "file": "test/e2e/voice-samples.e2e.mjs",
+      "component": "core",
+      "bytes": 12057,
+      "sha256": "249f6726f27a19cdefb64655427e3e94d149afcbbb8b49f9ae6960e9a5ccd69d"
+    },
+    {
+      "file": "test/feishu-background-auth.test.mjs",
+      "component": "core",
+      "bytes": 3620,
+      "sha256": "a71fdb9608a904b0d15d8f094dd38e57b253558d07e9c149f777056dcaf16725"
+    },
+    {
+      "file": "test/feishu-capabilities.test.mjs",
+      "component": "core",
+      "bytes": 2591,
+      "sha256": "b5481a773140168e558272821156c1918f5f33ece4a9f47bc90a8c92918184ce"
+    },
+    {
+      "file": "test/feishu-collection.test.mjs",
+      "component": "core",
+      "bytes": 5132,
+      "sha256": "f012c9318c8142bcf3dec5eae2449398f9bd804f10eef73dd81dc49ff2403749"
+    },
+    {
+      "file": "test/feishu-conversation-evaluation.test.mjs",
+      "component": "core",
+      "bytes": 2880,
+      "sha256": "5b056ff9c31e8bcfa60e8a6dd8399a08ac82c0af49c40145126d93ef68bea55f"
+    },
+    {
+      "file": "test/feishu-evaluation-dataset.test.mjs",
+      "component": "core",
+      "bytes": 9293,
+      "sha256": "5155beea9a7e84ea2d2da5540eabe92c78871a1f59404c9aacd511003aa0a6a7"
+    },
+    {
+      "file": "test/feishu-evaluation-result.test.mjs",
+      "component": "core",
+      "bytes": 1624,
+      "sha256": "89df0c4579677a534866aba8441b18de7c43018778adbefa355f90933dec769f"
+    },
+    {
+      "file": "test/feishu-evaluation-score.test.mjs",
+      "component": "core",
+      "bytes": 2433,
+      "sha256": "3b4bdff7187bcfd1f423938db760c2131fb3123f4bebf98b465bb079f6ca2932"
+    },
+    {
+      "file": "test/feishu-events.test.mjs",
+      "component": "core",
+      "bytes": 14630,
+      "sha256": "5003d15309612e7e550e9de7705ef9612d5f916b94801d100cef715f27f99d7a"
+    },
+    {
+      "file": "test/feishu-ownership.test.mjs",
+      "component": "core",
+      "bytes": 5727,
+      "sha256": "bb67bda60acf697d0883ab6f1e6f6e1add37402249a7bd6449218e87c3cb9e8b"
+    },
+    {
+      "file": "test/feishu-time.test.mjs",
+      "component": "core",
+      "bytes": 517,
+      "sha256": "defe94356980aefcfc3bd895967f6f8474f863d000e144b091f2d3977f3212b7"
+    },
+    {
+      "file": "test/feishu-transport-simulation.test.mjs",
+      "component": "core",
+      "bytes": 1703,
+      "sha256": "c4eb75e928649e53071bd9b636b0e33f5f5a95c09c3f8a9e895f30d7c9bc22bc"
+    },
+    {
+      "file": "test/fixtures/capability-mcp-server.mjs",
+      "component": "core",
+      "bytes": 640,
+      "sha256": "451040b00015d98f649b7a3c9c84ae538bdddc5ac6874a5fac98811d91d51bde"
+    },
+    {
+      "file": "test/fixtures/database-worker-fixture.mjs",
+      "component": "core",
+      "bytes": 324,
+      "sha256": "c94478c7e4016a8f230736ab9f498f03fa78d563d39fb08a7bba567ba5e634fb"
+    },
+    {
+      "file": "test/fixtures/fake-kimi-code.mjs",
+      "component": "core",
+      "bytes": 1850,
+      "sha256": "d684da5957722bf7e221bfce13d7e6cf3f4f52c179a4b57026013c74e62d9c6e"
+    },
+    {
+      "file": "test/fixtures/gateway-diagnostic-io.ps1",
+      "component": "core",
+      "bytes": 3777,
+      "sha256": "c1e5daabe32e867b51f7488faee36cf68e7a52c7ea1e910c7745e40bba1d312b"
+    },
+    {
+      "file": "test/fixtures/gateway-instance-ownership.ps1",
+      "component": "core",
+      "bytes": 2457,
+      "sha256": "5c3960004dc4f8b458b3b64f7c9a4c14fc24ed476399c94f0a5fbf819e4fabd4"
+    },
+    {
+      "file": "test/gateway-error.test.mjs",
+      "component": "core",
+      "bytes": 544,
+      "sha256": "df6329810cc68623c35c36fcd38e482545e0be51995294dd3006d1ea60b34d6b"
+    },
+    {
+      "file": "test/gateway-instance.test.mjs",
+      "component": "core",
+      "bytes": 2388,
+      "sha256": "47588472b090cc7480129db6caa71151774fe78798a8f03ba904315a723aa468"
+    },
+    {
+      "file": "test/gateway-supervisor.test.mjs",
+      "component": "core",
+      "bytes": 2386,
+      "sha256": "4d8094af98a47d28c6a43c32be25d4ee9f8ec1e2ac48acc842ef6efb7385d97a"
+    },
+    {
+      "file": "test/graph-maintenance.test.mjs",
+      "component": "core",
+      "bytes": 13148,
+      "sha256": "18906a8c1f1bf3f5d31dadfc0b0c0961143a6b02caa2a412e9a35cc5676e95b3"
+    },
+    {
+      "file": "test/graph-model.test.mjs",
+      "component": "core",
+      "bytes": 16862,
+      "sha256": "3025f85ed238993d3b5239e28ae23a5a0b638b1a15b67126fb16b4a7925062bb"
+    },
+    {
+      "file": "test/helpers/shadow-plugin.mjs",
+      "component": "core",
+      "bytes": 946,
+      "sha256": "98cd7f57cfdde0988dbbe69c5065895713eac5a82f65608d28d64704c081f409"
+    },
+    {
+      "file": "test/helpers/voice-samples-fixture.mjs",
+      "component": "core",
+      "bytes": 2870,
+      "sha256": "7795a85d95f24e703c70df8f613232d4b831e1696c4dc13cc0a086c620951934"
+    },
+    {
+      "file": "test/information-delivery-integration.test.mjs",
+      "component": "core",
+      "bytes": 22709,
+      "sha256": "fef4f13ecaad7a20aff7d919296c0111f9bc650ae3488b22a4f2c174f1379d04"
+    },
+    {
+      "file": "test/information-delivery.test.mjs",
+      "component": "core",
+      "bytes": 37474,
+      "sha256": "793f103a0bf334348a9ceebb1a8fb4785427c00677c16629f864df2e2a8012bc"
+    },
+    {
+      "file": "test/information-dispatch-tool.test.mjs",
+      "component": "core",
+      "bytes": 24322,
+      "sha256": "614209a2efa01c106f8f3dfe37066d05ec550b19f18ced247e1374ed757fead9"
+    },
+    {
+      "file": "test/kimi-code-executor.test.mjs",
+      "component": "core",
+      "bytes": 7798,
+      "sha256": "eb76e849d76ccd36f6458f3bb108df871ba2b63caad6eac1b7618c53cb5ad394"
+    },
+    {
+      "file": "test/knowledge-entries.test.mjs",
+      "component": "core",
+      "bytes": 8810,
+      "sha256": "96f2327b4b7d06a69e16a904959633bbb914b5e50cfe8b4777c9a1036baf2fde"
+    },
+    {
+      "file": "test/knowledge-feedback-loop.test.mjs",
+      "component": "core",
+      "bytes": 38187,
+      "sha256": "b7838ea5dcc0e46f2d755d3c7d1c843a56a33f662a87bace16fd6d3469d01b3a"
+    },
+    {
+      "file": "test/knowledge-governance.test.mjs",
+      "component": "core",
+      "bytes": 9303,
+      "sha256": "cd9f583b58b72e51f45739198068553dbeb44be26fa1e5c462b2201a842c7b1a"
+    },
+    {
+      "file": "test/knowledge-quality.test.mjs",
+      "component": "core",
+      "bytes": 13958,
+      "sha256": "9e937a20567ca5f4cc6e02da3df27ea67ab44025f7bd68eb542ee747ffb510b8"
+    },
+    {
+      "file": "test/knowledge-reliability.test.mjs",
+      "component": "core",
+      "bytes": 12536,
+      "sha256": "65d8f63fe7a38ecd33f41101455af66ce2dddf162cca8ccc4337ede913e3e990"
+    },
+    {
+      "file": "test/knowledge-review-index.test.mjs",
+      "component": "core",
+      "bytes": 11138,
+      "sha256": "8e187d624cb7e39660d8b46272ac7c40f797316a444195479aad45209a4643f5"
+    },
+    {
+      "file": "test/knowledge-routing-lifecycle.test.mjs",
+      "component": "core",
+      "bytes": 5733,
+      "sha256": "5f8464f9553d29493d5e8856a94a3daafbc48be90c295b3a6f73ee13dc62c5df"
+    },
+    {
+      "file": "test/knowledge-routing-temporal.test.mjs",
+      "component": "core",
+      "bytes": 23919,
+      "sha256": "cdfb84c52238483be364717731b6781f2927e378442be475990e6a95f22e65ca"
+    },
+    {
+      "file": "test/native-session-store.test.mjs",
+      "component": "core",
+      "bytes": 3100,
+      "sha256": "2438deed832fd82eb147e176f94971604bf1b78cf87dd0eac30171d8642748b8"
+    },
+    {
+      "file": "test/native-terminal.test.mjs",
+      "component": "core",
+      "bytes": 4491,
+      "sha256": "315a67d7b80dd18e9aef41ef77ad38eaae118d78380e99c09240950f3ff3df0c"
+    },
+    {
+      "file": "test/openclaw-cli.test.mjs",
+      "component": "core",
+      "bytes": 12905,
+      "sha256": "e675bce5675ae091ad6e5e3b3606c73b65083a17b6df0c9e1cfa6655f9d99894"
+    },
+    {
+      "file": "test/openclaw-runtime-profile.test.mjs",
+      "component": "core",
+      "bytes": 8283,
+      "sha256": "2048c4636dfd50de9005dba2d276de0758e8c9dd57095f630f255e933b35e8ed"
+    },
+    {
+      "file": "test/openclaw-turn-metrics.test.mjs",
+      "component": "core",
+      "bytes": 5177,
+      "sha256": "95746d8fc0a3c9358d799c8fc751948c1852541903e138ebc5592a463a73943d"
+    },
+    {
+      "file": "test/outbound-messages.test.mjs",
+      "component": "core",
+      "bytes": 8430,
+      "sha256": "747c2e69eae6de46ede22b82d6797ec30ba298ab2c8432fba69cf46921ffcc22"
+    },
+    {
+      "file": "test/personalization-boundary.test.mjs",
+      "component": "core",
+      "bytes": 2681,
+      "sha256": "12a4d834a89e914a08fea8822b7da5b3c1d29e1f6922e2f1b9a636f70b45d540"
+    },
+    {
+      "file": "test/pet-conversations.test.mjs",
+      "component": "core",
+      "bytes": 23233,
+      "sha256": "817e89c95bf44ed2a22107bf2643ef35598f7a807b4117f84b0f939166228cd9"
+    },
+    {
+      "file": "test/project-contract.test.mjs",
+      "component": "core",
+      "bytes": 21130,
+      "sha256": "533e4448d45d827fc75069c70134de99c15520f823db243faf3865e3ffb5d8ef"
+    },
+    {
+      "file": "test/reasoning-policy.test.mjs",
+      "component": "core",
+      "bytes": 4431,
+      "sha256": "6dd0a14e3152bb73e8e27d0ce672dabd395383925a8f5d8270523e5b8b4a46c3"
+    },
+    {
+      "file": "test/reminders.test.mjs",
+      "component": "core",
+      "bytes": 9182,
+      "sha256": "7b3451e80f74560575f2da2e7a281b564759776beb034e32be61c712e91837a1"
+    },
+    {
+      "file": "test/run-wait-presence.test.mjs",
+      "component": "core",
+      "bytes": 2980,
+      "sha256": "ee7aeeee6846d5c6b393da72c9c59140b8a72e9605780f95bcbd0b9f07d4bee7"
+    },
+    {
+      "file": "test/runtime-boundary-fixtures.test.mjs",
+      "component": "core",
+      "bytes": 3211,
+      "sha256": "2676e0dffc66137cddca02f2ddbf8ef1695e9352874a15e0e74cb93976b91521"
+    },
+    {
+      "file": "test/runtime-boundary-prompt.test.mjs",
+      "component": "core",
+      "bytes": 16950,
+      "sha256": "952dfc987a34e3da7445fe376708f81a05e7b20c976e1d42fec3a85937cb8e8d"
+    },
+    {
+      "file": "test/runtime-boundary-recovery.test.mjs",
+      "component": "core",
+      "bytes": 86126,
+      "sha256": "aecf73d6c64d210007b7f27ef91e7499421f275d7a1dfaab41cc1488785f8d74"
+    },
+    {
+      "file": "test/runtime-boundary-summary.test.mjs",
+      "component": "core",
+      "bytes": 21133,
+      "sha256": "2577b33347c81ed49004330e40b61416788ac570fe3e30402cf3caf2f5b67e4a"
+    },
+    {
+      "file": "test/shadow-plugin-deployment.test.mjs",
+      "component": "core",
+      "bytes": 5224,
+      "sha256": "d77c2387056c88d563701c5ffa581b04da223c7cf077bd3d4b04a29eecf4646b"
+    },
+    {
+      "file": "test/shadow-policy.test.mjs",
+      "component": "core",
+      "bytes": 25576,
+      "sha256": "127e96c8a34184ae8e3b014d5b8d3b747cc7b43138cdb830396cc7cb9134b0db"
+    },
+    {
+      "file": "test/shadow-work-installation.test.mjs",
+      "component": "core",
+      "bytes": 46441,
+      "sha256": "88b7c6959252991d8a106ab4febf9c635c81584741435a3b9b5dad4c992c883f"
+    },
+    {
+      "file": "test/source-adapters.test.mjs",
+      "component": "core",
+      "bytes": 9637,
+      "sha256": "912179accc6b8cc9d55ef0ca1500b31d43b5216d61f4895b425a604e2a704275"
+    },
+    {
+      "file": "test/stop-shadow-agent.test.mjs",
+      "component": "core",
+      "bytes": 1232,
+      "sha256": "67327eafe5098b5dc9b2a6ee89756420b3c7936ee27cdef8a2056647efb21169"
+    },
+    {
+      "file": "test/task-closure.test.mjs",
+      "component": "core",
+      "bytes": 20173,
+      "sha256": "5e7f0ec61cdca094571177a9bc4b4ba95c31a7653182942acb6d1c5c33a0fdff"
+    },
+    {
+      "file": "test/task-execution-stop.test.mjs",
+      "component": "core",
+      "bytes": 26729,
+      "sha256": "3801f3ae73387ebd81e459e160c4df72e7cb4b8f4c4f7512543a9df2fb6b6a70"
+    },
+    {
+      "file": "test/task-handling.test.mjs",
+      "component": "core",
+      "bytes": 5040,
+      "sha256": "cb439f3e0d34a4a6b3017c724fc0fe305cffa592ab4958a894438f0a4c952cca"
+    },
+    {
+      "file": "test/task-owner.test.mjs",
+      "component": "core",
+      "bytes": 6108,
+      "sha256": "1dbaa480ebb70ee9764b81902d49ad1293d1421857c4af391de10751ba7f5d6f"
+    },
+    {
+      "file": "test/task-progress-fixture.mjs",
+      "component": "core",
+      "bytes": 1927,
+      "sha256": "cb202ddea90f40abf76b96153b4b9fb70fe0321887d5cf4bf6225fa45c62fc4a"
+    },
+    {
+      "file": "test/task-progress-plan.test.mjs",
+      "component": "core",
+      "bytes": 1132,
+      "sha256": "05013e240252478128af6e7e6075706f33ef9b29ba0e7084496f37d836cc70d0"
+    },
+    {
+      "file": "test/task-progress-supervisor.test.mjs",
+      "component": "core",
+      "bytes": 11040,
+      "sha256": "67f37c6075e44fb0d50c3bb81ea9f9cd60410b30ac8ef3cc64d1dc7eefffd89f"
+    },
+    {
+      "file": "test/task-progress-writer.test.mjs",
+      "component": "core",
+      "bytes": 4554,
+      "sha256": "cd520540212d846e9d1154f56b11da236d4fcc53294579f02b2e5d0076cda06b"
+    },
+    {
+      "file": "test/team-profile.test.mjs",
+      "component": "core",
+      "bytes": 5819,
+      "sha256": "54dfaba7bbdd741e7a2781be61a539483442914d58f0a12a151e9fa7578e5b6d"
+    },
+    {
+      "file": "test/user-profile.test.mjs",
+      "component": "core",
+      "bytes": 18258,
+      "sha256": "8ee35fcf6a2df51bd235b1c72a9fdd305043cf3a6896ea39ac738ac93eb09ab7"
+    },
+    {
+      "file": "test/utils.test.mjs",
+      "component": "core",
+      "bytes": 1121,
+      "sha256": "fc2ffc9575ba08e66a3b66f95c7aadf1ce9d6acf0122609d8ad12e9fb78d9fe4"
+    },
+    {
+      "file": "test/voice-enrollment.test.mjs",
+      "component": "core",
+      "bytes": 28504,
+      "sha256": "8801fd26744f497b562a32a914246bda2afaa059cf3e381f796ab94726c994b4"
+    },
+    {
+      "file": "test/voice-history.test.mjs",
+      "component": "core",
+      "bytes": 8483,
+      "sha256": "44e3dc31dfc86e891f1c29031444aec188218e8cae1cb6d9581057bf885e1867"
+    },
+    {
+      "file": "test/voice-inbox.test.mjs",
+      "component": "core",
+      "bytes": 10904,
+      "sha256": "ea9cb72980ee19908af815341129b0477d3431b262f9f7ae5fcbbfba42c878f7"
+    },
+    {
+      "file": "test/voice-input-cli.test.mjs",
+      "component": "core",
+      "bytes": 11016,
+      "sha256": "718fd840eaa2de90029c8703ac16092627ac5b857a6ff1f595b95aceddc7610a"
+    },
+    {
+      "file": "test/voice-input.test.mjs",
+      "component": "core",
+      "bytes": 47724,
+      "sha256": "c993ee62dd6993d7101bc105aea9a31aa3c95f347226035f8be63efbd81c0175"
+    },
+    {
+      "file": "test/voice-intake-service.test.mjs",
+      "component": "core",
+      "bytes": 2800,
+      "sha256": "6d0863a39475a9c06d82829d10b6c3767ba4110d474ef477b67d3882711e90e5"
+    },
+    {
+      "file": "test/voice-local-provider.test.mjs",
+      "component": "core",
+      "bytes": 3948,
+      "sha256": "40ed1ff3e474773278226389d97c3581a74bc1b119910dcd2195a76efc7540eb"
+    },
+    {
+      "file": "test/voice-reanalysis.test.mjs",
+      "component": "core",
+      "bytes": 5200,
+      "sha256": "be15563e8b8b7e292541eede54a67e188fb1f490abcbf4027dc5ac096b150994"
+    },
+    {
+      "file": "test/voice-review-model.test.mjs",
+      "component": "core",
+      "bytes": 14415,
+      "sha256": "d154ff0619fe970961d7b334442614ed9e024335fbcbcc440d550f85cfa67b13"
+    },
+    {
+      "file": "test/voice-review.test.mjs",
+      "component": "core",
+      "bytes": 9758,
+      "sha256": "5058ed1d521dd9ce7a230cbe3c014f336fcb96ff3dac9d519218f3c12d75c5c3"
+    },
+    {
+      "file": "test/voice-runtime.test.py",
+      "component": "core",
+      "bytes": 9025,
+      "sha256": "d6787feaa53c204cd9119e031c37869451bf033d7c0056fdb47db7f5e4dcdd22"
+    },
+    {
+      "file": "test/voice-runtime/test_audio_conditioning.py",
+      "component": "core",
+      "bytes": 1777,
+      "sha256": "1e2ce1974a0b05debf8a53a940bfdcd410894d7082641d6903472761031c6461"
+    },
+    {
+      "file": "test/voice-runtime/test_capture_recovery.py",
+      "component": "core",
+      "bytes": 7009,
+      "sha256": "4b2b9b62b69ec1b5233002e7d2f5eb39d8bbe0682037ffa9306348125ae18bc8"
+    },
+    {
+      "file": "test/voice-runtime/test_download_artifact.py",
+      "component": "core",
+      "bytes": 3105,
+      "sha256": "01adb371f47c8001a0c829647770f6eebf497aead5ac12e54522df6b6514f491"
+    },
+    {
+      "file": "test/voice-runtime/test_listen.py",
+      "component": "core",
+      "bytes": 27189,
+      "sha256": "78e7244a47ab98da348c74e2b4be76d425c9356ddebcbc47cf3bf44f22f5682b"
+    },
+    {
+      "file": "test/voice-runtime/test_moss_attention_probe.py",
+      "component": "core",
+      "bytes": 2169,
+      "sha256": "f12a7e0cc00c5d08f2b94423938c47d935c2cba23826ec7dd9dc85e97698a556"
+    },
+    {
+      "file": "test/voice-runtime/test_moss_encoder.py",
+      "component": "core",
+      "bytes": 1488,
+      "sha256": "0166b5e9ae491cbc9c5803c9d1cbd8777100e47be65e0e3aacf46af2bc1dd301"
+    },
+    {
+      "file": "test/voice-runtime/test_moss_output.py",
+      "component": "core",
+      "bytes": 3267,
+      "sha256": "294a2a7584a8b5ff0cb3fefabb7334afc700a55ae9dacde587651becbe0ed366"
+    },
+    {
+      "file": "test/voice-runtime/test_moss_pipeline.py",
+      "component": "core",
+      "bytes": 13206,
+      "sha256": "a0e3e829d44cf5b0dfaa3dcc125394ea3151abe77412fe5a19a91423586827f4"
+    },
+    {
+      "file": "test/voice-runtime/test_moss_probe.py",
+      "component": "core",
+      "bytes": 2511,
+      "sha256": "c0797dd5f166bb9778cc9265c8d066c15c98b081cfda3859e25b71b72a410d08"
+    },
+    {
+      "file": "test/voice-runtime/test_moss_silence_diagnostic.py",
+      "component": "core",
+      "bytes": 3315,
+      "sha256": "07059b749ad6813ecb7df39c54819bfe1274aed5c71a28a802d3fc35c67f628d"
+    },
+    {
+      "file": "test/voice-runtime/test_partial_transcripts.py",
+      "component": "core",
+      "bytes": 5440,
+      "sha256": "44f84e9669e830e41928ec0f5007ec07f844042f508738203b5730ae3a771ed8"
+    },
+    {
+      "file": "test/voice-runtime/test_probe_cleanup.py",
+      "component": "core",
+      "bytes": 1440,
+      "sha256": "b5defae2e182ca1a90b85ea2c384194e770d5f2be36ba73657968396f56e54fb"
+    },
+    {
+      "file": "test/voice-runtime/test_streaming_deadline.py",
+      "component": "core",
+      "bytes": 10038,
+      "sha256": "04bf05862d71bce7b7a73703e4af98db7cc66fc6a9a58ea2a6842c59a66af801"
+    },
+    {
+      "file": "test/voice-samples.test.mjs",
+      "component": "core",
+      "bytes": 8232,
+      "sha256": "033800867b697109c9ca95a176bc490a45cf170a1de5e25a299b7e3f7891108d"
+    },
+    {
+      "file": "test/voice-source-adapter.test.mjs",
+      "component": "core",
+      "bytes": 15027,
+      "sha256": "d27ea4de235f90d0ee4ef300cbab9871ec5abb4da925daa27e726736ec40c360"
+    },
+    {
+      "file": "test/voice-speaker-index.test.mjs",
+      "component": "core",
+      "bytes": 3192,
+      "sha256": "5a3760146a516c6ba888da0ba03ded21197b10a94bc731c5e8ba9b47cbf5e7e7"
+    },
+    {
+      "file": "test/workboard-reader.test.mjs",
+      "component": "core",
+      "bytes": 1546,
+      "sha256": "6bb3199b8bd14ae826bbd092ce524808e238d839a3dc443088c3bf1b3ac3d77d"
+    },
+    {
+      "file": "test/zentao-openapi.test.mjs",
+      "component": "core",
+      "bytes": 3023,
+      "sha256": "6a3851a81eac57f165c84ff7926b6eeb9f2383381902b43cc4e5a101374cfe7a"
+    },
+    {
+      "file": "THIRD_PARTY_NOTICES.md",
+      "component": "core",
+      "bytes": 2391,
+      "sha256": "36c60af3d836201096463297b541e7ed7df5efade617a1cb06f0c79fbbf9f9a4"
+    },
+    {
+      "file": "third_party/material-icons/LICENSE",
+      "component": "core",
+      "bytes": 11357,
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "file": "third_party/openclaw/LICENSE",
+      "component": "core",
+      "bytes": 1170,
+      "sha256": "73571b25326281d369087f469842c02444fe39faaecebda4d82ed21ff3a1c29d"
+    },
+    {
+      "file": "third_party/openclaw/THIRD_PARTY_NOTICES.md",
+      "component": "core",
+      "bytes": 1575,
+      "sha256": "c84200f7a9bb8b3abc8563520433316716a9eb83915cfe7c3063d5e6fce5e7ca"
+    }
+  ]
+}

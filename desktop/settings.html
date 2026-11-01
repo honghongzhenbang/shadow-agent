@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'">
+  <title>自动巡检设置</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p>SHADOW AGENT</p>
+        <h1>自动巡检</h1>
+      </div>
+      <label class="switch" title="启用自动巡检">
+        <input id="enabled" type="checkbox">
+        <span aria-hidden="true"></span>
+      </label>
+    </header>
+
+    <form id="scheduleForm">
+      <div class="time-grid">
+        <label><span>开始时间</span><input id="startTime" type="time" required></label>
+        <label><span>结束时间</span><input id="endTime" type="time" required></label>
+      </div>
+      <p id="statusText" class="status" aria-live="polite">正在读取设置</p>
+      <p class="hint">时间段外暂停自动巡检，变化会保留到下次开放。人工交代、飞书实时消息和到期提醒仍可处理。</p>
+      <div class="actions">
+        <button id="cancelButton" type="button">取消</button>
+        <button id="saveButton" class="primary" type="submit">保存</button>
+      </div>
+    </form>
+  </main>
+  <script src="settings.js"></script>
+</body>
+</html>

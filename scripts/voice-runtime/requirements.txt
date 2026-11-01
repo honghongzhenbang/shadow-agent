@@ -1,0 +1,8 @@
+# CPython 3.9, Windows x64. Binary wheels only; no global installation.
+sherpa-onnx==1.13.8 --hash=sha256:f7a1c974361383f35cd0a440db8361bca25a556106d15d12496bf3446642560f
+sherpa-onnx-core==1.13.8 --hash=sha256:5579e80196d516e6dae23c8f629292ce3142ab8869925d32b94612fd86f93733
+numpy==1.26.4 --hash=sha256:3373d5d70a5fe74a2c1bb6d2cfd9609ecf686d47a2d7b1d37a8f3b6bf6003aea
+soundfile==0.13.1 --hash=sha256:1e70a05a0626524a69e9f0f4dd2ec174b4e9567f4d8b6c11d38b5c289be36ee9
+cffi==1.17.1 --hash=sha256:d016c76bdd850f3c626af19b0542c9677ba156e4ee4fccfdd7848803533ef662
+pycparser==2.22 --hash=sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc
+soxr==0.5.0.post1 --hash=sha256:7e71b0b0db450f36de70f1047505231db77a713f8c47df9342582ae8a4b828f2

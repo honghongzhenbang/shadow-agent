@@ -1,0 +1,90 @@
+{
+  "controller": { "model": "openai/gpt-5.6-sol", "runtime": "codex" },
+  "codingWorker": { "model": "openai/gpt-5.6-sol", "runtime": "codex" },
+  "thinkingDefault": "medium",
+  "heartbeat": {
+    "every": "0m",
+    "target": "none",
+    "lightContext": true,
+    "isolatedSession": true,
+    "timeoutSeconds": 600
+  },
+  "contextInjection": "continuation-skip",
+  "compaction": {
+    "mode": "safeguard",
+    "maxActiveTranscriptBytes": "20mb",
+    "recentTurnsPreserve": 4,
+    "midTurnPrecheck": {
+      "enabled": true
+    },
+    "notifyUser": false
+  },
+  "subagents": {
+    "thinking": "high",
+    "maxConcurrent": 2,
+    "maxChildrenPerAgent": 2,
+    "maxSpawnDepth": 1,
+    "archiveAfterMinutes": 60
+  },
+  "tools": {
+    "profile": "full",
+    "fs": { "workspaceOnly": false },
+    "exec": {
+      "host": "gateway",
+      "mode": "full",
+      "applyPatch": { "enabled": true, "workspaceOnly": false }
+    },
+    "loopDetection": {
+      "enabled": true
+    }
+  },
+  "contextEngine": "shadow-work",
+  "agentTools": {
+    "alsoAllow": [
+      "sessions_list",
+      "sessions_history",
+      "sessions_send",
+      "sessions_spawn",
+      "sessions_yield",
+      "subagents",
+      "session_status",
+      "read",
+      "skill_workshop",
+      "codex_endpoint_probe",
+      "codex_sessions_list",
+      "codex_session_read",
+      "workboard_list",
+      "workboard_read",
+      "workboard_create",
+      "workboard_claim",
+      "workboard_complete",
+      "workboard_release",
+      "workboard_comment",
+      "workboard_proof",
+      "workboard_block",
+      "workboard_unblock",
+      "workboard_stats"
+    ]
+  },
+  "skills": [
+    "lark-im",
+    "lark-doc",
+    "lark-base",
+    "lark-task",
+    "lark-approval",
+    "lark-calendar",
+    "capability-growth",
+    "task-progression"
+  ],
+  "skillsLimits": {
+    "maxSkillsPromptChars": 5000
+  },
+  "codexSupervision": {
+    "allowRawTranscripts": true,
+    "allowWriteControls": false
+  },
+  "codexRuntime": {
+    "homeScope": "agent"
+  },
+  "codexDynamicToolsLoading": "direct"
+}

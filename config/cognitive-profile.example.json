@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "exampleOnly": true,
+  "title": "示例认知路由资料",
+  "entities": [
+    {
+      "canonicalKey": "role:me",
+      "type": "Role",
+      "name": "本人工作角色",
+      "summary": "填写稳定职责，不在这里记录每天的消息。"
+    },
+    {
+      "canonicalKey": "topic:example-product-interface",
+      "type": "KnowledgeTopic",
+      "name": "示例产品外部接口"
+    },
+    {
+      "canonicalKey": "code:example-product/src/interface",
+      "type": "CodeLocation",
+      "name": "示例接口源码目录",
+      "metadata": {
+        "path": "D:/Projects/example-product/src/interface"
+      }
+    },
+    {
+      "canonicalKey": "person:example-maintainer",
+      "type": "Person",
+      "name": "示例维护人",
+      "summary": "替换为真实同事；不要填写密钥或密码。"
+    },
+    {
+      "canonicalKey": "feishu:open_id:example-maintainer",
+      "type": "CommunicationChannel",
+      "name": "示例维护人飞书",
+      "metadata": {
+        "locator": "open_id:replace-me"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "subject": "topic:example-product-interface",
+      "predicate": "IMPLEMENTED_IN",
+      "object": "code:example-product/src/interface",
+      "confidence": 0.95
+    },
+    {
+      "subject": "person:example-maintainer",
+      "predicate": "EXPERT_IN",
+      "object": "topic:example-product-interface",
+      "confidence": 0.9
+    },
+    {
+      "subject": "person:example-maintainer",
+      "predicate": "CONTACT_VIA",
+      "object": "feishu:open_id:example-maintainer",
+      "confidence": 0.95
+    }
+  ]
+}

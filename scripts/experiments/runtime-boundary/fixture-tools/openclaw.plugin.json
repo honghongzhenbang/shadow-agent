@@ -1,0 +1,20 @@
+{
+  "id": "runtime-boundary-fixtures",
+  "name": "Runtime Boundary Experimental Fixtures",
+  "version": "0.1.0",
+  "description": "Synthetic evidence and actions for isolated runtime comparisons.",
+  "activation": { "onStartup": true },
+  "contracts": {
+    "trustedToolPolicies": [],
+    "tools": ["fixture_read", "fixture_action"]
+  },
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "root": { "type": "string" },
+      "explicitValidationScope": { "type": "boolean", "default": false }
+    },
+    "required": ["root"],
+    "additionalProperties": false
+  }
+}

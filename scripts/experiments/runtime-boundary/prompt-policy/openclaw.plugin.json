@@ -1,0 +1,34 @@
+{
+  "id": "runtime-boundary-prompt-policy",
+  "name": "Runtime Boundary Prompt Policy Experiment",
+  "version": "0.1.0",
+  "description": "Isolated baseline/replacement prompt experiment; not an authorization gate.",
+  "activation": { "onStartup": true },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["experimentId", "experimentRoot", "mode"],
+    "properties": {
+      "experimentId": {
+        "type": "string",
+        "const": "runtime-boundary-prompt-policy-v1"
+      },
+      "experimentRoot": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Absolute existing runtime/experiments/runtime-boundary/<uuid> directory."
+      },
+      "mode": { "type": "string", "enum": ["baseline", "replacement"] },
+      "role": {
+        "type": "string",
+        "enum": ["controller", "engineer", "knowledge-maintainer", "continuation"]
+      },
+      "stableRules": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 8192,
+        "description": "Optional stable, non-secret role rules; never task state, credentials or full context."
+      }
+    }
+  }
+}
