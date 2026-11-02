@@ -1606,8 +1606,14 @@
     {
       "file": "README.md",
       "component": "distribution",
-      "bytes": 18205,
-      "sha256": "95e50bffa62b9c98750b93da343e7bc7c3dff0cc39fea7454c653356d6fc1ede"
+      "bytes": 21708,
+      "sha256": "1d53ac2025b729bf2305363594c04c184e5c50b8e6ebfaf661575cd7ece218ad"
+    },
+    {
+      "file": "README.zh-CN.md",
+      "component": "distribution",
+      "bytes": 18246,
+      "sha256": "4802427407b93b7782c28863410c8cc099cf83e0596d88f27c9a9f61a03c66af"
     },
     {
       "file": "scripts/analyze-feishu-conversation-evaluation.mjs",

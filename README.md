@@ -2,287 +2,291 @@
 
 # Shadow Agent
 
-### 影子智能体 · 记忆与持续推进
+**English** | [简体中文](README.zh-CN.md)
 
-让信息成为有依据的知识，让交代成为可以持续跟进的工作。
+### Personal memory and continuous task progress
 
-**本机优先 · 可追溯知识 · 独立任务会话 · 受控能力扩展**
+Turn information into evidence-backed knowledge, and requests into work that can be followed through.
 
-[工作方式](#工作方式) · [知识库](#有依据可更新的知识库) · [持续推进](#一项工作一张卡) · [能力扩展](#能力如何生长) · [开始使用](#开始使用) · [冷启动](#冷启动从认识你到开始工作)
+**Local-first · Traceable knowledge · Independent task conversations · Controlled capability growth**
+
+[How it works](#how-it-works) · [Knowledge](#evidence-backed-updatable-knowledge) · [Tasks](#one-task-one-card) · [Extensions](#how-capabilities-grow) · [Getting started](#getting-started) · [Onboarding](#onboarding-from-context-to-action)
 
 </div>
 
-> **Windows 优先，正在持续开发。** 使用前需要配置模型账号与本机运行环境；语音和办公软件按需接入。第一次使用建议从一个小任务开始，再逐步扩大资料和操作范围。
+> **Windows-first and under active development.** A model account and local runtime setup are required. Voice and workplace integrations are optional. Start with a small task, then gradually expand access to sources and actions.
 >
-> **安全提醒：** 当前运行模板包含较高的本机文件与执行权限。来源范围、HITL 和业务策略不是操作系统沙箱。先在独立 Windows 用户或测试环境中使用，不要直接接入无法承受误操作的重要资料和设备。
+> **Security:** The current runtime template grants broad local file and execution access. Source scopes, human review, and application policies are not an operating-system sandbox. Start in a separate Windows user account or test environment, without connecting critical data or equipment that cannot tolerate mistakes.
 
-## 它做什么
+## What it does
 
-Shadow Agent 面向这样的工作：信息分散在聊天、文件、仓库、编程会话和口头交流里，任务会跨天变化，也会因为别人已经处理、方案调整或你改变决定而需要重新判断。
+Shadow Agent is built for work whose context is scattered across chats, files, repositories, coding sessions, and spoken conversations. Tasks may span days, change direction, or become unnecessary because someone else has already handled them.
 
-它希望减少的，不只是打字和检索，而是反复解释背景、寻找依据、手工追问进度和重复整理知识的工作。
+The goal is to reduce more than typing and searching: repeated explanations, finding supporting material, manually chasing progress, and maintaining the same knowledge in multiple places.
 
-| 能力 | 使用中的意义 | 当前边界 |
+| Capability | What it helps with | Current boundary |
 |---|---|---|
-| 有来源的个人知识库 | 记住职责、协作关系、项目、决策及资料位置 | 保存了内容不等于内容已经可信 |
-| 可修订记忆 | 新证据可以补充、反驳或修订旧认识 | 不按“最后收到”直接覆盖，不保证模型判断永远正确 |
-| 持续任务卡 | 每项工作保留目标、验收、进展、依据和阻塞 | 子执行器结束不等于任务完成 |
-| 信息与任务联动 | 会议结论、聊天变化和人工纠正进入相关任务 | 相关性需要判断，不承诺所有消息都自动匹配 |
-| 编程任务委托 | 主控可委托独立编程执行器并核验产物 | 后端接口、认证和权限需实际接通 |
-| 能力扩展 | 在任务内调查并接入 MCP、CLI、Skill 或局部代码 | 发现工具、配置成功、业务成功分开验收 |
-| 语音输入与人物标注 | 录音成为带时间、原音频入口和说话人候选的信息 | 声纹不是身份授权，混合说话和识别错误需要复核 |
-| 可替换模型 | 主控与编程执行器可以独立选择模型 | 换模型不迁移知识库，但旧会话绑定仍需核对 |
+| Evidence-backed personal knowledge | Responsibilities, collaborators, projects, decisions, and source locations | Stored information is not automatically trustworthy |
+| Revisable memory | New evidence can extend, contradict, or revise earlier understanding | Arrival order alone does not decide truth; model judgments can be wrong |
+| Persistent task cards | Goals, acceptance criteria, progress, evidence, and blockers | A child executor finishing does not mean the task is complete |
+| Information-to-task updates | Meeting outcomes, chat changes, and corrections can reach related tasks | Relevance requires judgment; not every message is automatically matched |
+| Delegated coding | The controller can delegate to a separate coding executor and verify its output | Backend interfaces, authentication, and permissions must be connected |
+| Capability growth | Investigate and integrate MCP servers, CLIs, Skills, or focused code changes within a task | Discovery, configuration, and successful business use are separate checks |
+| Voice and speaker annotation | Recordings become information with timestamps, audio references, and speaker candidates | Voiceprints are not authorization; mixed speech and transcription errors need review |
+| Replaceable models | Configure controller and coding-executor models independently | Changing models does not migrate the knowledge base; existing session bindings still need checking |
 
-## 工作方式
+## How it works
 
 ```mermaid
 flowchart TD
-    A[人工交代 / 文件 / Git / 编程记录 / 办公会话 / 录音] --> B[来源采集与原始证据]
-    B --> C[增量变化与路由]
-    C --> D[Shadow Agent 主控]
-    D --> E[知识维护会话]
-    D --> F[相关任务卡与独立任务会话]
-    E --> G[事实 / 关系 / 冲突 / 来源位置]
+    A[User input / Files / Git / Coding history / Workplace chats / Recordings] --> B[Source capture and original evidence]
+    B --> C[Incremental changes and routing]
+    C --> D[Shadow Agent controller]
+    D --> E[Knowledge maintenance conversation]
+    D --> F[Task cards and independent task conversations]
+    E --> G[Facts / Relations / Conflicts / Source locations]
     G --> D
-    F --> H[原生工具 / MCP / CLI / Skill / 编程执行器]
-    H --> I[结果、依据和执行回执]
+    F --> H[Native tools / MCP / CLI / Skills / Coding executors]
+    H --> I[Results, evidence, and execution receipts]
     I --> F
     I --> E
-    F --> J[需要用户决策或授权]
+    F --> J[User decisions or authorization]
     J --> D
 ```
 
-输入渠道和执行工具不是系统的中心。系统围绕三件事组织：**知道了什么、正在做什么、凭什么认为完成了。**
+Input channels and execution tools are not the center of the system. It is organized around three questions: **What do we know? What are we doing? What supports the claim that it is complete?**
 
-OpenClaw 提供模型、会话、工具和原生 Workboard 等运行设施；Shadow Agent 定义个人知识、信息路由、任务归属、推进和核验规则。它不是把所有工作塞进一个不断变长的聊天。
+OpenClaw provides runtime facilities such as models, sessions, tools, and native Workboard. Shadow Agent defines personal knowledge, information routing, task ownership, progression, and verification. It does not put all work into one ever-growing chat.
 
-## 有依据、可更新的知识库
+## Evidence-backed, updatable knowledge
 
-### 记住事实，也记住依据和变化
+### Remember facts, their evidence, and how they change
 
-| 层次 | 保存什么 | 用来做什么 |
+| Layer | What it stores | Why it matters |
 |---|---|---|
-| 原始证据 Evidence | 输入正文、来源标识、发生/采集时间、可回查位置 | 回到原始依据，区分是谁说的和模型推断 |
-| 实体与事实 | 人、项目、文档、仓库及它们之间有来源的关系 | 回答“谁负责”“什么关联”“去哪里查” |
-| 修订与冲突 | 支持/反对证据、适用范围、有效期、取代历史 | 避免把相互矛盾或已经过时的信息混成一个结论 |
-| 检索入口 | 词法索引、图谱关系、文档/会话/仓库位置 | 先找到入口，再按任务读取必要原文 |
-| 个人简况 | 从同一图谱派生的有界事实视图与私有 `USER.md` | 给 Agent 当前背景，而不是另维护一份个人资料 |
+| Original evidence | Input text, source identity, event and capture times, retrievable locations | Return to the source and distinguish a statement from model inference |
+| Entities and facts | People, projects, documents, repositories, and evidence-linked relationships | Answer who is responsible, what is related, and where to investigate |
+| Revisions and conflicts | Supporting and opposing evidence, scope, validity periods, supersession history | Keep contradictory or outdated information from becoming one unqualified conclusion |
+| Retrieval entry points | Lexical indexes, graph relationships, document, conversation, and repository locations | Find an entry point, then read the original material needed for the task |
+| Personal profile | A bounded fact view and private `USER.md`, derived from the same graph | Provide current context without maintaining a second personal database |
 
-你可以先问“目前知道什么”，再沿来源查看原文。当前认知与历史记录分开呈现，遇到冲突时保留依据，便于纠正。
+Ask what is currently known, then follow the source references. Current understanding and historical records remain distinguishable, with evidence available for correction.
 
-### 知识如何更新
+### How knowledge is updated
 
-1. **保留新输入。** 人工说明、已接入的来源变化、语音纠正或任务结果先保存来源与时间。
-2. **进入统一维护流程。** 有长期价值的信息交给知识维护会话；任务会话可以提出知识差量，不独立维护另一套事实。
-3. **和既有知识比较。** 判断是补充、重复、冲突还是同一声明的修订，保留对应证据。
-4. **写入并回查。** 维护结果、事实支持关系及复核回执持久化；处理完成不自动等同于事实可信。
-5. **用于后续工作。** 个人简况从图谱重新生成，相关变化经现有任务链路传递；下一次查询可追查新旧依据。
+1. **Preserve new input.** User statements, changes from connected sources, voice corrections, and task results retain their sources and timestamps.
+2. **Use one maintenance workflow.** Information with lasting value goes to the knowledge maintenance conversation. Task conversations may propose knowledge changes rather than maintain separate facts.
+3. **Compare with existing knowledge.** Determine whether the input adds information, repeats it, conflicts with it, or revises the same claim, retaining the evidence.
+4. **Write and read back.** Persist maintenance results, evidence links, and review receipts. A completed review does not automatically make a fact trustworthy.
+5. **Use it in later work.** Regenerate the personal profile from the graph and route relevant changes through the task workflow. Later queries can trace both new and old evidence.
 
-**收到时间晚，不一定代表信息更新。** 发生时间、来源版本、作用域与证据含义都需要核对。无法可靠判定时，保留冲突或待确认项，而不是静默覆盖。
+**Received later does not necessarily mean more current.** Event time, source version, scope, and meaning all matter. When the relationship cannot be established reliably, keep a conflict or an unresolved question instead of silently overwriting knowledge.
 
 <details>
-<summary><strong>例子：开会后负责人和方案改变了</strong></summary>
+<summary><strong>Example: a meeting changes ownership and the plan</strong></summary>
 
-假设会议确认“由同事乙负责验收，先做离线验证”。录音转写和人物纠正保留为来源；主控判断哪些正在推进的任务受到影响，向任务提供新信息，同时把可复用的职责/决策交给知识维护。
+Suppose a meeting confirms that a colleague will handle acceptance testing and that offline validation should come first. The transcript and speaker corrections retain their source. The controller determines which active tasks are affected, supplies the new information to those tasks, and sends reusable responsibilities and decisions to knowledge maintenance.
 
-任务卡仍负责实际推进和验收。它可以提出补充知识，但不因为同一条会议结论经过任务卡，就再建一套互相覆盖的事实。旧依据保留，便于解释认识为什么改变。
+The task card still owns execution and acceptance. It can propose additional knowledge, but routing the same meeting outcome through a task does not create a second independently maintained set of facts. Earlier evidence remains available to explain the change.
 
-识别错误、未知人物和责任不清时，可以在录音标注或任务卡里补充说明。
+Use recording annotations or the task card to clarify transcription mistakes, unknown speakers, or unclear responsibility.
 
 </details>
 
-### 搜索不到时怎么办
+### What happens when the first search misses?
 
-当前使用**词法检索、图谱关系和来源入口**。不必记住准确文件名，可以先描述问题，让 Agent 找到相关项目、资料或会话，再深入查看。
+Current retrieval uses **lexical search, graph relationships, and source entry points**. You do not have to remember an exact filename: describe the problem, let the Agent find a related project, document, or conversation, and continue from there.
 
-Agent 可以沿找到的文档、会话、仓库或模块入口继续检索、读取原文、查提交记录和相关文件。验收看它是否取得必要依据并完成请求，而不是要求首轮检索命中 100%。
+The Agent can follow document, conversation, repository, or module references to search further, read originals, inspect commits, and examine related files. Success means obtaining the necessary evidence and completing the request, not achieving a 100% first-search hit rate.
 
-原件不存在、账号不可读、资料没有采集时，检索不能凭空补齐。系统应说明缺口，不把“找到相似内容”包装成答案成立。
+Retrieval cannot invent missing originals, inaccessible account data, or uncaptured material. Such gaps should be reported, not disguised as a supported answer because similar content was found.
 
-## 一项工作，一张卡
+## One task, one card
 
-主对话用于交代、询问和纠正；任务卡用于持续处理一项具体工作。每张卡有自己的控制会话，可以查询相关任务和知识，但不需要共享所有任务的完整聊天历史。
+Use the main conversation to assign work, ask questions, and correct understanding. Use a task card to follow one specific piece of work. Each card has its own controller conversation and can query related tasks and knowledge without sharing every task's full history.
 
-| 在哪里 | 适合做什么 |
+| Surface | What to do there |
 |---|---|
-| 主对话 | “帮我做这件事”“这条职责理解错了”“我现在优先关注什么” |
-| 任务卡的继续交代 | 补充材料、改变方案、询问进度或给出新的验收要求 |
-| 需要你处理 | 补充确实缺少的信息、授权、作出决策或确认结果 |
-| 完成 / 终止 | 结束任务并可选填写说明；终止不应冒充目标已完成 |
-| 声音与人物 | 回听、修订转写、确认人物和维护声纹样本 |
+| Main conversation | Assign work, correct a responsibility, or discuss priorities |
+| Follow-up in a task card | Add material, change the plan, ask for progress, or revise acceptance criteria |
+| Needs you | Supply missing information, authorize an action, make a decision, or verify a result |
+| Complete / Terminate | End the task with an optional note; termination must not be reported as achieving the goal |
+| Voice and people | Listen back, edit transcripts, confirm people, and maintain voiceprint samples |
 
-新消息、来源变化、用户反馈、任务结果和恢复检查可以唤醒后续处理。电脑关闭、主控离线、来源未连接或自动巡检被关闭时，不能宣称 Agent 仍在持续执行。
+New messages, source changes, user feedback, task results, and recovery checks can trigger further processing. The Agent cannot claim to be continuously executing when the computer is off, the controller is offline, a source is disconnected, or automatic checks are disabled.
 
-在任务卡里补充新信息后，Agent 会根据新情况判断是继续、调整还是重新规划。正在执行的编程工作可能到下一轮才读取补充内容；重要变更请查看卡片中的后续进展，不要只凭一句“收到”判断已经生效。
+After you add information to a card, the Agent decides whether to continue, adjust, or replan. A running coding executor may read the update in its next turn. For important changes, check subsequent progress rather than treating an acknowledgment as proof of adoption.
 
-## 能力如何生长
+## How capabilities grow
 
-你可以把“接入一种新能力”作为普通任务交给 Agent，例如：
+You can assign integration work as an ordinary task, for example:
 
-> 我希望能查询某个系统里的项目文档。先确认有没有官方 MCP 或 CLI，只读接入；找到指定文档并回查原文后，再告诉我还缺什么。
+> I want to query project documents in this system. First check for an official MCP server or CLI and connect it read-only. Find the requested document, read the original, and tell me what is still missing.
 
-| 缺口 | 优先方式 | 是否通常需要改核心 |
+| Need | Preferred approach | Core changes usually required? |
 |---|---|---|
-| 已有工具，只缺复用步骤 | 写或接入工作区 Skill | 否 |
-| 软件提供 MCP / CLI | 接入原生服务、认证和工具 | 否，但需验证运行及权限 |
-| 缺少一个局部工具 | 委托编程执行器实现、测试 | 通常不需要 |
-| 更换思考模型 | 原生 provider 和角色选择配置 | 通常不需要 |
-| 新的持续消息/事件来源 | 实现来源身份、增量、时间、去重与恢复契约 | 需要来源接入代码 |
-| 改知识或任务的基本语义 | 修改核心、契约和回归测试 | 是 |
+| Reusable steps for existing tools | Write or connect a workspace Skill | No |
+| A service with MCP or CLI support | Connect its native service, authentication, and tools | No, but runtime and permissions need validation |
+| A missing focused tool | Delegate implementation and testing to a coding executor | Usually not |
+| A different reasoning model | Configure the native provider and model roles | Usually not |
+| A new continuous message or event source | Implement source identity, incremental capture, timestamps, deduplication, and recovery contracts | Source integration code is needed |
+| Different knowledge or task semantics | Change the core, contracts, and regression tests | Yes |
 
-新 MCP 可以先准备配置、探测，再启用或回滚。探测会实际运行程序或连接服务，接入前请确认来源可信；启用后仍需用一项真实业务验证。新增外部写入需要相应授权。
+An MCP integration can be prepared, probed, enabled, or rolled back. Probing runs a program or connects to a service, so check its trustworthiness first. After enabling it, verify a real business operation. New external writes require appropriate authorization.
 
-涉及核心代码或正在运行的服务时，Agent 应先说明方案、测试结果和切换影响，再按授权部署。需要账号或尚无接口的软件，会明确提出缺少的条件。
+For changes to core code or running services, the Agent should explain the plan, test results, and switching impact before deploying within its authorization. Missing accounts or unavailable software interfaces remain explicit requirements.
 
-详见 [能力接入与模型切换](docs/operations/capability-growth.md)。
+See [Capability integration and model selection](docs/operations/capability-growth.md).
 
-## 开始使用
+## Getting started
 
-**先读 [安装与首次运行](docs/getting-started.md)。** `npm install` 只安装当前 Node/Electron 工程依赖，不会自动完成 OpenClaw、Codex 插件、模型登录和语音环境配置。
+**Start with [Installation and first run](docs/getting-started.md).** `npm install` installs this Node/Electron project's dependencies; it does not configure OpenClaw, the Codex plugin, model login, or voice processing.
 
-| 组件 | 当前要求 |
+The README is available in English and Simplified Chinese. Most linked setup and technical documents are currently in Chinese.
+
+| Component | Current requirement |
 |---|---|
-| 操作系统 | 桌面与启动脚本以 Windows x64 / PowerShell 为主要验证环境 |
-| Node.js | 包声明 `>=22`；既有启动脚本固定查找项目内 Node `24.19.0` |
-| OpenClaw | 当前运行补丁锁定 `2026.8.1`，升级需重新验证 |
-| 主控模型 | 已配置、可调用且具有相应工具能力的模型后端 |
-| 编程执行器 | 默认 Codex；受管 app-server 脚本要求 `>=0.149.0` |
-| 办公软件 | 可选；各自的 CLI/MCP、账号与授权需要单独连接 |
-| 语音 | 可选；Python、ASR/VAD/声纹依赖及模型需要另外安装 |
+| Operating system | Desktop and startup scripts are primarily validated on Windows x64 / PowerShell |
+| Node.js | The package declares `>=22`; existing startup scripts look for project-local Node `24.19.0` |
+| OpenClaw | Runtime patches are pinned to `2026.8.1`; upgrades need revalidation |
+| Controller model | A configured, callable model backend with the required tool capabilities |
+| Coding executor | Codex by default; managed app-server scripts require `>=0.149.0` |
+| Workplace software | Optional; connect each CLI/MCP, account, and authorization separately |
+| Voice | Optional; install Python, ASR/VAD/voiceprint dependencies, and models separately |
 
-在**新的独立目录**准备依赖和本机配置后，可以先初始化本地数据库：
+Prepare dependencies and local configuration in a **new, separate directory**, then initialize the local database:
 
 ```powershell
 npm ci
 npm run init
 ```
 
-随后按安装指南完成 OpenClaw、插件和模型登录，启动后台与桌面。主对话能正常回复后，再进行下面的个人初始化。
+Follow the installation guide to configure OpenClaw, plugins, and model login, then start the backend and desktop. Once the main conversation responds, proceed with personal onboarding below.
 
-## 冷启动：从认识你到开始工作
+## Onboarding: from context to action
 
-### 第一步：只问必要信息
+### 1. Start with essential information
 
-告诉 Agent 或配置助手：
+Tell the Agent or setup assistant:
 
-- 怎样称呼你，岗位和团队是什么。
-- 哪些工作由你负责，哪些不归你负责。
-- 第一个希望它帮你完成的目标。
-- 允许读取哪些软件、目录或会话；哪些暂时不接入。
-- 可选的协作偏好。**不在资料里填写密码、Token 或 Cookie。**
+- Your preferred name, role, and team.
+- Which work you own, and which work you do not.
+- The first goal you want help with.
+- Which applications, directories, or conversations it may read, and which should remain disconnected.
+- Optional collaboration preferences. **Do not include passwords, tokens, or cookies in this profile.**
 
-资料写入私有 `config/user-basics.local.json`，格式参考 [基本信息示例](config/user-basics.example.json)。示例中的 `exampleOnly` 必须在替换为自己的资料后删除。
+Use the private `config/user-basics.local.json`, following the [basic information example](config/user-basics.example.json). Replace the sample with your own information before removing its `exampleOnly` marker.
 
-### 第二步：预览你和 Agent 各自要做的事
+### 2. Preview work for you and the Agent
 
 ```powershell
 node scripts/user-profile.mjs preview --file config/user-basics.local.json
 ```
 
-预览不写库。它列出资料、初始化任务计划和确认哈希。根据你选定的来源，计划可能包括：
+Preview does not write to the database. It shows the profile, onboarding task plan, and confirmation hash. Depending on your selected sources, tasks may include:
 
-| 任务 | 处理者 | 完成标准 |
+| Task | Owner | Completion criteria |
 |---|---|---|
-| 补充职责边界和同事协作关系 | 你 | 不要求重填已知资料，补充缺失的负责/委派/协作边界 |
-| 确认可读软件和资料范围 | 你 | 未选来源时先确认，不默认全盘扫描 |
-| 完成某个软件接入或登录 | 你 | 在该软件安全入口授权，验证必要的只读能力 |
-| 调查指定资料并整理知识 | Agent | 先看目录/索引，再按目标选取材料，保留事实、位置与疑问 |
-| 配置并验收语音输入 | Agent，与用户配合 | 显式选择语音时才加入，按设备、偏好和真实试验配置 |
-| 推进你的首个目标 | Agent | 在独立卡片澄清验收并实际推进 |
+| Clarify responsibilities and collaborators | You | Fill gaps in ownership, delegation, and collaboration without re-entering known facts |
+| Confirm readable sources and scope | You | Confirm sources first; do not assume full-disk access |
+| Connect or log into a selected application | You | Authorize through the application's secure entry point and verify the required read-only access |
+| Investigate selected material and organize knowledge | Agent | Inspect directories and indexes, select relevant material, retain facts, locations, and questions |
+| Configure and validate voice input | Agent, with your participation | Added only when voice is selected; configure for the device, preferences, and real tests |
+| Advance your first goal | Agent | Establish acceptance criteria and work on an independent task card |
 
-它不是强制每人生成固定数量的任务。一个来源没登录，不应阻止其他已经就绪的独立来源继续。
+There is no fixed number of mandatory onboarding tasks. An unavailable source should not block independent sources that are ready.
 
-### 第三步：确认后进入同一套任务系统
+### 3. Confirm and use the same task system
 
 ```powershell
-# 用刚才预览的完整哈希替换占位符；先人工核对资料及任务计划。
+# Review the profile and plan, then replace the placeholder with the full preview hash.
 node scripts/user-profile.mjs confirm --file config/user-basics.local.json --confirm YOUR_PREVIEW_HASH
 node scripts/user-profile.mjs status
 node scripts/user-profile.mjs sync
 ```
 
-确认后保存基本资料并安排初始化。主控在线处理后，会在任务列表中建立引导卡片；暂时离线时保留请求，恢复后继续。
+Confirmation stores the basic information and queues onboarding. When the controller processes the request, it creates onboarding cards in the task list. If offline, the request remains available for later processing.
 
-同一确认可以幂等重放，不重复入队。资料文件只是导入输入，修改它不会绕过知识维护流程自动改写长期认知。
+Replaying the same confirmation is idempotent and does not enqueue duplicates. The profile file is an import input: editing it does not bypass knowledge maintenance to rewrite long-term understanding.
 
-**当前没有独立首次启动弹窗。** 基本资料通过主对话与 CLI 预览/确认完成；引导任务复用现有任务链路，不另建初始化任务库。
+**There is no separate first-run wizard yet.** Basic information is handled through the main conversation and CLI preview/confirmation. Onboarding uses the existing task workflow, not another task database.
 
-### 第四步：让知识从真实使用中完善
+### 4. Refine knowledge through actual use
 
-完成资料调查、任务反馈和人工纠正后，知识维护会话更新同一个图谱。`USER.md` 是自动生成的个人简况，不是第二个手工主数据库；修改这个视图会作为待复核输入进入维护流程。
+Source investigations, task feedback, and corrections update the same graph through knowledge maintenance. `USER.md` is an automatically generated personal profile, not a second manually maintained database. Edits to that view enter maintenance as input requiring review.
 
-详见 [用户知识与冷启动](docs/operations/user-knowledge-onboarding.md)。
+See [User knowledge and onboarding](docs/operations/user-knowledge-onboarding.md).
 
-## 语音也属于同一条信息链
+## Voice uses the same information workflow
 
 ```text
-电脑录音 / 手机传输包 / 已有音频
-    → 接收与完整性检查
-    → 有界组装、VAD 与识别窗口
-    → 转写、局部说话人及跨窗声纹候选
-    → 人工修订 / Evidence
-    → 相关任务 + 统一知识维护
+Computer recording / Phone transfer packages / Existing audio
+    -> Reception and integrity checks
+    -> Bounded assembly, VAD, and recognition windows
+    -> Transcript, local speakers, and cross-window voiceprint candidates
+    -> Human corrections / Evidence
+    -> Related tasks + Unified knowledge maintenance
 ```
 
-- 按**录制时间**对齐事件，不把回到电脑传输的时间当成谈话发生时间。
-- 可配置 SenseVoice、Fun-ASR-Nano 或 MOSS 本机路线；当前 `auto-local` 逻辑仍是 Fun 优先、不可用时按策略降级 SenseVoice，MOSS 需显式选择。
-- MOSS 提供局部说话人结果；跨窗口不能直接用 `S01` 认定是同一人，需要声纹候选或人工确认。
-- 可只标注有价值的人和片段，不强制给整段录音的所有人命名。混合说话且没有干净样本时，不强行登记声纹。
-- 标注、保存声纹样本和重新匹配候选是不同操作；声音身份不是授权。
-- 识别失败、部分输出和不确定边缘保留状态，不把不完整转写伪装成完整理解。
+- Align events by **recording time**, not by the time the phone returns and transfers its files.
+- Local routes include SenseVoice, Fun-ASR-Nano, and MOSS. Currently, `auto-local` prefers Fun and falls back to SenseVoice according to policy; MOSS must be selected explicitly.
+- MOSS produces local speaker labels. `S01` in two different windows does not establish the same person; use voiceprint candidates or human confirmation.
+- Annotate only the people and excerpts that matter. You do not have to name every speaker. Do not enroll a voiceprint from mixed speech without a clean sample.
+- Annotation, voiceprint enrollment, and candidate rematching are separate actions. Speaker identity does not grant authorization.
+- Failures, partial output, and uncertain boundaries retain their status rather than becoming claims of complete transcription.
 
-支持 Windows 电脑录音、Android 随行录音和已有音频导入。手机负责采集与传输，电脑负责识别和人物关联；当前没有 iOS 客户端。
+Windows recording, Android portable recording, and existing audio import are supported. The phone captures and transfers audio; the computer performs recognition and speaker association. There is currently no iOS client.
 
-| 选择 | 适合的需求 |
+| Option | Intended use |
 |---|---|
-| MOSS | 希望在转写中同时得到时间和局部说话人信息，有可用 NVIDIA GPU |
-| Fun-ASR-Nano | 侧重本机语音识别，使用独立 CUDA 环境 |
-| SenseVoice | CPU 路线，或作为自动本机模式的后备 |
-| 外部 API | 已有云服务并接受音频上传及计费，通过扩展任务接入 |
+| MOSS | Transcription with timestamps and local speaker information, with a usable NVIDIA GPU |
+| Fun-ASR-Nano | Local speech recognition in a dedicated CUDA environment |
+| SenseVoice | A CPU route or fallback for automatic local mode |
+| External API | A cloud service whose upload and billing terms you accept, connected through an extension task |
 
-在“声音与人物”中回听、改字、确认人物；在“人员与声纹”中试听和管理样本。只标注你关心的片段即可。详见 [语音模型与两端配置](docs/voice-guide.md)。
+Use the voice view to listen, correct text, and confirm speakers; use people and voiceprint management to listen to and manage samples. Annotate only the excerpts you care about. See [Voice models and device setup](docs/voice-guide.md).
 
-## 日常使用与排障
+## Everyday use and troubleshooting
 
-| 现象 | 先检查 |
+| Symptom | What to check first |
 |---|---|
-| 能录音但主控离线 | 采集与主控是不同进程；查看 Gateway、模型授权和待处理队列 |
-| 初始化计划已排队但没有卡 | 查看主控是否在线、是否消费原请求；不要重复重新建档 |
-| 任务等待你处理 | 打开原卡查看缺少的输入或授权，在同卡继续交代 |
-| 新模型忘了背景 | 核对是否仍使用同一知识/Workboard 路径，旧会话是否 pin 到原后端 |
-| 工具已配置但用不了 | 检查实际新轮次工具发现、认证、权限与一项真实业务操作 |
-| 查到相似信息但答案不明确 | 继续回查原文、来源版本和范围，不把候选当确认事实 |
+| Recording works but the controller is offline | Capture and control are separate processes; inspect Gateway, model authorization, and pending queues |
+| Onboarding is queued but there are no cards | Check whether the controller is online and consuming the original request; do not repeatedly recreate the profile |
+| A task is waiting for you | Open the original card, inspect the missing information or authorization, and reply there |
+| A new model seems to lack context | Check that knowledge and Workboard paths are unchanged and whether old sessions are pinned to the previous backend |
+| A configured tool is unavailable | Verify discovery in a new turn, authentication, permissions, and an actual business operation |
+| Similar content appears but the answer is unclear | Read the original, version, and scope; do not treat a search candidate as a confirmed fact |
 
-完成运行配置后可用 `npm run status` 查看状态，`npm run report:controller-runtime -- --hours 24` 查看已记录成本。`npm run doctor` 会初始化部分目录/数据库并探测依赖，不是完全无副作用的只读审计。
+After configuring the runtime, use `npm run status` for status and `npm run report:controller-runtime -- --hours 24` for recorded costs. `npm run doctor` initializes some directories/databases and probes dependencies; it is not a side-effect-free read-only audit.
 
-托盘 `X` 用于隐藏；托盘退出会停止受管后台。不要在不了解影响时用“重启全部服务”修复一个窗口问题。
+The desktop `X` hides the interface; exiting through the system tray stops the managed backend. Avoid restarting every service to fix one window without understanding the impact.
 
-## 数据与权限
+## Data and permissions
 
-本机优先不等于完全离线：使用远端模型时，模型请求会包含本轮需要的上下文和工具返回；外部 MCP、CLI 和云服务也有各自的数据流向。
+Local-first does not mean fully offline. Remote model requests include the context and tool results needed for the turn. External MCP servers, CLIs, and cloud services have their own data flows.
 
-本项目不是多租户安全平台；高权限工具及第三方程序具有真实风险。账号授权、来源选择、模型数据处理和外发审核需要由使用者明确决定。
+This is not a multi-tenant security platform. High-privilege tools and third-party programs carry real risks. Users must explicitly decide account authorization, source access, model data handling, and external-action review.
 
-## 与 OpenClaw 的关系
+## Relationship with OpenClaw
 
-OpenClaw 提供模型调用、会话、工具和原生任务设施；Shadow Agent 在其上实现个人知识、任务推进、桌面交互和语音链路。
+OpenClaw provides model invocation, sessions, tools, and native task facilities. Shadow Agent builds personal knowledge, task progression, desktop interaction, and voice workflows on top.
 
-当前依赖固定版 OpenClaw，并通过插件及少量受控补丁接入。更新上游前请先核对兼容版本，不要直接替换为 `latest`。
+The project currently relies on a pinned OpenClaw version, plugins, and a small set of controlled patches. Check compatibility before upgrading; do not replace it with `latest` without validation.
 
-依赖版本、补丁和第三方声明见 [运行依赖说明](docs/runtime-dependencies.md)。
+See [Runtime dependencies](docs/runtime-dependencies.md) for versions, patches, and third-party notices.
 
-开发者可从 [架构说明](docs/ARCHITECTURE.md)、[项目契约](docs/PROJECT_CONTRACT.md) 和 [源码组件导航](docs/release-contents.md) 了解实现。
+Developers can start with [Architecture](docs/ARCHITECTURE.md), the [Project contract](docs/PROJECT_CONTRACT.md), and the [Source component guide](docs/release-contents.md).
 
-## 当前限制
+## Current limitations
 
-- 首次安装需要配置多个运行组件，尚未提供一键安装器。
-- 持续推进依赖电脑、后台和所需模型在线；离线期间输入会等待处理。
-- 模型可能误解职责、任务或录音，需要保留人工纠正和结果核验。
-- Android 的后台录音、蓝牙距离判断和续航受设备及系统限制，不保证手机与电脑零间隙交接。
-- 长会话和复杂调查可能消耗较多时间与 Token，可按任务类型配置模型和思考等级。
+- Initial setup involves several runtime components; there is no one-click installer yet.
+- Continuous progress requires the computer, backend, and required models to be online. Offline inputs wait for processing.
+- Models can misunderstand responsibilities, tasks, and recordings. Human corrections and result verification remain important.
+- Android background recording, Bluetooth proximity, and battery life depend on the device and OS. Gap-free phone/computer handover is not guaranteed.
+- Long conversations and complex investigations can take time and consume substantial tokens. Configure models and reasoning levels by task type.
 
-## 许可证
+## License
 
-本项目自有代码采用 [MIT License](LICENSE)，允许使用、修改和商业分发，须保留版权与许可声明。第三方代码和模型权重仍适用各自许可证，不因本项目采用 MIT 而被重新授权。
+Project-owned code is licensed under the [MIT License](LICENSE), permitting use, modification, and commercial distribution with the copyright and license notice retained. Third-party code and model weights remain under their own licenses; this project's MIT license does not relicense them.
 
-OpenClaw、图标及语音模型的说明见 [第三方声明](THIRD_PARTY_NOTICES.md)。
+See [Third-party notices](THIRD_PARTY_NOTICES.md) for OpenClaw, icons, and voice models.
